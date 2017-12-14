@@ -1,0 +1,33 @@
+/*
+====================
+SEZIONE GENERALE
+====================
+*/
+
+* {
+	padding: 0em;
+	margin: 0em;
+}
+
+html, body {
+	max-width: 1024px;
+	margin: auto;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+/*
+====================
+SEZIONE HEADER
+====================
+*/
+
+#logo {
+	float: left;
+	width: 8em;
+	margin: 0.5em;
+}
+
+#title {
+	
+}
