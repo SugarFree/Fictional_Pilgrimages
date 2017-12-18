@@ -77,27 +77,26 @@ SEZIONE CORPO
 */
 
 #body{
-	margin-left: 20%;
-	padding: 2em 0.5em 2em 0.5em
+	padding: 2em 10em 20em 1em;
 }
 
-#pic{ 
-	width:45em;
-	padding: 1em;
+#stato{ 
+	padding-right: 8em;
 }
+
+#citta{ 
+	padding-right: 8em;
+}
+
+#ricerca{
+	padding: 0em 0.5em;
+}
+
 /*
 ================
 SEZIONE FOOTER
 ================
 */
-#pic1{
-	float: left;
-}
-
-#pic2{
-	float: right;
-}
-
 #footer {
 	font-size: 0.75em;
 	text-align: center;
