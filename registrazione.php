@@ -6,14 +6,16 @@
 
     /*Contengono i messaggi d'errore da mostrare all'utente
       Se sono tutte stringhe vuote, l'operazione è andata a buon fine.
+      Rispettivamente errore di username già esistente, errore di password non ripetuta correttamente,
+      errore di email in formato non corretto, errore del database generico, ad esempio è pieno, non risponde ecc.
     */
-    $errore_username = $errore_password = $errore_conferma_password = $errore_email = $errore_misc = "";
+    $errore_username  = $errore_conferma_password = $errore_email = $errore_misc = "";
 
     //parametri in input per test
-    $username="user2";
+    $username="user";
     $password="prova1";
     $conferma_password="prova1";
-    $email="fai@cagare.com";
+    $email="prova@email.com";
     $privilegi="user";
 
     //Verifico che l'email sia nel formato corretto
@@ -55,6 +57,7 @@
             $inserimento = $conn->prepare("INSERT INTO utente VALUES (?,?,?,?)");
             $inserimento->bind_param("ssss", $username,$email,sha1($password),$privilegi);
             $inserimento->execute();
+            //Se per qualche altro motivo il database si è rifiutato di inserire il nuovo utente, salva il messaggio d'errore ed esce
             if($inserimento->error!="")
             {
                 $errore_misc="Errore ritornato dal database:". $inserimento->error;
@@ -80,7 +83,7 @@
         //echo "Un'email corrisponde";
         $verifica_email->close();
         $conn->close();
-        $errore_email="Email relativa ad un'account gia' esistente. Recarsi alla pagina di Login.";
+        $errore_email="Email relativa ad un account gia' esistente. Recarsi alla pagina di Login.";
         die($errore_email);
     }
     ?>
