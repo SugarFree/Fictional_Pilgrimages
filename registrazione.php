@@ -45,8 +45,14 @@
     $verifica_email = $conn->prepare("SELECT email from utente WHERE email=?");
     $verifica_email->bind_param("s",$email);
     $verifica_email->execute();
-    $risultato_email=$verifica_email->get_result();
 
+    //Se la query fallisce per qualsiasi motivo, esce
+    if ($verifica_email->error!="")
+    {
+        $errore_misc="Errore ritornato dal database:" . $verifica_email->error;
+        die($errore_misc);
+    }
+    $risultato_email=$verifica_email->get_result();
     //Se l'email è nuova, tutto ok, altrimenti esce
     if($risultato_email->num_rows===0)
     {
@@ -56,6 +62,13 @@
         $verifica_username = $conn->prepare("SELECT username from utente WHERE username=?");
         $verifica_username->bind_param("s",$username);
         $verifica_username->execute();
+
+        //Se la query fallisce per qualsiasi motivo, esce
+        if ($verifica_username->error!="")
+        {
+            $errore_misc="Errore ritornato dal database:" . $verifica_username->error;
+            die($errore_misc);
+        }
         $risultato_username=$verifica_username->get_result();
 
         if($risultato_username->num_rows===0)
