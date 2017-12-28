@@ -2,6 +2,7 @@
 
     require_once 'connessione.php';
 
+    //Questi sono i parametri da passare tramite form
     $username = $password = $email = $conferma_password = "";
 
     /*Contengono i messaggi d'errore da mostrare all'utente
@@ -11,12 +12,20 @@
     */
     $errore_username  = $errore_conferma_password = $errore_email = $errore_misc = "";
 
-    //parametri in input per test
+    //Rimuove qualsiasi tag HTML/PHP per evitare che l'utente faccia scherzi strani, tipo avere il suo nome in grassetto
+    $username=strip_tags($username);
+    $password=strip_tags($password);
+    $conferma_password=strip_tags($conferma_password);
+    $email=strip_tags($email);
+
+
+
+    /*parametri in input per test
     $username="user";
     $password="prova1";
     $conferma_password="prova1";
-    $email="prova@email.com";
-    $privilegi="user";
+    $email="prova@email.com";*/
+    $privilegi="user";//Questo va lasciato così sempre, non si possono registrare nuovi admin
 
     //Verifico che l'email sia nel formato corretto
     if(!filter_var($email, FILTER_VALIDATE_EMAIL))
