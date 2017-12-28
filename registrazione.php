@@ -3,29 +3,41 @@
     require_once 'connessione.php';
 
     //Questi sono i parametri da passare tramite form
-    $username = $password = $email = $conferma_password = "";
+    $username = $password = $email  = $conferma_password = "";
 
     /*Contengono i messaggi d'errore da mostrare all'utente
       Se sono tutte stringhe vuote, l'operazione è andata a buon fine.
-      Rispettivamente errore di username già esistente, errore di password non ripetuta correttamente,
-      errore di email in formato non corretto, errore del database generico, ad esempio è pieno, non risponde ecc.
+      Rispettivamente errore di username già esistente/vuoto, errore password vuota,
+      errore di password non ripetuta correttamente, errore di email in formato non corretto,
+      errore del database generico, ad esempio è pieno, non risponde ecc.
     */
-    $errore_username  = $errore_conferma_password = $errore_email = $errore_misc = "";
+    $errore_username  = $errore_conferma_password = $errore_password = $errore_email = $errore_misc = "";
 
     //Rimuove qualsiasi tag HTML/PHP per evitare che l'utente faccia scherzi strani, tipo avere il suo nome in grassetto
     $username=strip_tags($username);
     $password=strip_tags($password);
     $conferma_password=strip_tags($conferma_password);
     $email=strip_tags($email);
-
-
-
     /*parametri in input per test
     $username="user";
     $password="prova1";
     $conferma_password="prova1";
     $email="prova@email.com";*/
+
     $privilegi="user";//Questo va lasciato così sempre, non si possono registrare nuovi admin
+
+    //Verifica che username e password inseriti non siano vuoti
+    if (empty($username))
+        {
+            $errore_username=("Inserire un username");
+            die($errore_username);
+        }
+
+    if (empty($password))
+    {
+        $password=("Inserire una password");
+        die($errore_password);
+    }
 
     //Verifico che l'email sia nel formato corretto
     if(!filter_var($email, FILTER_VALIDATE_EMAIL))
