@@ -2,21 +2,42 @@
 
     require_once 'connessione.php';
 
-    $username = $password = $email = $conferma_password = "";
+    //Questi sono i parametri da passare tramite form
+    $username = $password = $email  = $conferma_password = "";
 
     /*Contengono i messaggi d'errore da mostrare all'utente
       Se sono tutte stringhe vuote, l'operazione è andata a buon fine.
-      Rispettivamente errore di username già esistente, errore di password non ripetuta correttamente,
-      errore di email in formato non corretto, errore del database generico, ad esempio è pieno, non risponde ecc.
+      Rispettivamente errore di username già esistente/vuoto, errore password vuota,
+      errore di password non ripetuta correttamente, errore di email in formato non corretto,
+      errore del database generico, ad esempio è pieno, non risponde ecc.
     */
-    $errore_username  = $errore_conferma_password = $errore_email = $errore_misc = "";
+    $errore_username  = $errore_conferma_password = $errore_password = $errore_email = $errore_misc = "";
 
-    //parametri in input per test
+    //Rimuove qualsiasi tag HTML/PHP per evitare che l'utente faccia scherzi strani, tipo avere il suo nome in grassetto
+    $username=strip_tags($username);
+    $password=strip_tags($password);
+    $conferma_password=strip_tags($conferma_password);
+    $email=strip_tags($email);
+    /*parametri in input per test
     $username="user";
     $password="prova1";
     $conferma_password="prova1";
-    $email="prova@email.com";
-    $privilegi="user";
+    $email="prova@email.com";*/
+
+    $privilegi="user";//Questo va lasciato così sempre, non si possono registrare nuovi admin
+
+    //Verifica che username e password inseriti non siano vuoti
+    if (empty($username))
+        {
+            $errore_username=("Inserire un username");
+            die($errore_username);
+        }
+
+    if (empty($password))
+    {
+        $password=("Inserire una password");
+        die($errore_password);
+    }
 
     //Verifico che l'email sia nel formato corretto
     if(!filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -36,8 +57,14 @@
     $verifica_email = $conn->prepare("SELECT email from utente WHERE email=?");
     $verifica_email->bind_param("s",$email);
     $verifica_email->execute();
-    $risultato_email=$verifica_email->get_result();
 
+    //Se la query fallisce per qualsiasi motivo, esce
+    if ($verifica_email->error!="")
+    {
+        $errore_misc="Errore ritornato dal database:" . $verifica_email->error;
+        die($errore_misc);
+    }
+    $risultato_email=$verifica_email->get_result();
     //Se l'email è nuova, tutto ok, altrimenti esce
     if($risultato_email->num_rows===0)
     {
@@ -47,6 +74,13 @@
         $verifica_username = $conn->prepare("SELECT username from utente WHERE username=?");
         $verifica_username->bind_param("s",$username);
         $verifica_username->execute();
+
+        //Se la query fallisce per qualsiasi motivo, esce
+        if ($verifica_username->error!="")
+        {
+            $errore_misc="Errore ritornato dal database:" . $verifica_username->error;
+            die($errore_misc);
+        }
         $risultato_username=$verifica_username->get_result();
 
         if($risultato_username->num_rows===0)
