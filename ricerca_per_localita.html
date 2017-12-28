@@ -3,30 +3,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="ricerca_per_localita.css">
-	<title>Fictional Pilgrimages</title>
+	<title>Ricerca per località</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="ricerca_per_localita_style.css">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" href="ricerca_per_localita_style_small.css" >
 </head>
 <body>
-	<div id="header">
-		<img id="logo" src="img/logo.png" alt="Mappa di Westeros dalla serie televisiva &quot;Il trono di spade&quot;" />
-		<img id="title" src="img/title.png" alt="Fictional Pilgrimages" />
-	</div>
+	<h1>Fictional Pilgrimages</h1>
 	<div id="path">
-		Ricerca per luogo
+		Ti trovi in: ricerca per luogo
+	</div>
+	<div id="sidenav">
+		<img id="logo" src="./img/logo.png" alt="Logo del sito" />
+		<a href="index.html"><img id="home" src="./img/home.png" alt="" />Home</a>
+		<a href="ricerca_per_localita.html"><img id="world" src="./img/world.png" alt="" />Ricerca per luogo</a>
+		<a href="ricerca_per_titolo.html"><img id="titolo" src="./img/titolo.png" alt="" />Ricerca per titolo</a>
+		<a href="#"><img id="utente" src="./img/utente.png" alt="" />Pannello utente</a>
 	</div>
 	<div id="body">
 		<form action="/action_page.php">
 			<select id="stato"> <!--PHP elenco stati-->
 				<option value="">Stato</option>
 			</select>
-			<select id="citta"> <!--PHP elenco stati-->
+			<select id="citta"> <!--PHP elenco città-->
 				<option value="">Citta'</option>
 			</select>
 			<input id="ricerca" type="submit" value="Ricerca">
 		</form>
 	</div>
 	<div id="footer">
-		Copyright &copy; 2017 Fictional Pilgrimages | v0.01
+		Copyright &copy; 2017 Fictional Pilgrimages | v0.032
 	</div>
 </body>
 </html>
