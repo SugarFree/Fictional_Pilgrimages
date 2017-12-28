@@ -11,15 +11,16 @@ SEZIONE GENERALE
 
 html, body {
 	max-width: 1760px;
-	margin-left: 80px;
 	font-family: sans-serif;
 	font-size: 100%;
 }
 
 h1 {
+  margin-left: 150px;
   text-align: center;
   font-family: 'Crimson Text';
-  font-size: 10em;
+  font-size: 8vw;
+  padding-top: 5vh;
 }
 
 /*
@@ -28,13 +29,14 @@ SEZIONE BREADCRUMB
 ====================
 */
 
-#breadcrumb {
-	background-color: #006BCF;
-	padding: 0.5em;
-	border-top: 1px solid #DDD;
-	font-size: 1em;
-	color: white;
-	font-weight: bold;
+#path {
+  right: 0;
+  margin-left:150px;
+  background-color: #006BCF;
+  color: white;
+  padding: 0.5em;
+  font-weight: bold;
+  border-top: 1px solid #DDD;
 }
 
 /*
@@ -45,12 +47,12 @@ SEZIONE SIDENAV
 
 /* The sidebar menu */
 #sidenav {
+  float: left;
+  width: 150px;
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
-  left: 0;
   background-color: #4b4b4b;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
@@ -73,13 +75,13 @@ SEZIONE SIDENAV
 }
 
 #logo {
-  width: 7.5em;
+  width: 6.5em;
   display: block;
   margin: auto;
 }
 
 #home {
-  width: 7.5em;
+  width: 7em;
   display: block;
   margin: auto;
 }
@@ -88,14 +90,16 @@ SEZIONE SIDENAV
   width: 4em;
   display: block;
   margin: auto;
-  padding-bottom: 1.75em; 
+  padding-bottom: 0.75em; 
+  padding-top: 1em;
 }
 
 #utente {
   width: 3em;
   display: block;
   margin: auto;
-  padding-bottom: 1.75em; 
+  padding-bottom: 0.75em; 
+  padding-top: 1em;
 }
 
 /*
@@ -105,6 +109,7 @@ SEZIONE CORPO
 */
 
 #corpo {
+  margin-left: 150px;
 	padding: 1em;
 	text-align: center;
 }
@@ -118,7 +123,7 @@ h2 {
 	text-align: center;
 }
 
-a {
+#corpo a {
 	margin-top: 2em;
 }
 
