@@ -12,11 +12,11 @@ else//Altrimenti va col login
     require_once 'connessione.php';
 
 
-    /* Dati di prova: quelli veri li riceve dal form
-     * $username="user";
-     * $password="prova";
-     * $errore = "";
-    */
+      $username=$_POST["username"];
+      $password=$_POST["password"];
+
+       $errore = "";
+
 
     //Se l'username o la password inseriti sono vuoti, avvisa l'utente
     if (empty($username))
