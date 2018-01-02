@@ -3,7 +3,6 @@
     require_once 'connessione.php';
 
     //Questi sono i parametri da passare tramite form
-    
     $username=$_POST["username"];
     $password=$_POST["password"];
     $email=$_POST["email"];
