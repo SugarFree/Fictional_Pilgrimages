@@ -1,7 +1,7 @@
 <?php
 /*Classe Post: Rappresenta un post nel sito.
 * Serve a chi dovrà trasformare il risultato della ricerca (fornito come vettore di oggetti post)
- *in una pagina html. Questa classe serve solo come ausilio.
+ *in una pagina html, oppure nel caso del dettaglio di un post soltanto viene ritornato un solo oggetto.
 */
 
 class post
