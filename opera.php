@@ -22,7 +22,6 @@ class opera
         $this->tipo=$tipo;
         $this->titolo=$titolo;
         $this->descrizione=$descrizione;
-        $this->tipo=$tipo;
     }
 }
 
