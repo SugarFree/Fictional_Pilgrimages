@@ -17,7 +17,7 @@ class opera
      * Tipicamente si presuppone che i dati gli arrivino dal risultato di una query "SELECT", già nel formato corretto,
      * quindi non ci sono controlli/property/getter/setter ecc.
      */
-    function __construct($id, $titolo, $descrizione, $tipo)
+    function __construct($titolo, $descrizione, $tipo)
     {
         $this->tipo=$tipo;
         $this->titolo=$titolo;
