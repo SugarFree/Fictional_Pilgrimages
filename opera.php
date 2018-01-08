@@ -6,7 +6,6 @@
 
 class opera
 {
-    var $id;
     var $titolo;
     var $descrizione;
     var $tipo;
@@ -17,11 +16,12 @@ class opera
      * Tipicamente si presuppone che i dati gli arrivino dal risultato di una query "SELECT", già nel formato corretto,
      * quindi non ci sono controlli/property/getter/setter ecc.
      */
-    function __construct($titolo, $descrizione, $tipo)
+    function __construct($titolo_inserito, $descrizione_inserita, $tipo_inserito)
     {
-        $this->tipo=$tipo;
-        $this->titolo=$titolo;
-        $this->descrizione=$descrizione;
+
+            $this->tipo = $tipo_inserito;
+            $this->titolo = $titolo_inserito;
+            $this->descrizione = $descrizione_inserita;
     }
 }
 
