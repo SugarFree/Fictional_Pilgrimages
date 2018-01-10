@@ -16,8 +16,9 @@
     */
     $errore_username  = $errore_conferma_password = $errore_password = $errore_email = $errore_misc = "";
 
-    //Rimuove qualsiasi tag HTML/PHP per evitare che l'utente faccia scherzi strani, tipo avere il suo nome in grassetto
-    $username=strip_tags($username);
+    /*Rimuove qualsiasi tag HTML/PHP per evitare che l'utente faccia scherzi strani, tipo avere il suo nome in grassetto
+      Rimuove anche gli spazi iniziali e finali per l'username, nella password sono ammessi*/
+    $username=trim(strip_tags($username));
     $password=strip_tags($password);
     $conferma_password=strip_tags($conferma_password);
     $email=strip_tags($email);
