@@ -2,8 +2,8 @@
 require_once "connessione.php";
 require_once "funzioni.php";
 
-$stato="";
-$localita="Albushitquerque";
+$stato=$_POST["stato"];
+$localita=$_POST["localita"];
 $errore="";
 
 $stato=trim(strip_tags($stato));
