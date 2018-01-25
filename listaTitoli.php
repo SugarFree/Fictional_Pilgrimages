@@ -12,11 +12,12 @@ if ($query==FALSE)
 	$errore="Errore del database:".mysqli_error();
 	die($errore);
 }
-$risultato_query=mysqli_fetch_array($query, MYSQLI_NUM); //Se e' null significa che non ci sono titoli
 
-foreach ($risultato_query as $value)
-{
-	$risultato=$value[i];
-	i++;
-}
+while (true) {
+    $risultato_query=mysqli_fetch_array($query, MYSQLI_NUM);
+	if($risultato_query==NULL) break;
+   $risultato[$i]= $risultato_query[0];
+
+    $i++; }
+
 var_dump($risultato);
