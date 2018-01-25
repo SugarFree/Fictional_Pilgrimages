@@ -86,36 +86,38 @@
             die($errore_misc);
         }
         $risultato_username=$verifica_username->get_result();
-
-        if($risultato_username->num_rows===0)
-        {
-            //Se l'username è nuovo, inserisce il nuovo utente nel db
-            $verifica_username->close();
-            //echo "Non ci sono username corrispondenti";
-            $inserimento = $conn->prepare("INSERT INTO utente VALUES (?,?,?,?)");
-            $inserimento->bind_param("ssss", $username,$email,sha1($password),$privilegi);
-            $inserimento->execute();
-            //Se per qualche altro motivo il database si è rifiutato di inserire il nuovo utente, salva il messaggio d'errore ed esce
-            if($inserimento->error!="")
-            {
-                $errore_misc="Errore ritornato dal database:". $inserimento->error;
-                $inserimento->close();
-                $conn->close();
-                die($errore_misc);
-            }
-            $inserimento->close();
-            $conn->close();
-        }
-        else
-        {
-            //Se l'username è già esistente esce
-            //echo "Un username corrisponde";
-            $verifica_username->close();
-            $conn->close();
-            $errore_username="Username gia' esistente, per favore sceglierne un altro";
-            die($errore_username);
-        }
-    }
+	if($errore_username == $errore_conferma_password == $errore_password == $errore_email == $errore_misc == "")
+        	if($risultato_username->num_rows===0)
+        	{
+            	//Se l'username è nuovo, inserisce il nuovo utente nel db
+            		$verifica_username->close();
+            		//echo "Non ci sono username corrispondenti";
+            		$inserimento = $conn->prepare("INSERT INTO utente VALUES (?,?,?,?)");
+            		$inserimento->bind_param("ssss", $username,$email,sha1($password),$privilegi);
+            		$inserimento->execute();
+            		//Se per qualche altro motivo il database si è rifiutato di inserire il nuovo utente, salva il messaggio d'errore ed esce
+            		if($inserimento->error!="")
+            		{
+            	    		$errore_misc="Errore ritornato dal database:". $inserimento->error;
+            	    		$inserimento->close();
+                		$conn->close();
+                		die($errore_misc);
+            		}
+            		$inserimento->close();
+            		$conn->close();
+        	}
+        	else
+        	{
+            	//Se l'username è già esistente esce
+            	//echo "Un username corrisponde";
+            		$verifica_username->close();
+            		$conn->close();
+            		$errore_username="Username gia' esistente, per favore sceglierne un altro";
+            		die($errore_username);
+        	}
+    	}
+	else
+		echo "sei scemo come la merda";
     else
     {
         //echo "Un'email corrisponde";

@@ -36,6 +36,7 @@ include("connessione.php");
 		<button onclick="window.location.href='registrazione.php'">Registrati</button>
 		</form>
 	</div>
+	
 	<div id="login">
 		<h1>Login</h1>   
 		<form name="form_registration" method="post" action="login.php">
