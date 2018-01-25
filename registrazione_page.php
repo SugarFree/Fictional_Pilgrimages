@@ -33,7 +33,6 @@ include("connessione.php");
 		<p>Conferma password: <input type='password' name='conferma_password'></p>
 		<br/>
 		<input type='submit' value='Registrati'>
-		<button onclick='window.location.href='registrazione.php''>Registrati</button>
 		</form>
 	</div>
 	
