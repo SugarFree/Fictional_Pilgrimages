@@ -39,7 +39,7 @@
 
     if (empty($password))
     {
-        $password=("Inserire una password");
+        $errore_password=("Inserire una password");
         die($errore_password);
     }
 
