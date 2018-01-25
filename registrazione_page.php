@@ -18,7 +18,7 @@ include("connessione.php");
 <body>
 	<?php
 	if(!isset($_SESSION['username'])){
-	echo "
+	echo ("
 	<img id="logo" src="./img/logo.png" alt="Logo del sito" />
 	<div id="registrazione">
 		<h1>Registrazione</h1>   
@@ -48,10 +48,11 @@ include("connessione.php");
 		<button>Login</button>
 		<br/>
 		</form>
-	</div>";
+	</div>");
 	}
 	else
 	echo "Effettuare logout";
+	?>
 </body>	
 	<div id="footer">
 		Copyright &copy; 2017 Fictional Pilgrimages | v0.032
