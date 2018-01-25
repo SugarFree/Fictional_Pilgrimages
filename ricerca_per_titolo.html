@@ -30,21 +30,21 @@
 		</form>
 	</div>
 	<div id="scroll">
-	<button onclick="topFunction()" id="Top" title="Go to top"><img src="./img/arrow_up.png" alt="" /></button>
-	<script>
-	window.onscroll = function() {scrollFunction()};
-	function scrollFunction() {
-    	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-       		document.getElementById("Top").style.display = "block";
-    	} else {
-        	document.getElementById("Top").style.display = "none";
+		<img id="Top" onclick="topFunction()" src="./img/back_on_top.png" alt="" />
+		<script>
+		window.onscroll = function() {scrollFunction()};
+		function scrollFunction() {
+    		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        		document.getElementById("Top").style.display = "block";
+    		} else {
+        		document.getElementById("Top").style.display = "none";
+    		}
+		}
+		function topFunction() {
+    		document.body.scrollTop = 0;
+    		document.documentElement.scrollTop = 0;
     	}
-	}
-	function topFunction() {
-    	document.body.scrollTop = 0;
-    	document.documentElement.scrollTop = 0;
-    }
-	</script>
+		</script>
 	</div>
 	<div id="footer">
 		Copyright &copy; 2017 Fictional Pilgrimages | v0.032
