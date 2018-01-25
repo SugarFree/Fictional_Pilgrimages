@@ -124,6 +124,29 @@ SEZIONE CORPO
 
 /*
 ====================
+SEZIONE SCROLL
+====================
+*/
+
+#Top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #4b4b4b;
+}
+
+#scroll img {
+  height: 40px;
+  width: 40px;
+}
+
+/*
+====================
 SEZIONE FOOTER
 ====================
 */
