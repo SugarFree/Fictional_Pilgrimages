@@ -11,8 +11,8 @@ include("connessione.php");
 	<title>Fictional Pilgrimages</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="pannello_utente_style.css" />
-	<link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" href="pannello_utente_style_small.css" >
+	<link rel="stylesheet" type="text/css" href="registrazione_page_style.css" />
+	<link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" href="registrazione_page_style_small.css" >
 </head>
 
 <body>

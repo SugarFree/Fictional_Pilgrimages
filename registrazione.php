@@ -86,7 +86,7 @@
             die($errore_misc);
         }
         $risultato_username=$verifica_username->get_result();
-	if($errore_username == $errore_conferma_password == $errore_password == $errore_email == $errore_misc == "")
+	if($errore_username == $errore_conferma_password == $errore_password == $errore_email == $errore_misc == ""){
         	if($risultato_username->num_rows===0)
         	{
             	//Se l'username è nuovo, inserisce il nuovo utente nel db
