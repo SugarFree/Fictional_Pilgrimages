@@ -41,14 +41,14 @@ SEZIONE BREADCRUMB
 
 button {
   float: right;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 15px;
+  border-style: solid;
+  background-color: white;
 }
 
-button a{
-  padding: 5px;
-  color: black;
-  text-decoration: none;
+form {
+  float: right;
 }
 
 /*
