@@ -19,31 +19,31 @@ include("connessione.php");
 	<?php
 	if(!isset($_SESSION['username'])){
 	echo ("
-	<img id="logo" src="./img/logo.png" alt="Logo del sito" />
-	<div id="registrazione">
+	<img id='logo' src='./img/logo.png' alt='Logo del sito' />
+	<div id='registrazione'>
 		<h1>Registrazione</h1>   
-		<form name="form_registration" method="post" action="registrazione.php">
+		<form name='form_registration' method='post' action='registrazione.php'>
 		<br/>
-		<p>Username: <input type="text" name="username"></p>
+		<p>Username: <input type='text' name='username'></p>
 		<br/>
-		<p>Password: <input type="password" name="password"></p>
+		<p>Password: <input type='password' name='password'></p>
 		<br/>	
-		<p>Email: <input type="text" name="email" ></p>
+		<p>Email: <input type='text' name='email' ></p>
 		<br/>
-		<p>Conferma password: <input type="password" name="conferma_password"></p>
+		<p>Conferma password: <input type='password' name='conferma_password'></p>
 		<br/>
-		<input type="submit" value="Registrati">
-		<button onclick="window.location.href='registrazione.php'">Registrati</button>
+		<input type='submit' value='Registrati'>
+		<button onclick='window.location.href='registrazione.php''>Registrati</button>
 		</form>
 	</div>
 	
-	<div id="login">
+	<div id='login'>
 		<h1>Login</h1>   
-		<form name="form_registration" method="post" action="login.php">
+		<form name='form_registration' method='post' action='login.php'>
 		<br/>
-		<p>Username: <input type="text" name="username"></p>
+		<p>Username: <input type='text' name='username'></p>
 		<br/>
-		<p>Password: <input type="password" name="password"></p>
+		<p>Password: <input type='password' name='password'></p>
 		<br/>
 		<button>Login</button>
 		<br/>
