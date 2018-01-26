@@ -19,7 +19,7 @@ include("connessione.php");
 	<?php
 	if(!isset($_SESSION['username'])){
 	echo ("
-	<img id='logo' src='./img/logo.png' alt='Logo del sito' />
+	<a href='index.html'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
 	<div id='registrazione'>
 		<h1>Registrazione</h1>   
 		<form name='form_registration' method='post' action='registrazione.php'>
