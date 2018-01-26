@@ -86,7 +86,10 @@
             die($errore_misc);
         }
         $risultato_username=$verifica_username->get_result();
-	if($errore_username == $errore_conferma_password == $errore_password == $errore_email == $errore_misc == ""){
+
+
+	if($errore_username == "" AND $errore_conferma_password == "" AND $errore_password == "" AND $errore_email == "" AND $errore_misc == "") //Se non ci sono errori
+	{
         	if($risultato_username->num_rows===0)
         	{
             	//Se l'username è nuovo, inserisce il nuovo utente nel db
@@ -117,7 +120,11 @@
         	}
     	}
 	else
-		echo "sei scemo come la merda";
+	    {
+            echo "sei scemo come la merda"; //Messaggio da mostrare se l'utente sbaglia a inserire qualcosa (Andrea deve sistemare)
+	    }
+    }
+
     else
     {
         //echo "Un'email corrisponde";
