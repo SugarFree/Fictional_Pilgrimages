@@ -8,7 +8,7 @@ include("connessione.php");
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 
 <head>
-	<title>Fictional Pilgrimages</title>
+	<title>Connettiti</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="registrazione_page_style.css" />
@@ -47,7 +47,9 @@ include("connessione.php");
 		<button>Login</button>
 		<br/>
 		</form>
+		<a href='index.html'>Ritorna alla home</a>
 	</div>");
+
 	}
 	else
 	echo "Effettuare logout";
