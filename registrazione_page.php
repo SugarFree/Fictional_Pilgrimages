@@ -21,7 +21,7 @@ include("connessione.php");
 	echo ("
 	<a href='index.html'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
 	<div id='registrazione'>
-		<h1>Registrazione</h1>   
+		Registrazione  
 		<form name='form_registration' method='post' action='registrazione.php'>
 		<label for='Uname'>Username: </label>
 		<input type='text' id='Uname' name='username' placeholder='Your username'>
