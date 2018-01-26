@@ -23,8 +23,8 @@ include("connessione.php");
 	<div id='registrazione'>
 		<h1>Registrazione</h1>   
 		<form name='form_registration' method='post' action='registrazione.php'>
-		<br/>
-		<p>Username: <input type='text' name='username'></p>
+		<label for='Uname'>Username: </label>
+		<input type='text' id='Uname' name='username' placeholder='Your username'>
 		<br/>
 		<p>Password: <input type='password' name='password'></p>
 		<br/>	
