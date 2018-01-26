@@ -8,7 +8,7 @@ include("connessione.php");
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 
 <head>
-	<title>Fictional Pilgrimages</title>
+	<title>Connettiti</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="registrazione_page_style.css" />
@@ -19,12 +19,12 @@ include("connessione.php");
 	<?php
 	if(!isset($_SESSION['username'])){
 	echo ("
-	<img id='logo' src='./img/logo.png' alt='Logo del sito' />
+	<a href='index.html'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
 	<div id='registrazione'>
-		<h1>Registrazione</h1>   
+		Registrazione  
 		<form name='form_registration' method='post' action='registrazione.php'>
-		<br/>
-		<p>Username: <input type='text' name='username'></p>
+		<label for='Uname'>Username: </label>
+		<input type='text' id='Uname' name='username' placeholder='Your username'>
 		<br/>
 		<p>Password: <input type='password' name='password'></p>
 		<br/>	
@@ -47,7 +47,9 @@ include("connessione.php");
 		<button>Login</button>
 		<br/>
 		</form>
+		<a href='index.html'>Ritorna alla home</a>
 	</div>");
+
 	}
 	else
 	echo "Effettuare logout";
