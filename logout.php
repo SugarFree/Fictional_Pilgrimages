@@ -3,6 +3,7 @@
 
     $errore=""; //Contiene l'eventuale messaggio d'errore
     session_start();
+
     if(!isset($_SESSION['username']))//Se l'utente non è già loggato
     {
         $errore="Non sei loggato: non puoi fare il logout!";
