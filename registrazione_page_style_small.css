@@ -20,14 +20,13 @@ h1 {
   font-family: 'Crimson Text';
   font-size: 8vw;
   padding: 0.8em 0em;
-
 }
 
 h2 {
   text-align: center;
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  padding: 0.8em;
-  font-size: 1.2em;
+  padding: 1em;
+  font-size: 1.5em;
 }
 
 /*
@@ -36,9 +35,8 @@ SEZIONE CORPO
 ================
 */
 #logo {
-  padding: 1em 4% 1em 4%;
+  padding: 2vh 5vw;
   width: 15%;
-  float: left;
   display: block;
   margin: auto;
   top: 0;
@@ -46,29 +44,29 @@ SEZIONE CORPO
 
 #registrazione {
   color: #eeeeee;
-  width: 30%;
-  float: left;
+  width: 76%;
+  float: none;
   display: block;
-  margin: 0em 3vw 2em 10vw; 
+  margin: 0vh 10% 5vw 10%; 
   background-color: #4b4b4b;
-  padding: 1vh 3vw 3vh 3vw;
+  padding: 3vw;
 }
 
 #login {
   color: #eeeeee;
-  width: 30%;
-  float: right;
+  width: 76%;
+  float: none;
   display: block;
-  margin: 5.5em 10vw 9em 3vw; 
+  margin: 5vw 10%; 
   background-color: #4b4b4b;
-  padding: 1vh 3vw 3vh 3vw;
+  padding: 3vw;
 }
 
 input[type=text] {
   color: black;
   border: none;
   border-bottom: 3px solid #006BCF;
-  width: 90%;
+  width: 95%;
   padding: 0.8em;
   margin: 3vh 0vw;
   display: inline-block;
@@ -78,7 +76,7 @@ input[type=password] {
   color: black;
   border: none;
   border-bottom: 3px solid #006BCF;
-  width: 90%;
+  width: 95%;
   padding: 0.8em;
   margin: 3vh 0vw;
   display: inline-block;
@@ -98,10 +96,11 @@ input[type=submit]:hover {
   background-color: #0073de;
 }
 
-p {
-  margin: 0em 3vw 2em 10vw; 
-  color:white;
-  padding-bottom: 1em}
+#ritorno{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
 
 /*
 ====================
