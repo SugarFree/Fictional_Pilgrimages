@@ -27,4 +27,4 @@ catch (Exception $e)
     echo "ERRORE: ".  $e->getMessage();
 }
 
-//
+//La lista dei titoli si trova in $risultato
