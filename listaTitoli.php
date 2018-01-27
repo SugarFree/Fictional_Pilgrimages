@@ -6,18 +6,25 @@ require_once "connessione.php";
 $errore="";
 $risultato=array();
 $i=0;
-$query=mysqli_query($conn, "SELECT DISTINCT titolo_opera FROM post WHERE approvato=TRUE");
-if ($query==FALSE)
+try
 {
-	$errore="Errore del database:".mysqli_error();
-	die($errore);
+    $query=mysqli_query($conn, "SELECT DISTINCT titolo_opera FROM post WHERE approvato=TRUE");
+    if ($query==FALSE)
+    {
+        $errore="Errore del database:".mysqli_error($conn);
+        throw new Exception($errore);
+    }
+
+    while (true) {
+        $risultato_query=mysqli_fetch_array($query, MYSQLI_NUM);
+        if($risultato_query==NULL) break;
+        $risultato[$i]= $risultato_query[0];
+
+        $i++; }
+}
+catch (Exception $e)
+{
+    echo "ERRORE: ".  $e->getMessage();
 }
 
-while (true) {
-    $risultato_query=mysqli_fetch_array($query, MYSQLI_NUM);
-	if($risultato_query==NULL) break;
-   $risultato[$i]= $risultato_query[0];
-
-    $i++; }
-
-var_dump($risultato);
+//
