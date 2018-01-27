@@ -14,25 +14,20 @@ html, body {
   font-size: 100%;
 }
 
-h1 {
-  margin-left: 1em;
-  font-family: 'Crimson Text';
-  font-size: 8vw;
-  padding-top: 5vh;
-}
 /*
 ================
 SEZIONE CORPO
 ================
 */
 #logo {
-  padding-top: 2em;
+  padding-top: 10em;
   width: 20%;
   text-align: center;
 }
 
 #registrazione {
-  width: 40%;
+  color: #eeeeee;
+  width: 100%;
   float: left;
   margin-left: 2em; 
   border-radius: 5px;
@@ -41,7 +36,8 @@ SEZIONE CORPO
 }
 
 #login {
-  width: 40%;
+  color: #eeeeee;
+  width: 30%;
   float: right;
   margin-right: 2em; 
   border-radius: 5px;
@@ -50,6 +46,7 @@ SEZIONE CORPO
 }
 
 input[type=text] {
+  color: #eeeeee;
   border: none;
   border-bottom: 2px solid #006BCF;
   width: 100%;
@@ -71,7 +68,7 @@ input[type=password] {
 input[type=submit] {
   width: 100%;
   background-color: #4b4b4b;
-  color: white;
+  color: #eeeeee;
   padding: 14px 20px;
   margin: 8px 1em 8px;
   border: none;
@@ -92,7 +89,7 @@ SEZIONE FOOTER
 #footer {
   background-color: #006BCF;
   border-top: 1px solid #DDD;
-  color: white;
+  color: red;
   text-align: right;
   font-size: 0.6em;
   padding: 1em;
