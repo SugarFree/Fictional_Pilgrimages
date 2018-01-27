@@ -10,8 +10,8 @@ include("connessione.php");
 <head>
 	<title>Connettiti</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="registrazione_page_style.css">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="registrazione_page_style.css" />
 	<link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" href="registrazione_page_style_small.css" >
 </head>
 
@@ -21,7 +21,7 @@ include("connessione.php");
 	echo ("
 	<a href='index.html'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
 	<div id='registrazione'>
-		Registrazione  
+		Registrazione
 		<form name='form_registration' method='post' action='registrazione.php'>
 		<label for='Uname'>Username: </label>
 		<input type='text' id='Uname' name='username' placeholder='Il tuo username'>
@@ -40,7 +40,7 @@ include("connessione.php");
 	</div>
 	
 	<div id='login'>
-		<h1>Login</h1>   
+		Login
 		<form name='form_registration' method='post' action='login.php'>
 		<br/>
 		<p>Username: <input type='text' name='username'></p>
