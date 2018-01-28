@@ -1,74 +1,56 @@
-<?php
-require_once "connessione.php";
-require_once "funzioni.php";
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 
-$stato=$_POST["stato"];
-$localita=$_POST["localita"];
-$errore="";
-
-$stato=trim(strip_tags($stato));
-$localita="%".trim(strip_tags($localita))."%";
-
-
-/*Di seguito tutti i casi possibili. Lo stato deve essere uguale perchè viene da un option value, la località deve solo
-  contenere la stringa cercata in quanto viene inserita in una textbox
-*/
-try
-{
-    if (empty($stato) and empty($localita))//Se entrambi i campi sono vuoti, ritorna tutti i post
-    {
-        //Non occorre usare un prepared statement perchè non ci sono input di nessun tipo
-
-        $risultato = mysqli_query($conn, "SELECT * FROM post WHERE approvato=TRUE");
-        if ($risultato == FALSE)
-        {
-            $errore = mysqli_error($conn);
-            throw new Exception("Errore del database: " . $errore);
-        }
-    } else if (empty($localita) and !empty($stato))
-    {
-
-        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND stato=?");
-        $risultato->bind_param("s", $stato);
-        $risultato->execute();
-        if ($risultato->error != "") {
-            $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
-            throw new Exception($errore);
-        }
-        $risultato = $risultato->get_result();
-    } else if (!empty($localita) and empty($stato))
-    {
-
-        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND localita LIKE ?");
-        $risultato->bind_param("s", $localita);
-        $risultato->execute();
-        if ($risultato->error != "")
-        {
-            $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
-            throw new Exception($errore);
-        }
-        $risultato = $risultato->get_result();
-    }
-    else
-    {
-        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND localita LIKE ? AND stato=?");
-        $risultato->bind_param("ss", $localita, $stato);
-        $risultato->execute();
-        if ($risultato->error != "")
-        {
-            $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
-            throw new Exception($errore);
-        }
-        $risultato = $risultato->get_result();
-    }
-
-    //L'array di oggetti "post" si trova in $risultato
-    $risultato = risultato_array_post($risultato);
-}
-catch(Exception $e)
-{
-    echo "ERRORE: ".  $e->getMessage();
-}
+<head>
+	<title>Ricerca per località</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="ricerca_per_localita_style.css">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" href="ricerca_per_localita_style_small.css" >
+</head>
+<body>
+	<h1>Fictional Pilgrimages</h1>
+	<div id="path">
+		Ti trovi in: ricerca per luogo
+	</div>
+	<div id="sidenav">
+		<img id="logo" src="./img/logo.png" alt="Logo del sito" />
+		<a href="index.php"><img id="home" src="./img/home.png" alt="" />Home</a>
+		<a href="ricerca_per_localita.php"><img id="world" src="./img/world.png" alt="" />Ricerca per luogo</a>
+		<a href="ricerca_per_titolo.php"><img id="titolo" src="./img/titolo.png" alt="" />Ricerca per titolo</a>
+		<a href="#"><img id="utente" src="./img/utente.png" alt="" />Pannello utente</a>
+	</div>
+	<div id="body">
+		<form action="/action_page.php">
+			<select id="stato"> <!--PHP elenco stati-->
+				<option value="">Stato</option>
+			</select>
+			<select id="citta"> <!--PHP elenco città-->
+				<option value="">Citta'</option>
+			</select>
+			<input id="ricerca" type="submit" value="Ricerca">
+		</form>
+	</div>
+	<div id="scroll">
+		<img id="Top" onclick="topFunction()" src="./img/back_on_top.png" alt="" />
+		<script>
+		window.onscroll = function() {scrollFunction()};
+		function scrollFunction() {
+    		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        		document.getElementById("Top").style.display = "block";
+    		} else {
+        		document.getElementById("Top").style.display = "none";
+    		}
+		}
+		function topFunction() {
+    		document.body.scrollTop = 0;
+    		document.documentElement.scrollTop = 0;
+    	}
+		</script>
+	</div>
+	<div id="footer">
+		Copyright &copy; 2017 Fictional Pilgrimages | v0.032
+	</div>
+</body>
+</html>

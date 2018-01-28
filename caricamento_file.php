@@ -19,9 +19,9 @@
 	</div>
 	<div id='sidenav'>
 		<img id='logo' src='./img/logo.png' alt='Logo del sito' />
-		<a href='index.html'><img id='home' src='./img/home.png' alt='' />Home</a>
-		<a href='ricerca_per_localita.html'><img id='world' src='./img/world.png' alt='' />Ricerca per luogo</a>
-		<a href='ricerca_per_titolo.html'><img id='titolo' src='./img/titolo.png' alt='' />Ricerca per titolo</a>
+		<a href='index.php'><img id='home' src='./img/home.png' alt='' />Home</a>
+		<a href='ricerca_per_localita.php'><img id='world' src='./img/world.png' alt='' />Ricerca per luogo</a>
+		<a href='ricerca_per_titolo.php'><img id='titolo' src='./img/titolo.png' alt='' />Ricerca per titolo</a>
 		<a href='#'><img id='utente' src='./img/utente.png' alt='' />Pannello utente</a>
 	</div>
 	<div id='corpo'>

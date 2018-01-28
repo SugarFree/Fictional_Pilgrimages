@@ -13,24 +13,36 @@
 	<h1>Fictional Pilgrimages</h1>
 	<div id='path'>
 		Ti trovi in: Home
+		<?php
+        if (isset($_SESSION['username']))//Se l'utente risulta già loggato, mostra un messaggio adeguato
+        {
+
+            echo "Ciao ".$_SESSION['username'];
+
+        }
+        else
+        {
+            echo "Non sei loggato";
+        }
+		?>
 		<form method='get' action='registrazione_page.php'>
     	<button type='submit'>Connettiti</button>
 		</form>
 	</div>
 	<div id='sidenav'>
 		<img id='logo' src='./img/logo.png' alt='Logo del sito' />
-		<a href='index.html'><img id='home' src='./img/home.png' alt='' />Home</a>
-		<a href='ricerca_per_localita.html'><img id='world' src='./img/world.png' alt='' />Ricerca per luogo</a>
-		<a href='ricerca_per_titolo.html'><img id='titolo' src='./img/titolo.png' alt='' />Ricerca per titolo</a>
+		<a href='index.php'><img id='home' src='./img/home.png' alt='' />Home</a>
+		<a href='ricerca_per_localita.php'><img id='world' src='./img/world.png' alt='' />Ricerca per luogo</a>
+		<a href='ricerca_per_titolo.php'><img id='titolo' src='./img/titolo.png' alt='' />Ricerca per titolo</a>
 		<a href='#'><img id='utente' src='./img/utente.png' alt='' />Pannello utente</a>
 	</div>
 	<div id='corpo'>
 		<h2>The journey starts here!</h2>
 		<p id='descrizione'>Questo sito &egrave; stato creato nell'ambito del progetto di Tecnologie Web dell'anno accademico 2017/2018. Il sito si propone di associare i set di film, anime e serie televisive famosi con i rispettivi luoghi &quot;della vita di ogni giorno&quot; fornendo allo stesso tempo informazioni su di essi.</p>
-		<a href='ricerca_per_localita.html' class='shiny-button'>
+		<a href='ricerca_per_localita.php' class='shiny-button'>
 		<strong>Ricerca per luogo</strong>
 		</a>
-		<a href='ricerca_per_titolo.html' class='shiny-button2'>
+		<a href='ricerca_per_titolo.php' class='shiny-button2'>
 		<strong>Ricerca per titolo</strong>
 		</a>
 		<h3>Top Searched</h3>

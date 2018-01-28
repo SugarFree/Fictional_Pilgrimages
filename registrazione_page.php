@@ -20,7 +20,7 @@ include("connessione.php");
 	if(!isset($_SESSION['username'])){
 	echo ("
 	
-	<a href='index.html'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
+	<a href='index.php'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
 
 	<h1>Fictional Pilgrimages</h1>
 
@@ -58,7 +58,7 @@ include("connessione.php");
 		</form>
 	</div>
 	
-	<p><a href='index.html'>Ritorna alla home</a></p>
+	<p><a href='index.php'>Ritorna alla home</a></p>
 	");
 
 	}
