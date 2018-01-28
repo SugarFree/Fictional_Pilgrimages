@@ -29,7 +29,7 @@ try {
 
     if (($latitudine > 90) || ($latitudine < -90) )
     {
-        throw  new Exception("Latitudine inserita deve essere mompresa tra +90 e -90");
+        throw  new Exception("Latitudine inserita deve essere compresa tra +90 e -90");
     }
 
 
@@ -40,7 +40,7 @@ try {
 
     if (($longitudine > 180) || ($longitudine < -180) )
     {
-        throw  new Exception("Longitudine inserita deve essere mompresa tra +90 e -90");
+        throw  new Exception("Longitudine inserita deve essere compresa tra +90 e -90");
     }
 
 
@@ -52,7 +52,14 @@ try {
 
         throw new Exception( "Errore ritornato dal database:". $inserimento->error);
     }
-    /*if (!isset($_FILES['upfile']['error']) || is_array($_FILES['upfile']['error']))
+
+
+
+    /*
+     * Controlli per i file (commentati in attesa del form)
+     *
+     *
+     * if (!isset($_FILES['upfile']['error']) || is_array($_FILES['upfile']['error']))
     {
         throw new RuntimeException('Errore nel caricamento del/dei file: Parametri errati');
     }
