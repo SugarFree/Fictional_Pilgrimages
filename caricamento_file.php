@@ -13,7 +13,7 @@
 	<h1>Fictional Pilgrimages</h1>
 	<div id='path'>
 		Ti trovi in: Home
-		<form method='get' action='registrazione_page.php'>
+		<form method='get' action='registrazione.php'>
     	<button type='submit'>Connettiti</button>
 		</form>
 	</div>

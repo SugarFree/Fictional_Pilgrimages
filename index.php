@@ -25,7 +25,7 @@
             echo "Non sei loggato";
         }
 		?>
-		<form method='get' action='registrazione_page.php'>
+		<form method='get' action='registrazione.php'>
     	<button type='submit'>Connettiti</button>
 		</form>
 	</div>

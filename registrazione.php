@@ -1,118 +1,73 @@
-    <?php
-
-    require_once 'connessione.php';
-
-    //Questi sono i parametri da passare tramite form
-    $username=$_POST["username"];
-    $password=$_POST["password"];
-    $email=$_POST["email"];
-    $conferma_password=$_POST["conferma_password"];
-
-    /*Contengono i messaggi d'errore da mostrare all'utente
-      Se sono tutte stringhe vuote, l'operazione è andata a buon fine.
-      Errore di username già esistente/vuoto, errore password vuota,
-      errore di password non ripetuta correttamente, errore di email in formato non corretto,
-      errore del database generico, ad esempio è pieno, non risponde ecc.
-    */
-    $errore = "";
-
-    /*Rimuove qualsiasi tag HTML/PHP per evitare che l'utente faccia scherzi strani, tipo avere il suo nome in grassetto
-      Rimuove anche gli spazi iniziali e finali per l'username, nella password sono ammessi*/
-    $username=trim(strip_tags($username));
-    $password=strip_tags($password);
-    $conferma_password=strip_tags($conferma_password);
-    $email=strip_tags($email);
-    /*parametri in input per test
-    $username="user";
-    $password="prova1";
-    $conferma_password="prova1";
-    $email="prova@email.com";*/
-
-    $privilegi="user";//Questo va lasciato così sempre, non si possono registrare nuovi admin
-try {
-    //Verifica che username e password inseriti non siano vuoti
-    if (empty($username))
-    {
-       throw new Exception("Inserire un username");
-    }
-
-    if (empty($password))
-    {
-         throw new Exception("Inserire una password");
-    }
-
-    //Verifico che l'email sia nel formato corretto
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        throw  new Exception("Formato indirizzo email errato");
-    }
-
-    //Verifico che la password sia ripetuta correttamente in entrambi i campi
-    if ($password != $conferma_password) {
-        throw new Exception("Password non ripetuta correttamente");
-    }
-
-    //Se questi due check passano, controllo se l'email o l'username erano già presenti nel db
-    $verifica_email = $conn->prepare("SELECT email FROM utente WHERE email=?");
-    $verifica_email->bind_param("s", $email);
-    $verifica_email->execute();
-
-    //Se la query fallisce per qualsiasi motivo, esce
-    if ($verifica_email->error != "") {
-        throw  new  Exception("Errore ritornato dal database:" . $verifica_email->error);
-    }
-    $risultato_email = $verifica_email->get_result();
-    //Se l'email è nuova, tutto ok, altrimenti esce
-    if ($risultato_email->num_rows === 0) {
-        $verifica_email->close();
-        //echo "Non ci sono email corrispondenti";
-        //Una volta verificata l'email, passa a controllare che l'username non sia già stato scelto da qualcun altro
-        $verifica_username = $conn->prepare("SELECT username FROM utente WHERE username=?");
-        $verifica_username->bind_param("s", $username);
-        $verifica_username->execute();
-
-        //Se la query fallisce per qualsiasi motivo, esce
-        if ($verifica_username->error != "") {
-            throw new Exception( "Errore ritornato dal database:" . $verifica_username->error);
-        }
-        $risultato_username = $verifica_username->get_result();
-
-
-            if ($risultato_username->num_rows === 0) {
-                //Se l'username è nuovo, inserisce il nuovo utente nel db
-                $verifica_username->close();
-                //echo "Non ci sono username corrispondenti";
-                $inserimento = $conn->prepare("INSERT INTO utente VALUES (?,?,?,?)");
-                $inserimento->bind_param("ssss", $username, $email, sha1($password), $privilegi);
-                $inserimento->execute();
-                //Se per qualche altro motivo il database si è rifiutato di inserire il nuovo utente, salva il messaggio d'errore ed esce
-                if ($inserimento->error != "")
-                {
-                    $inserimento->close();
-                    $conn->close();
-                    throw new Exception( "Errore ritornato dal database:" . $inserimento->error);
-                }
-                $inserimento->close();
-                $conn->close();
-            } else {
-                //Se l'username è già esistente esce
-                //echo "Un username corrisponde";
-                $verifica_username->close();
-                $conn->close();
-                throw new Exception("Username gia' esistente, per favore sceglierne un altro");
-
-            }
-
-    }
-    else
-    {
-        $verifica_email->close();
-        $conn->close();
-        throw  new Exception("Email relativa ad un account gia' esistente. Recarsi alla pagina di Login.");
-    }
-}
-
-catch (Exception $e)
-{
-    echo 'ERRORE: '.  $e->getMessage(), "\n";
-}
+<?php
+session_start();
+include("connessione.php");
 ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
+
+<head>
+	<title>Connettiti</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="registrazione_page_style.css">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" href="registrazione_page_style_small.css" >
+</head>
+
+<body>
+	<?php
+	if(!isset($_SESSION['username'])){
+	echo ("
+	
+	<a href='index.php'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
+
+	<h1>Fictional Pilgrimages</h1>
+
+	<div id='registrazione'>
+		<h2>Registrazione</h2>
+		<form name='form_registration' method='post' action='registrazione_script.php'>
+
+		<label for='Uname'>Username: </label>
+		<input type='text' id='Uname' name='username' placeholder='Il tuo username'>
+		
+		<label for='pw'>Password: </label> 
+		<input type='password' id='pw' name='password' placeholder='La tua password'>
+		
+		<label for='mail'>Email: </label> 
+		<input type='text' id='mail' name='email' placeholder='La tua mail'>
+
+		<label for='conferma_pw'>Password: </label> 
+		<input type='password' id='conferma_pw' name='conferma_password' placeholder='Riscrivi la tua password'>
+		
+		<input type='submit' value='Registrati'>
+		</form>
+	</div>
+	
+	<div id='login'>
+		<h2>Login</h2>
+		<form name='form_registration' method='post' action='login.php'>
+
+		<label for='Uname'>Username: </label>
+		<input type='text' id='Uname' name='username' placeholder='Il tuo username'>
+
+		<label for='pw'>Password: </label> 
+		<input type='password' id='pw' name='password' placeholder='La tua password'>
+		
+		<input type='submit' value='Login'>
+		</form>
+	</div>
+	
+	<p><a href='index.php'>Ritorna alla home</a></p>
+	");
+
+	}
+	else
+	echo "Effettuare logout";
+	?>
+</body>	
+	<div id="footer">
+		Copyright &copy; 2017 Fictional Pilgrimages | v0.032
+	</div>
+</body>
+</html>
