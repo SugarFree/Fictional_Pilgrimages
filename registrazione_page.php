@@ -19,10 +19,15 @@ include("connessione.php");
 	<?php
 	if(!isset($_SESSION['username'])){
 	echo ("
+	
 	<a href='index.html'><img id='logo' src='./img/logo.png' alt='Logo del sito' /></a>
+
+	<h1>Fictional Pilgrimages</h1>
+
 	<div id='registrazione'>
-		Registrazione
+		<h2>Registrazione</h2>
 		<form name='form_registration' method='post' action='registrazione.php'>
+
 		<label for='Uname'>Username: </label>
 		<input type='text' id='Uname' name='username' placeholder='Il tuo username'>
 		
@@ -40,18 +45,21 @@ include("connessione.php");
 	</div>
 	
 	<div id='login'>
-		Login
+		<h2>Login</h2>
 		<form name='form_registration' method='post' action='login.php'>
-		<br/>
-		<p>Username: <input type='text' name='username'></p>
-		<br/>
-		<p>Password: <input type='password' name='password'></p>
-		<br/>
-		<button>Login</button>
-		<br/>
+
+		<label for='Uname'>Username: </label>
+		<input type='text' id='Uname' name='username' placeholder='Il tuo username'>
+
+		<label for='pw'>Password: </label> 
+		<input type='password' id='pw' name='password' placeholder='La tua password'>
+		
+		<input type='submit' value='Login'>
 		</form>
-		<a href='index.html'>Ritorna alla home</a>
-	</div>");
+	</div>
+	
+	<p><a href='index.html'>Ritorna alla home</a></p>
+	");
 
 	}
 	else
