@@ -14,6 +14,7 @@
 	<div id='path'>
 		Ti trovi in: Home
 		<?php
+        session_start();
         if (isset($_SESSION['username']))//Se l'utente risulta già loggato, mostra un messaggio adeguato
         {
 
