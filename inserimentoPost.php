@@ -1,6 +1,6 @@
 <?php
 require_once "connessione.php";
-//Nella form di inserimento file va usata la sintassi <input type="file" multiple="multiple" name="filecaricati[]" /> altrimenti non va
+
 $titolo_opera="X-Men";
 $descrizione="post di prova";
 $latitudine="22.1324";
