@@ -10,7 +10,7 @@ gulp.task('deploy', function() {
     user: 'fictionalpilgrimages',
     password: 'rangumicpu98'
   });
-  gulp.src(['./*.html', './*.css', './*.js', './*.php', './img/*.jpg', './img/*.png'])
+  gulp.src(['./*.html', './*.css', './*.js', './*.php', './img/*.jpg', './img/*.png', './view/*.html', './view/*.php'])
     .pipe(conn.newer('/'))
     .pipe(conn.dest('/'));
 });
