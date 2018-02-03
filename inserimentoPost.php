@@ -106,13 +106,11 @@ try {
     if (false === $ext = array_search(
             $finfo->file($_FILES['immagine_film']['tmp_name']),
             array(
-                'jpg' => 'image/jpeg',
-                'png' => 'image/png',
-                'gif' => 'image/gif',
+                'jpg' => 'image/jpeg'
             ),
             true
         )) {
-        throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg, .png e .gif');
+        throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg');
     }
 
     //il file viene messo in /uploads/numerodelpost.estensione.
@@ -148,13 +146,11 @@ try {
     if (false === $ext = array_search(
             $finfo->file($_FILES['immagine_reale']['tmp_name']),
             array(
-                'jpg' => 'image/jpeg',
-                'png' => 'image/png',
-                'gif' => 'image/gif',
+                'jpg' => 'image/jpeg'
             ),
             true
         )) {
-        throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg, .png e .gif');
+        throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg');
     }
 
 //il file viene messo in /uploads/numerodelpostA.estensione.
@@ -166,9 +162,21 @@ try {
     echo 'File reale caricato correttamente.';
 
 }
+catch (RuntimeException $e)
+{
+    $numero_nuovo_post = mysqli_query($conn, "SELECT max(id) FROM post");//Prende il numero dell'ultimo post caricato (cioè  quello appena caricato dall'utente)
+    $risultato_query=mysqli_fetch_assoc($numero_nuovo_post);
+    $numero_nuovo_post=$risultato_query["max(id)"];
+    $elimina_post=mysqli_query($conn,"DELETE from post WHERE id=$numero_nuovo_post");//cancella il post se il caricamento di un'immagine fallisce
+    if (file_exists("uploads/".$numero_nuovo_post.".jpg")) { unlink ("uploads/".$numero_nuovo_post.".jpg"); }//Cancella le immagini se il caricamento di una delle due fallisce
+    if (file_exists("uploads/".$numero_nuovo_post."A.jpg")) { unlink ("uploads/".$numero_nuovo_post."A.jpg"); }
+    echo $e->getMessage();
+
+}
 catch (Exception $e)
 {
 
     echo $e->getMessage();
 
 }
+
