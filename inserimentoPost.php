@@ -172,5 +172,3 @@ catch (Exception $e)
     echo $e->getMessage();
 
 }
-echo "<br>";
-var_dump($_FILES);
