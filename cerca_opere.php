@@ -1,10 +1,10 @@
 <?php
 	$titolo="Fictional Pilgrimages";
-	$path="Home";
-	$current_menu_item=0;
+	$path="Cerca opere";
+	$current_menu_item=2;
 	include "top.php";
 
-	include "view/index.php";
+	include "view/cerca_opere.php";
 
 	include "bottom.php";
 ?>

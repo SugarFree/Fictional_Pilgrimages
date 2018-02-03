@@ -28,7 +28,7 @@ h1 {
   font-family: 'Crimson Text';
   vertical-align: center;
   text-align: center;
-  font-size: 6vw; }
+  font-size: 5vw; }
 
 #sidenav {
   width: 150px;
@@ -94,7 +94,11 @@ h1 {
   margin-top: 20px;
   background-color: white;
   border: 3px solid #0D4263;
-  text-align: center; }
+}
+
+#corpo ul {
+	padding-left: 25px;
+}
 
 h2 {
 	text-align: center; }
