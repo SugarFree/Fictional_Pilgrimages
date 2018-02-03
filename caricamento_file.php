@@ -28,31 +28,31 @@
 		<form name='form_csricamento' method='post' action='caricamento.php'>
 
 		<label for='Titolo'>Titolo: </label>
-		<input type='text' id='titolo' name='id_title' placeholder='Inserisci il titolo dell&#8217 opera'>
+		<input type='text' id='titolo' name='titolo_opera' placeholder='Inserisci il titolo dell&#8217 opera'>
 
 		<label for='Descrizione'>Descrizione: </label>
-		<input type='text' id='descrizione' name='desc' placeholder='Inserisci una breve descrizione dell&#8217 opera (facoltativo)'>
+		<input type='text' id='descrizione' name='descrizione' placeholder='Inserisci una breve descrizione dell&#8217 opera (facoltativo)'>
 
 		<label for='Stato'>Stato: </label>
-		<input type='text' id='stato' name='state' placeholder='Inserisci lo Stato in cui è stata scattata la foto'>
+		<input type='text' id='stato' name='stato' placeholder='Inserisci lo Stato in cui è stata scattata la foto'>
 
 		<label for='Indirizzo'>Indirizzo: </label>
-		<input type='text' id='Indirizzo' name='address' placeholder='Inserisci l&#8217 indirizzo in cui è stata scattata la foto'>
+		<input type='text' id='Indirizzo' name='indirizzo' placeholder='Inserisci l&#8217 indirizzo in cui è stata scattata la foto'>
 
 		<label for='località'>Località: </label>
-		<input type='text' id='località' name='place' placeholder='Inserisci la località in cui è stata scattata la foto'>
+		<input type='text' id='località' name='localita' placeholder='Inserisci la località in cui è stata scattata la foto'>
 
 		<label for='Latitudine'>Latitudine: </label>
-		<input type='text' id='latitudine' name='lat' placeholder='Inserisci latitudine'>
+		<input type='text' id='latitudine' name='latitudine' placeholder='Inserisci latitudine'>
 
 		<label for='Longitudine'>Longitudine: </label>
-		<input type='text' id='longitudine' name='long' placeholder='Inserisci longitudine'>
+		<input type='text' id='longitudine' name='longitudine' placeholder='Inserisci longitudine'>
 
 		<label for='immagine_film'>Immagine tratta dal film: </label>
-		<input type='file' id='immagine_film' name='film_picture' placeholder='Carica l&#8217 immagine del film'>
+		<input type='file' id='immagine_film' name='immagine_film' placeholder='Carica l&#8217 immagine del film'>
 
 		<label for='immagine_reale'>Foto: </label>
-		<input type='file' id='immagine_reale' name='picture' placeholder='Carica la foto'>
+		<input type='file' id='immagine_reale' name='immagine_reale' placeholder='Carica la foto'>
 
 	</div>
 	<div id='scroll'>
