@@ -1,14 +1,14 @@
 <?php
 require_once "connessione.php";
 
-$titolo_opera="X-Men";
-$descrizione="post di prova";
-$latitudine="22.1324";
-$longitudine="33.6843";
-$username="user";//$_SESSION["username"]
-$stato="Burundi";
-$indirizzo="Via Fasulla, 123, Bujumbura";
-$localita="Quartiere di prova";
+$titolo_opera=$_POST["titolo_opera"];
+$descrizione=$_POST["descrizione"];
+$latitudine=$_POST["latitudine"];
+$longitudine=$_POST["longitudine"];
+$username=$_SESSION["username"];
+$stato=$_POST["stato"];
+$indirizzo=$_POST["indirizzo"];
+$localita=$_POST["localita"];
 
 $titolo_opera=trim(strip_tags($titolo_opera));
 $descrizione=trim(strip_tags($descrizione));
@@ -21,6 +21,27 @@ $localita=trim(strip_tags($localita));
 
 
 try {
+    if(empty($titolo_opera))
+    {
+        throw  new Exception("Inserisci il titolo del film o serie tv");
+    }
+    if(empty($descrizione))
+    {
+        throw  new Exception("Inserisci una descrizione");
+    }
+    if(empty($indirizzo))
+    {
+        throw  new Exception("Inserisci un indirizzo");//Non controllo la località perchè è facoltativa
+    }
+    if(empty($stato))
+    {
+        throw  new Exception("Inserisci uno stato");
+    }
+    if(empty($_SESSION["username"]))
+    {
+        throw  new Exception("Devi loggarti per poter effettuare questa azione");
+    }
+
     if (!filter_var($latitudine, FILTER_VALIDATE_FLOAT))
     {
         throw  new Exception("Latitudine inserita non e' un numero");
@@ -53,19 +74,23 @@ try {
         throw new Exception( "Errore ritornato dal database:". $inserimento->error);
     }
 
+    $numero_nuovo_post = mysqli_query($conn, "SELECT max(id) FROM post");//Prende il numero dell'ultimo post caricato (cioè  quello appena caricato dall'utente)
+    $risultato_query=mysqli_fetch_assoc($numero_nuovo_post);
+    $numero_nuovo_post=$risultato_query["max(id)"];
 
+    if (!file_exists('uploads')) //crea la cartella per tenere le foto se non esiste
+    {
+        mkdir('uploads', 0777, true);
+    }
 
-    /*
-     * Controlli per i file (commentati in attesa del form)
-     *
-     *
-     * if (!isset($_FILES['upfile']['error']) || is_array($_FILES['upfile']['error']))
+    //-----------------CARICAMENTO IMMAGINE 1
+
+    if (!isset($_FILES['immagine_film']['error']) || is_array($_FILES['immagine_film']['error']))
     {
         throw new RuntimeException('Errore nel caricamento del/dei file: Parametri errati');
     }
 
-    // Check $_FILES['upfile']['error'] value.
-    switch ($_FILES['upfile']['error']) {
+    switch ($_FILES['immagine_film']['error']) {
         case UPLOAD_ERR_OK:
             break;
         case UPLOAD_ERR_NO_FILE:
@@ -77,11 +102,9 @@ try {
             throw new RuntimeException('Altro errore non specificato nel caricamento dei file');
     }
 
-    // DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
-    // Check MIME Type by yourself.
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     if (false === $ext = array_search(
-            $finfo->file($_FILES['upfile']['tmp_name']),
+            $finfo->file($_FILES['immagine_film']['tmp_name']),
             array(
                 'jpg' => 'image/jpeg',
                 'png' => 'image/png',
@@ -92,15 +115,55 @@ try {
         throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg, .png e .gif');
     }
 
-    // You should name it uniquely.
-    // DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
-    // On this example, obtain safe unique name from its binary data.
-    if (!move_uploaded_file($_FILES['upfile']['tmp_name'], sprintf('./uploads/%s.%s', sha1_file($_FILES['upfile']['tmp_name']), $ext)))
+    //il file viene messo in /uploads/numerodelpost.estensione.
+    if (!move_uploaded_file($_FILES['immagine_film']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post, $ext)))
     {
         throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
     }
 
-    echo 'File caricato correttamente.';*/
+    echo 'File dal film caricato correttamente.';
+
+    if (!isset($_FILES['immagine_reale']['error']) || is_array($_FILES['immagine_reale']['error']))
+    {
+        throw new RuntimeException('Errore nel caricamento del/dei file: Parametri errati');
+    }
+
+
+
+    //-----------CARICAMENTO IMMAGINE 2
+
+    switch ($_FILES['immagine_reale']['error']) {
+        case UPLOAD_ERR_OK:
+            break;
+        case UPLOAD_ERR_NO_FILE:
+            throw new RuntimeException('Non hai inviato alcun file');
+        case UPLOAD_ERR_INI_SIZE:
+        case UPLOAD_ERR_FORM_SIZE:
+            throw new RuntimeException('Superato limite di peso file');
+        default:
+            throw new RuntimeException('Altro errore non specificato nel caricamento dei file');
+    }
+
+    $finfo = new finfo(FILEINFO_MIME_TYPE);
+    if (false === $ext = array_search(
+            $finfo->file($_FILES['immagine_reale']['tmp_name']),
+            array(
+                'jpg' => 'image/jpeg',
+                'png' => 'image/png',
+                'gif' => 'image/gif',
+            ),
+            true
+        )) {
+        throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg, .png e .gif');
+    }
+
+//il file viene messo in /uploads/numerodelpostA.estensione.
+    if (!move_uploaded_file($_FILES['immagine_reale']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post.'A', $ext)))
+    {
+        throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
+    }
+
+    echo 'File reale caricato correttamente.';
 
 }
 catch (Exception $e)
@@ -109,3 +172,5 @@ catch (Exception $e)
     echo $e->getMessage();
 
 }
+echo "<br>";
+var_dump($_FILES);
