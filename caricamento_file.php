@@ -25,7 +25,7 @@
 		<a href='#'><img id='utente' src='./img/utente.png' alt='' />Pannello utente</a>
 	</div>
 	<div id='corpo'>
-		<form name='form_csricamento' method='post' action='caricamento.php'>
+		<form name='form_csricamento' method='post' enctype='multipart/form-data' action='inserimentoPost.php '>
 
 		<label for='Titolo'>Titolo: </label>
 		<input type='text' id='titolo' name='titolo_opera' placeholder='Inserisci il titolo dell&#8217 opera'>
@@ -53,7 +53,7 @@
 
 		<label for='immagine_reale'>Foto: </label>
 		<input type='file' id='immagine_reale' name='immagine_reale' placeholder='Carica la foto'>
-
+            <input type="submit" value="Inserisci">
 	</div>
 	<div id='scroll'>
 		<img id='Top' onclick='topFunction()' src='./img/back_on_top.png' alt='' />
