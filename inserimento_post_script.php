@@ -1,6 +1,6 @@
 <?php
 require_once "connessione.php";
-
+session_start();
 $titolo_opera=$_POST["titolo_opera"];
 $descrizione=$_POST["descrizione"];
 $latitudine=$_POST["latitudine"];
