@@ -25,7 +25,7 @@
 		<a href='#'><img id='utente' src='./img/utente.png' alt='' />Pannello utente</a>
 	</div>
 	<div id='corpo'>
-		<form name='form_csricamento' method='post' enctype='multipart/form-data' action='inserimentoPost.php '>
+		<form name='form_csricamento' method='post' enctype='multipart/form-data' action='inserimento_post_script.php '>
 
 		<label for='Titolo'>Titolo: </label>
 		<input type='text' id='titolo' name='titolo_opera' placeholder='Inserisci il titolo dell&#8217 opera'>
