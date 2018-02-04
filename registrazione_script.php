@@ -113,6 +113,6 @@ try {
 
 catch (Exception $e)
 {
-    echo 'ERRORE: '.  $e->getMessage(), "\n";
+    echo 'ERRORE: '.  $e->getMessage();
 }
 ?>
