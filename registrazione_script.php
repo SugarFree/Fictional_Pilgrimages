@@ -19,7 +19,6 @@
     /*Rimuove qualsiasi tag HTML/PHP per evitare che l'utente faccia scherzi strani, tipo avere il suo nome in grassetto
       Rimuove anche gli spazi iniziali e finali per l'username, nella password sono ammessi*/
     $username=trim(strip_tags($username));
-    $password=strip_tags($password);
     $conferma_password=strip_tags($conferma_password);
     $email=strip_tags($email);
     /*parametri in input per test
