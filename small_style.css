@@ -13,7 +13,7 @@ html, body {
 h1, #path, #corpo, #footer {
   width: 75%;
   margin-top: 10px;
-  margin-left: 180px; /* sidenav */
+  margin-left: 0px; /* sidenav */
   border-radius: 2px;
   border: 3px solid #0D4263;
   box-shadow: 10px 0 0 0 #216181;
@@ -31,14 +31,15 @@ h1 {
   font-size: 5vw; }
 
 #sidenav {
-  width: 150px;
-  height: 100%;
-  float: left;
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  width: 100%;
+  height: 32vw;
+  float: none;
+  position: static;
+  z-index: auto;
+  top: auto;
   overflow-x: hidden; /* Disable horizontal scroll (hmmm maybe not) */
-  margin-left: 10px;
+  padding: 1vw 0vw;
+  margin: 0em;
   background-color: #0d4263; }
 
 #sidenav #logo {
@@ -105,18 +106,6 @@ h1 {
 
 h2 {
 	text-align: center; }
-
-#bottone1{
-  text-align: center;
-  float: left;
-  margin-left: 15vw;
-}
-
-#bottone2{
-  text-align: center;
-  float: right;
-  margin-right: 15vw;
-}
 
 #descrizione {
     padding-top: 1em;
