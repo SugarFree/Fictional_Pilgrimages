@@ -13,7 +13,7 @@
 	<h1 id='titolo'>Fictional Pilgrimages</h1>
 	<div id='path'>
 		Ti trovi in: <?php echo $path . "\n"; ?>
-		<form method='get' action='registrazione_page.php'>
+		<form method='get' action='registrazione.php'>
 			<button type='submit'>Connettiti</button>
 		</form>
 	</div>

@@ -50,7 +50,7 @@ SEZIONE CORPO
   float: left;
   display: block;
   margin: 0em 3vw 2em 10vw; 
-  background-color: #4b4b4b;
+  background-color: #0D4263;
   padding: 1vh 3vw 3vh 3vw;
 }
 
@@ -60,14 +60,14 @@ SEZIONE CORPO
   float: right;
   display: block;
   margin: 6.5em 10vw 13em 3vw; 
-  background-color: #4b4b4b;
+  background-color: #0D4263;
   padding: 1vh 3vw 3vh 3vw;
 }
 
 input[type=text] {
   color: black;
   border: none;
-  border-bottom: 3px solid #006BCF;
+  border-bottom: 3px solid #0D4263;
   width: 90%;
   padding: 0.8em;
   margin: 3vh 0vw;
@@ -77,7 +77,7 @@ input[type=text] {
 input[type=password] {
   color: black;
   border: none;
-  border-bottom: 3px solid #006BCF;
+  border-bottom: 3px solid #93a459;
   width: 90%;
   padding: 0.8em;
   margin: 3vh 0vw;
@@ -86,7 +86,7 @@ input[type=password] {
 
 input[type=submit] {
   width: 90%;
-  background-color: #006BCF;
+  background-color: #0D4263;
   color: #eeeeee;
   padding: 12px 20px;
   margin: 8px 1em 8px;
@@ -95,7 +95,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #0073de;
+  background-color: #93a459;
 }
 
 p {
@@ -110,12 +110,13 @@ SEZIONE FOOTER
 */
 
 #footer {
-  background-color: #006BCF;
-  border-top: 1px solid #DDD;
   width: 100%;
+  border: 3px solid #0D4263;
+  padding: 5px;
+  background-color: #0d4263;
   color: white;
   text-align: right;
-  font-size: 0.6em;
-  padding: 1em;
+  font-size: 1em;
 }
+
 

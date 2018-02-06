@@ -67,7 +67,7 @@ include("connessione.php");
 	?>
 </body>	
 	<div id="footer">
-		Copyright &copy; 2017 Fictional Pilgrimages | v0.032
-	</div>
+        Copyright &copy; 2017 Fictional Pilgrimages
+    </div>
 </body>
 </html>
