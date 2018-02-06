@@ -27,17 +27,17 @@ include("connessione.php");
 	<div id='registrazione'>
 		<h2>Registrazione</h2>
 		<form name='form_registration' method='post' action='registrazione_script.php'>
+		
+		<label for='mail'>Email: </label> 
+		<input type='text' id='mail' name='email' placeholder='La tua mail'>
 
 		<label for='Uname'>Username: </label>
 		<input type='text' id='Uname' name='username' placeholder='Il tuo username'>
 		
 		<label for='pw'>Password: </label> 
 		<input type='password' id='pw' name='password' placeholder='La tua password'>
-		
-		<label for='mail'>Email: </label> 
-		<input type='text' id='mail' name='email' placeholder='La tua mail'>
 
-		<label for='conferma_pw'>Password: </label> 
+		<label for='conferma_pw'>Conferma password: </label> 
 		<input type='password' id='conferma_pw' name='conferma_password' placeholder='Riscrivi la tua password'>
 		
 		<input type='submit' value='Registrati'>
@@ -65,7 +65,6 @@ include("connessione.php");
 	else
 	echo "Effettuare logout";
 	?>
-</body>	
 	<div id="footer">
         Copyright &copy; 2017 Fictional Pilgrimages
     </div>

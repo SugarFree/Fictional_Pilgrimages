@@ -18,7 +18,7 @@ h1 {
   margin-left: 23%;
   text-align: left;
   font-family: 'Crimson Text';
-  font-size: 8vw;
+  font-size: 7vw;
   padding: 0.8em 0em;
 
 }
@@ -37,7 +37,7 @@ SEZIONE CORPO
 */
 #logo {
   padding: 1em 4% 1em 4%;
-  width: 15%;
+  width: 12.5%;
   float: left;
   display: block;
   margin: auto;
@@ -67,7 +67,7 @@ SEZIONE CORPO
 input[type=text] {
   color: black;
   border: none;
-  border-bottom: 3px solid #0D4263;
+  border-bottom: 3px solid #93a459;
   width: 90%;
   padding: 0.8em;
   margin: 3vh 0vw;
@@ -92,6 +92,7 @@ input[type=submit] {
   margin: 8px 1em 8px;
   border: none;
   cursor: auto;
+  outline: 2px solid #216181;
 }
 
 input[type=submit]:hover {
@@ -110,7 +111,7 @@ SEZIONE FOOTER
 */
 
 #footer {
-  width: 100%;
+  width: 99%;
   border: 3px solid #0D4263;
   padding: 5px;
   background-color: #0d4263;
