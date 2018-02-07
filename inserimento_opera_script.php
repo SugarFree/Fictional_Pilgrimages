@@ -2,17 +2,17 @@
 session_start();
 require_once "connessione.php";
 
-$titolo="";
-$descrizione="";
-$tipo="";
+$titolo=trim(strip_tags($_POST["titolo"]));
+$descrizione=trim(strip_tags($_POST["descrizione"]));
+$tipo=$_POST["tipo"];
 
 
 try
 {
-    /*if (!isset($_SESSION["username"]))
+    if (!isset($_SESSION["username"]))
     {
         throw  new  Exception("Devi loggarti per poter effettuare questa azione");
-    }*/
+    }
     if(($tipo!="film") and ($tipo!="serietv"))
     {
         throw  new  Exception("Dati inviati in modo non corretto");
@@ -33,6 +33,15 @@ try
     {
         $inserisci_post= $conn->prepare("INSERT INTO opera VALUES (?,?,?)");
         $inserisci_post->bind_param("sss",$titolo,$descrizione,$tipo);
+        $inserisci_post->execute();
+        if($inserisci_post->error!="")
+        {
+            throw  new  Exception("Errore ritornato dal database:" . $verifica_titolo->error);
+        }
+    }
+    else
+    {
+        throw  new  Exception("Titolo già presente nel sito");
     }
 }
 catch (Exception $e)
