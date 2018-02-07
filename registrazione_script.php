@@ -100,7 +100,6 @@ try {
                 throw new Exception("Username gia' esistente, per favore sceglierne un altro");
 
             }
-
     }
     else
     {
@@ -114,4 +113,8 @@ catch (Exception $e)
 {
     echo 'ERRORE: '.  $e->getMessage();
 }
+
+if($verifica_email && $verifica_username && $password==$conferma_password)
+            header("Location: index.php");
+
 ?>
