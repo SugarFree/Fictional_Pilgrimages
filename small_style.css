@@ -37,7 +37,6 @@ h1 {
   position: static;
   z-index: auto;
   top: auto;
-  padding: 1% 0%;
   margin: 0.3em 0 0 0;
   background-color: #0d4263; }
 
@@ -68,25 +67,27 @@ h1 {
   color: white; }
 
 #path {
-  margin-top: 20px;
-  font-weight: bold; }
+  width: 96%;
+  margin-top: 10px;
+  font-weight: bold;
+  padding: 2%; }
 
 #path form {
   float: right; }
 
 #path form button {
   float: right;
-  margin: 0.3em 0.8em;
+  margin: 0.1em 1%;
   border-radius: 0.3em;
-  font-size: 1.5em;
+  font-size: 2em;
   border-style: solid;
   background-color: white;
 }
 
 #corpo {
   margin-top: 20px;
+  padding-bottom: 10em;
   background-color: white;
-  border: 3px solid #0D4263;
 }
 
 #corpo ul {
@@ -107,25 +108,15 @@ h2 {
 	margin-top: 2em; }
 
 #corpo h3 {
-	text-align: left;
-	padding-top: 3em;
-	font-style: normal;
-	font-size: 1em;
-	padding-bottom: 1em;
+	display: none;
 }
 
 #corpo img {
-	display: block;
-	text-align: center;
-	width: 20em;
-	padding-left: 1em;
-  padding-top: 0.5em;
+	display: none;
 }
 
 #didascalia {
-	padding: 1em;
-	font-size: 0.75em;
-	text-align: left;
+	display: none;
 }
 
 #Top {
@@ -142,4 +133,4 @@ h2 {
 #footer {
   margin-top: 20px;
   text-align: right;
-  font-size: 1em; }
+  font-size: 0.8em; }
