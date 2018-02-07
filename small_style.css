@@ -15,7 +15,6 @@ h1, #path, #corpo, #footer {
   margin-left: 0px; /* sidenav */
   border-radius: 0px;
   border: 0px;
-  box-shadow: 10px 0 0 0 #216181;
   padding: 0px; }
 
 h1, #path, #footer {
@@ -23,12 +22,12 @@ h1, #path, #footer {
   color: white; }
 
 h1 {
-  min-height: 114px; /* per allinearsi col logo */
   font-family: 'Crimson Text';
   vertical-align: center;
   text-align: center;
-  font-size: 10vw;
-  padding-top: 1vh; }
+  font-size: 3em;
+  padding-top: 0.5em;
+}
 
 #sidenav {
   width: 100%;
@@ -55,7 +54,7 @@ h1 {
   display: block; }
 
 #sidenav #menu li {
-  font-size: 2.5vw;
+  font-size: 1em;
   text-align: center;
   color: #d6dcbA; }
 
@@ -79,14 +78,14 @@ h1 {
   float: right;
   margin: 0.1em 1%;
   border-radius: 0.3em;
-  font-size: 2em;
+  font-size: 0.8em;
   border-style: solid;
   background-color: white;
 }
 
 #corpo {
   margin-top: 20px;
-  padding-bottom: 13em;
+  padding-bottom: 8em;
   background-color: white;
 }
 
@@ -111,28 +110,28 @@ h2 {
 #bottone1 {
   text-align: center;
   float: left;
-  margin-left: 15vw;
-  width: 250px;
-  height: 150px;
+  margin-left: 5%;
+  width: 120px;
+  height: 60px;
   border-radius: 20px;
   background-color: #0d4263;
-  font-size: 3em;
+  font-size: 1em;
   color: #f0f0f0;
-  box-shadow: 10px 10px 8px #888888;
+  box-shadow: 5px 5px 5px #888888;
   cursor: pointer;
 }
 
 #bottone2 {
   text-align: center;
   float: right;
-  margin-right: 15vw;
-  width: 250px;
-  height: 150px;
+  margin-right: 5%;
+  width: 120px;
+  height: 60px;
   border-radius: 20px;
   background-color: #0d4263;
-  font-size: 3em;
+  font-size: 1em;
   color: #f0f0f0;
-  box-shadow: 10px 10px 8px #888888;
+  box-shadow: 5px 5px 5px #888888;
   cursor: pointer;
 }
 
