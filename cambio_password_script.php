@@ -4,7 +4,7 @@ require_once "connessione.php";
 $password_vecchia=$_POST["password_vecchia"];
 $password=$_POST["password"];
 $conferma_password=$_POST["conferma_password"];
-$username=$_POST["username"];
+$username=$_SESSION["username"];
 
 
 try
