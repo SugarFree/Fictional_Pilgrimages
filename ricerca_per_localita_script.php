@@ -70,5 +70,6 @@ try
 }
 catch(Exception $e)
 {
-    echo "ERRORE: ".  $e->getMessage();
+
+
 }
