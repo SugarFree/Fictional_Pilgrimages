@@ -1,5 +1,7 @@
     <?php
 
+    error_reporting(E_ALL & ~E_NOTICE);
+
     require_once 'connessione.php';
 
     //Questi sono i parametri da passare tramite form
@@ -115,6 +117,9 @@ catch (Exception $e)
 }
 
 if($verifica_email && $verifica_username && $password==$conferma_password)
-            header("Location: index.php");
+{
+    header("refresh:3; registrazione.php");
+    echo("Registrazione effettuata con successo. Tra 3 secondi sarai reindirizzato alla pagina di login.");
+}
 
 ?>

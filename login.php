@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL & ~E_NOTICE);
+
 session_start();
 try
 {
@@ -40,8 +43,8 @@ try
         if ($risultato_login->num_rows == 1) //Se corrisponde ai dati presenti nel db si logga come quello specifico utente
         {
             $_SESSION['username'] = $username;
-            //echo("Ti sei loggato come " . $_SESSION['username']);
-            header("Location: index.php");
+            header("refresh:3; index.php");
+            echo("Ti sei loggato come " .$_SESSION['username']. ". Tra 3 secondi sarai reindirizzato alla homepage.");
             $verifica_login->close();
             $conn->close();
         } else//Altrimenti mostra messaggio di errore ed esce
