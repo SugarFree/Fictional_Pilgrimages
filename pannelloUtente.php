@@ -1,6 +1,6 @@
 <?php
 $titolo="Fictional Pilgrimages";
-$path="Cerca località";
+$path="Pannello Utente";
 $current_menu_item=3;
 include "top.php";
 

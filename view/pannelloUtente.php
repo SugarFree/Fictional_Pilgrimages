@@ -4,4 +4,21 @@
 	$query= mysqli_query($conn, "SELECT email FROM utente WHERE username='".$_SESSION['username']."'");
 	$arr = mysqli_fetch_array($query);
 ?>
-<span>E-mail:</span> <?php echo $arr['email']; ?>
+<ul>
+	<li>Username: <?php echo($_SESSION['username']) ?></li>
+	<li>Email: <?php echo $arr['email']; ?></li>
+</ul>
+<div id='cambio'>
+	<form name='cambio_password' method='post' action='./cambio_password_script.php'>
+		<label for='password_vecchia'>Vecchia password: </label> 
+		<input type='password' id='vecchia_password' name='password_vecchia' placeholder='La tua vecchia password'>
+
+		<label for='password'>Nuova password: </label> 
+		<input type='password' id='password' name='password' placeholder='La tua nuova password'>
+
+		<label for='conferma_password'>Conferma nuova password: </label> 
+		<input type='password' id='conferma_password' name='conferma_password' placeholder='Riscrivi la tua nuova password'>
+
+		<input type='submit' value='Cambia password'>
+	</form>
+</div>

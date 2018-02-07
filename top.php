@@ -8,7 +8,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:600' rel='stylesheet'>
 	<link rel='stylesheet' type='text/css' href='style.css' />
 	<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='small_style.css' />
-	<link rel="stylesheet" type="text/css" media="print" href="print_style.css"/>
 </head>
 <body>
 	<h1 id='titolo'>Fictional Pilgrimages</h1>
@@ -45,7 +44,7 @@
 			$menu_items = array(new menu_item("index.php","home.png","Home"),
 													new menu_item("ricerca_per_localita.php","world.png","Cerca localit&agrave;"),
 													new menu_item("cerca_opere.php","titolo.png","Cerca opere"),
-													new menu_item("#","utente.png","Pannello utente"));
+													new menu_item("pannelloUtente.php","utente.png","Pannello utente"));
 
 			echo "\n";
 			for($i=0; $i<count($menu_items); $i++) {
