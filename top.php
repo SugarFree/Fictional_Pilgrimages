@@ -8,6 +8,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:600' rel='stylesheet'>
 	<link rel='stylesheet' type='text/css' href='style.css' />
 	<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='small_style.css' />
+	<link rel="stylesheet" type="text/css" media="print" href="print_style.css"/>
 </head>
 <body>
 	<h1 id='titolo'>Fictional Pilgrimages</h1>
