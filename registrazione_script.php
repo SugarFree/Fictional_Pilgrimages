@@ -35,6 +35,11 @@ try {
        throw new Exception("Inserire un username");
     }
 
+    if(strlen($username)>16)
+    {
+        throw  new  Exception("Username troppo lungo: max 16 caratteri");
+    }
+
     if (empty($password))
     {
          throw new Exception("Inserire una password");
