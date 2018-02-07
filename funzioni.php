@@ -5,6 +5,7 @@
 require_once "opera.php";
 require_once "post.php";
 require_once "commento.php";
+require_once "connessione.php";
 
 /**
  * @param $risultato mysqli_result Il risultato della query SELECT nella tabella post
@@ -72,3 +73,35 @@ function risultato_array_commento($risultato)
 
 }
 
+/**
+ * @param string $username l'utente del quale occorre verificare il livello di privilegio (user/admin)
+ * @return bool Vero se l'utente è amministratore, falso se non lo è o se risulta impossibile determinarlo (es. connessione al db persa)
+ */
+function amministratore($username)
+{
+    global $conn;
+    try
+    {
+        $verifica_username = $conn->prepare("SELECT username FROM utente WHERE username=? AND privilegi='admin'");
+        $verifica_username->bind_param("s", $username);
+        $verifica_username->execute();
+        if ($verifica_username->error != "")
+        {
+            throw new Exception( "Errore ritornato dal database:" . $verifica_username->error);
+        }
+
+        $risultato_username = $verifica_username->get_result();
+        if ($risultato_username->num_rows === 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    catch (Exception $e)
+    {
+        return false;
+    }
+}
