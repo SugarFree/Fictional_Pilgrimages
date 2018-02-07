@@ -15,7 +15,6 @@ h1, #path, #corpo, #footer {
   margin-left: 0px; /* sidenav */
   border-radius: 0px;
   border: 0px;
-  box-shadow: 10px 0 0 0 #216181;
   padding: 0px; }
 
 h1, #path, #footer {
@@ -23,12 +22,12 @@ h1, #path, #footer {
   color: white; }
 
 h1 {
-  min-height: 114px; /* per allinearsi col logo */
   font-family: 'Crimson Text';
   vertical-align: center;
   text-align: center;
-  font-size: 10vw;
-  padding-top: 1vh; }
+  font-size: 3em;
+  padding-top: 0.5em;
+}
 
 #sidenav {
   width: 100%;
@@ -37,7 +36,6 @@ h1 {
   position: static;
   z-index: auto;
   top: auto;
-  padding: 1% 0%;
   margin: 0.3em 0 0 0;
   background-color: #0d4263; }
 
@@ -56,7 +54,7 @@ h1 {
   display: block; }
 
 #sidenav #menu li {
-  font-size: 2.5vw;
+  font-size: 1em;
   text-align: center;
   color: #d6dcbA; }
 
@@ -68,25 +66,27 @@ h1 {
   color: white; }
 
 #path {
-  margin-top: 20px;
-  font-weight: bold; }
+  width: 96%;
+  margin-top: 10px;
+  font-weight: bold;
+  padding: 2%; }
 
 #path form {
   float: right; }
 
 #path form button {
   float: right;
-  margin: 0.3em 0.8em;
+  margin: 0.1em 1%;
   border-radius: 0.3em;
-  font-size: 1.5em;
+  font-size: 0.8em;
   border-style: solid;
   background-color: white;
 }
 
 #corpo {
   margin-top: 20px;
+  padding-bottom: 8em;
   background-color: white;
-  border: 3px solid #0D4263;
 }
 
 #corpo ul {
@@ -94,6 +94,7 @@ h1 {
 }
 
 h2 {
+  padding-top: 1em;
 	text-align: center; }
 
 #descrizione {
@@ -106,26 +107,44 @@ h2 {
 #corpo a {
 	margin-top: 2em; }
 
+#bottone1 {
+  text-align: center;
+  float: left;
+  margin-left: 5%;
+  width: 120px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #0d4263;
+  font-size: 1em;
+  color: #f0f0f0;
+  box-shadow: 5px 5px 5px #888888;
+  cursor: pointer;
+}
+
+#bottone2 {
+  text-align: center;
+  float: right;
+  margin-right: 5%;
+  width: 120px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #0d4263;
+  font-size: 1em;
+  color: #f0f0f0;
+  box-shadow: 5px 5px 5px #888888;
+  cursor: pointer;
+}
+
 #corpo h3 {
-	text-align: left;
-	padding-top: 3em;
-	font-style: normal;
-	font-size: 1em;
-	padding-bottom: 1em;
+	display: none;
 }
 
 #corpo img {
-	display: block;
-	text-align: center;
-	width: 20em;
-	padding-left: 1em;
-  padding-top: 0.5em;
+	display: none;
 }
 
 #didascalia {
-	padding: 1em;
-	font-size: 0.75em;
-	text-align: left;
+	display: none;
 }
 
 #Top {
@@ -140,6 +159,8 @@ h2 {
     width: 40px; }
 
 #footer {
+  width: 96%;
   margin-top: 20px;
   text-align: right;
-  font-size: 1em; }
+  font-size: 0.5em;
+  padding: 2% }
