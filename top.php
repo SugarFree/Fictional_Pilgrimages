@@ -12,10 +12,24 @@
 <body>
 	<h1 id='titolo'>Fictional Pilgrimages</h1>
 	<div id='path'>
-		Ti trovi in: <?php echo $path . "\n"; ?>
-		<form method='get' action='registrazione.php'>
-			<button type='submit'>Connettiti</button>
-		</form>
+		Ti trovi in: <?php echo $path . "\n";?>
+		<?php
+		session_start();
+		if(!isset($_SESSION['username']))
+		{
+
+			echo ("<form method='get' action='registrazione.php'>
+				<button type='submit'>Connettiti</button>
+			</form>");
+		}
+		else
+		{
+			echo ("<form method='get' action='logout.php'>
+			<button type='submit'>Logout</button>
+			</form>");
+			echo "<p id='prova'>Ciao " .$_SESSION['username']. "</p>";
+		}
+		?>
 	</div>
 	<div id='sidenav'>
 		<a href='#corpo' style='display: none'>Clicca per saltare il menu.</a>

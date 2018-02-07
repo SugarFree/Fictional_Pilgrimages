@@ -14,7 +14,8 @@ try {
             throw new Exception("Logout Fallito!");
         }
     }
-    echo("Logout effettuato con successo");//Se arriva alla fine significa che ha fatto il logout
+    //echo("Logout effettuato con successo");//Se arriva alla fine significa che ha fatto il logout
+    header("Location: index.php");
 }
 catch (Exception $e)
 {

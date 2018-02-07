@@ -11,10 +11,8 @@ try
     {
         require_once 'connessione.php';
 
-
         $username = $_POST["username"];
         $password = $_POST["password"];
-
 
         //Se l'username o la password inseriti sono vuoti, avvisa l'utente
         if (empty($username))
@@ -42,7 +40,8 @@ try
         if ($risultato_login->num_rows == 1) //Se corrisponde ai dati presenti nel db si logga come quello specifico utente
         {
             $_SESSION['username'] = $username;
-            echo("Ti sei loggato come " . $_SESSION['username']);
+            //echo("Ti sei loggato come " . $_SESSION['username']);
+            header("Location: index.php");
             $verifica_login->close();
             $conn->close();
         } else//Altrimenti mostra messaggio di errore ed esce
