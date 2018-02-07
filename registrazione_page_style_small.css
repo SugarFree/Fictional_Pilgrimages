@@ -15,11 +15,11 @@ html, body {
 }
 
 h1 {
-  margin-left: 23%;
-  text-align: left;
+  margin-left: 0;
+  text-align: center;
   font-family: 'Crimson Text';
-  font-size: 8vw;
-  padding: 0.8em 0em;
+  font-size: 10vw;
+  padding: 0.5em 0em;
 }
 
 h2 {
@@ -35,73 +35,71 @@ SEZIONE CORPO
 ================
 */
 #logo {
-  padding: 2vh 5vw;
-  width: 15%;
-  display: block;
-  margin: auto;
-  top: 0;
+  display: none;
 }
 
 #registrazione {
   color: #eeeeee;
-  font-size: 1.3em;
+  font-size: 1.8em;
   width: 76%;
   float: none;
   display: block;
   margin: 0vh 10% 5vw 10%; 
-  background-color: #4b4b4b;
-  padding: 3vw;
+  background-color: #0D4263;
+  padding: 2vw 2%;
 }
 
 #login {
   color: #eeeeee;
-  font-size: 1.3em;
+  font-size: 1.8em;
   width: 76%;
   float: none;
   display: block;
   margin: 5vw 10%; 
-  background-color: #4b4b4b;
-  padding: 3vw;
+  background-color: #0D4263;
+  padding: 2vw 2%;
 }
 
 input[type=text] {
   color: black;
   border: none;
-  border-bottom: 3px solid #006BCF;
+  border-bottom: 3px solid #93a459;
+  font-size: 0.8em;
   width: 95%;
-  padding: 0.6em;
-  margin: 3vh 0vw;
+  padding: 0.8em;
+  margin: 2vh 0vw;
   display: inline-block;
 }
 
 input[type=password] {
   color: black;
   border: none;
-  border-bottom: 3px solid #006BCF;
+  border-bottom: 3px solid #93a459;
+  font-size: 0.8em;
   width: 95%;
-  padding: 0.6em;
-  margin: 3vh 0vw;
+  padding: 0.8em;
+  margin: 2vh 0vw;
   display: inline-block;
 }
 
 input[type=submit] {
-  width: 90%;
-  background-color: #006BCF;
+  width: 95%;
+  font-size: 0.8em;
+  background-color: #0D4263;
   color: #eeeeee;
   padding: 12px 20px;
   margin: 8px 1em 8px;
   border: none;
   cursor: auto;
+  outline: 2px solid #216181;
 }
 
 input[type=submit]:hover {
-  background-color: #0073de;
+  background-color: #93a459;
 }
 
 #ritorno{
-  display: block;
-  margin: auto;
-  text-align: center;
+  font-size: 0.8em;
 }
 
 /*
@@ -111,12 +109,12 @@ SEZIONE FOOTER
 */
 
 #footer {
-  background-color: #006BCF;
-  border-top: 1px solid #DDD;
+  background-color: #0d4263;
+  border: 3px solid #0D4263;
   width: 100%;
   color: white;
   text-align: right;
-  font-size: 0.6em;
+  font-size: 0.8em;
   padding: 1em;
 }
 
