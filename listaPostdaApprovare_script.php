@@ -4,14 +4,13 @@ require_once "connessione.php";
 require_once "post.php";
 require_once "funzioni.php";
 //Salva tutti i post in attesa di approvazione nell'array $array_post
-$username=$_SESSION["username"];
 try
 {
     if (!isset($_SESSION["username"]))
     {
         throw  new  Exception("Devi loggarti per poter effettuare questa azione");
     }
-    if(!amministratore($username))
+    if(!amministratore($_SESSION["$username"]))
     {
         throw  new  Exception("Devi essere un amministratore per poter effettuare questa azione");
     }
