@@ -92,23 +92,19 @@ h1 {
   background-color: white;
   width: 5em;
   height: 1.5em;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 #prova {
   float: right;
-  padding-right: 1em;
-}
+  padding-right: 1em; }
 
 #corpo {
   margin-top: 20px;
   background-color: white;
-  border: 3px solid #0D4263;
-}
+  border: 3px solid #0D4263; }
 
 #corpo ul {
-	padding-left: 25px;
-}
+	padding-left: 25px; }
 
 h2 {
 	text-align: center;
@@ -125,12 +121,10 @@ h2 {
   font-size: 1.5em;
   color: #f0f0f0;
   box-shadow: 10px 10px 8px #888888;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 #bottone1:hover {
-  background-color: #216181;
-}
+  background-color: #216181; }
 
 #bottone2 {
   text-align: center;
@@ -143,48 +137,41 @@ h2 {
   font-size: 1.5em;
   color: #f0f0f0;
   box-shadow: 10px 10px 8px #888888;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 #bottone2:hover {
-  background-color: #216181;
-}
+  background-color: #216181; }
 
 #descrizione {
     padding-top: 1em;
     padding-right: 1em;
     padding-left: 1em;
     padding-bottom: 3em;
-    text-align: center; 
-}
+    text-align: center; }
 
 #corpo a {
 	margin-top: 2em; }
 
 #topSearched{
-  padding-top: 8em;
-}
+  padding-top: 8em; }
 
 #corpo h3 {
 	text-align: left;
 	font-style: normal;
 	font-size: 1em;
-	padding-bottom: 1em;
-}
+	padding-bottom: 1em; }
 
 #corpo img {
 	display: block;
 	text-align: center;
 	width: 20em;
 	padding-left: 1em;
-  padding-top: 0.5em;
-}
+  padding-top: 0.5em; }
 
 #didascalia {
 	padding: 1em;
 	font-size: 0.75em;
-	text-align: left;
-}
+	text-align: left; }
 
 input[type=text], input[type=password]{
   color: black;
@@ -192,8 +179,7 @@ input[type=text], input[type=password]{
   width: 88%;
   padding: 1em;
   margin: 2vh 3vw;
-  display: inline-block;
-}
+  display: inline-block; }
 
 input[type=submit] {
   background-color: #0D4263;
@@ -202,20 +188,17 @@ input[type=submit] {
   margin: 1em 1em;
   border: none;
   cursor: pointer;
-  outline: 1px solid #216181;
-}
+  outline: 1px solid #216181; }
 
 input[type=submit]:hover {
-  background-color: #93a459;
-}
+  background-color: #93a459; }
 
 dt {
   font-weight: bold;
-  padding: 0.2em 0em;
-} 
+  padding: 0.2em 0em; } 
 
 #Top {
-    display: block;
+    display: none;
     position: fixed;
     bottom: 35px;
     right: 7px;
