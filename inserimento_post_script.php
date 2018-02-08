@@ -21,9 +21,18 @@ $localita=trim(strip_tags($localita));
 
 
 try {
+    if(empty($_SESSION["username"]))
+
+    {
+        throw  new Exception("Devi loggarti per poter effettuare questa azione");
+    }
     if(empty($titolo_opera))
     {
         throw  new Exception("Inserisci il titolo del film o serie tv");
+    }
+    if(strlen($titolo_opera)>32)
+    {
+        throw  new Exception("Il titolo può essere lungo max 32 caratteri");
     }
     if(empty($descrizione))
     {
@@ -37,9 +46,17 @@ try {
     {
         throw  new Exception("Inserisci uno stato");
     }
-    if(empty($_SESSION["username"]))
+    if(strlen($stato)>32)
     {
-        throw  new Exception("Devi loggarti per poter effettuare questa azione");
+        throw  new Exception("Lo stato può essere lungo max 32 caratteri");
+    }
+    if(strlen($indirizzo)>64)
+    {
+        throw  new Exception("L'indirizzo può essere lungo max 32 caratteri");
+    }
+    if(strlen($localita)>32)
+    {
+        throw  new Exception("La località può essere lunga max 32 caratteri");
     }
 
     if (!filter_var($latitudine, FILTER_VALIDATE_FLOAT))
@@ -47,14 +64,13 @@ try {
         throw  new Exception("Latitudine inserita non e' un numero");
     }
 
-
     if (($latitudine > 90) || ($latitudine < -90) )
     {
         throw  new Exception("Latitudine inserita deve essere compresa tra +90 e -90");
     }
 
 
-        if (!filter_var($longitudine, FILTER_VALIDATE_FLOAT))
+    if (!filter_var($longitudine, FILTER_VALIDATE_FLOAT))
     {
         throw  new Exception("Longitudine inserita non e' un numero");
     }
@@ -64,6 +80,8 @@ try {
         throw  new Exception("Longitudine inserita deve essere compresa tra +90 e -90");
     }
 
+    $latitudine=round($latitudine, 4);//approssima latitudine e longitudine a 4 cifre decimali per farle stare nel DB
+    $longitudine=round($longitudine, 4);
 
     $inserimento = $conn->prepare("INSERT INTO post (titolo_opera, descrizione, latitudine, longitudine, username, stato, indirizzo, localita) VALUES (?,?,?,?,?,?,?,?)");
     $inserimento->bind_param("ssddssss",$titolo_opera,$descrizione, $latitudine, $longitudine, $username, $stato, $indirizzo, $localita);
