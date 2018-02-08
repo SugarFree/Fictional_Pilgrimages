@@ -41,12 +41,19 @@
 					$this->href=$href;
 					$this->icon=$icon;
 					$this->testo=$text; }}
-
-			$menu_items = array(new menu_item("index.php","home.png","Home"),
-													new menu_item("ricerca_per_localita.php","world.png","Cerca localit&agrave;"),
-													new menu_item("cerca_opere.php","titolo.png","Cerca opere"),
-													new menu_item("pannelloUtente.php","utente.png","Pannello utente"));
-
+			if(isset($_SESSION['username']))
+			{
+				$menu_items = array(new menu_item("index.php","home.png","Home"),
+														new menu_item("ricerca_per_localita.php","world.png","Cerca localit&agrave;"),
+														new menu_item("cerca_opere.php","titolo.png","Cerca opere"),
+														new menu_item("pannelloUtente.php","utente.png","Pannello utente"));
+			}
+			else
+			{
+				$menu_items = array(new menu_item("index.php","home.png","Home"),
+														new menu_item("ricerca_per_localita.php","world.png","Cerca localit&agrave;"),
+														new menu_item("cerca_opere.php","titolo.png","Cerca opere"));
+			}
 			echo "\n";
 			for($i=0; $i<count($menu_items); $i++) {
 				echo "\t\t\t";
