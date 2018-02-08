@@ -100,4 +100,3 @@ catch (Exception $e)
 {
     echo $e->getMessage();
 }
-echo "Operazione eseguita con successo";
