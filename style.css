@@ -111,7 +111,8 @@ h1 {
 }
 
 h2 {
-	text-align: center; }
+	text-align: center;
+  padding: 0.5em; }
 
 #bottone1 {
   text-align: center;
@@ -160,9 +161,12 @@ h2 {
 #corpo a {
 	margin-top: 2em; }
 
+#topSearched{
+  padding-top: 8em;
+}
+
 #corpo h3 {
 	text-align: left;
-	padding-top: 8em;
 	font-style: normal;
 	font-size: 1em;
 	padding-bottom: 1em;
@@ -181,6 +185,30 @@ h2 {
 	font-size: 0.75em;
 	text-align: left;
 }
+
+input[type=text], input[type=password]{
+  color: black;
+  border: 3px solid #93a459;
+  width: 88%;
+  padding: 1em;
+  margin: 2vh 3vw;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #0D4263;
+  color: #eeeeee;
+  padding: 12px 20px;
+  margin: 1em 1em;
+  border: none;
+  cursor: auto;
+  outline: 2px solid #216181;
+}
+
+dt {
+  font-weight: bold;
+  padding: 0.2em 0em;
+} 
 
 #Top {
     display: none;

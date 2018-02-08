@@ -6,13 +6,16 @@
 	$result= mysqli_query($conn, "SELECT privilegi FROM utente WHERE username='".$_SESSION['username']."'");
 	$arr2 = mysqli_fetch_array($result);
 ?>
-<ul>
-	<li>Username: <?php echo($_SESSION['username']) ?></li>
-	<li>Email: <?php echo $arr['email']; ?></li>
-	<li>Tipo di utente: <?php echo $arr2['privilegi']; ?></li>
-</ul>
+<dl>
+	<dt class='grassetto' > Username: </dt><dd><?php echo($_SESSION['username']) ?></dd>
+	</br>
+	<dt>Email: </dt><dd><?php echo $arr['email']; ?></dd>
+	</br>
+	<dt>Tipo di utente: </dt><dd><?php echo $arr2['privilegi']; ?></dd>
+	</br>
+</dl>
 <div id='cambio'>
-	<h3>Cambio password</h3>
+	<h2>Cambio password</h2>
 	<form name='cambio_password' method='post' action='./cambio_password_script.php'>
 		<label for='password_vecchia'>Vecchia password: </label> 
 		<input type='password' id='vecchia_password' name='password_vecchia' placeholder='La tua vecchia password'>
