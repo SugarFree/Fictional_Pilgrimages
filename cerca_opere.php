@@ -1,5 +1,5 @@
 <?php
-	$titolo="Fictional Pilgrimages";
+	$titolo="Cerca opere - Fictional Pilgrimages";
 	$path="Cerca opere";
 	$current_menu_item=2;
 	include "top.php";
