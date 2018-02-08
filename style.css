@@ -215,7 +215,7 @@ dt {
 } 
 
 #Top {
-    display: none;
+    display: block;
     position: fixed;
     bottom: 35px;
     right: 7px;
