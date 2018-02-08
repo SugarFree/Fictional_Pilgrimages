@@ -15,6 +15,7 @@ h1, #path, #corpo, #footer {
   margin-left: 0px; /* sidenav */
   border-radius: 0px;
   border: 0px;
+  box-shadow: 0 0 0 0;
   padding: 0px; }
 
 h1, #path, #footer {
@@ -27,6 +28,11 @@ h1 {
   text-align: center;
   font-size: 3em;
   padding-top: 0.5em;
+}
+
+#corpo {
+  padding: 0 5%;
+  width: 90%;
 }
 
 #sidenav {
@@ -76,7 +82,7 @@ h1 {
 
 #path form button {
   float: right;
-  margin: 0.1em 1%;
+  margin: 0.1em;
   border-radius: 0.3em;
   font-size: 0.8em;
   border-style: solid;
@@ -145,6 +151,14 @@ h2 {
 
 #didascalia {
 	display: none;
+}
+
+input[type=text], input[type=password]{
+  color: black;
+  width: 88%;
+  padding: 2%;
+  margin: 2vh 3%;
+  display: inline-block;
 }
 
 #Top {

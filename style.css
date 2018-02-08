@@ -201,8 +201,12 @@ input[type=submit] {
   padding: 12px 20px;
   margin: 1em 1em;
   border: none;
-  cursor: auto;
-  outline: 2px solid #216181;
+  cursor: pointer;
+  outline: 1px solid #216181;
+}
+
+input[type=submit]:hover {
+  background-color: #93a459;
 }
 
 dt {
