@@ -7,8 +7,8 @@ try
 {
     if (isset($_SESSION['username']))//Se l'utente risulta già loggato, mostra un messaggio adeguato
     {
-
-        Throw new Exception( "Utente già loggato, esegui il logout prima");
+        header("refresh:3; index.php");
+        Throw new Exception("Utente già loggato, esegui il logout prima. Tra 3 secondi sarai reindirizzato alla homepage dove potrai effettuare il logout.");
 
     } else//Altrimenti va col login
     {
@@ -20,11 +20,13 @@ try
         //Se l'username o la password inseriti sono vuoti, avvisa l'utente
         if (empty($username))
         {
-            throw new Exception("Inserisci un username");
+            header("refresh:3; registrazione.php");
+            throw new Exception("Inserisci un username. Tra 3 secondi sarai reindirizzato alla pagina di login.");
         }
         if (empty($password))
         {
-            throw new Exception("Inserisci una password");
+            header("refresh:3; registrazione.php");
+            throw new Exception("Inserisci una password. Tra 3 secondi sarai reindirizzato alla pagina di login.");
         }
 
         //Verifica se la combinazione di username e password inserita è corretta
@@ -35,7 +37,8 @@ try
 
         //Se la query per qualche motivo fallisce, mostra un messaggio di errore ed esce
         if ($verifica_login->error != "") {
-            throw new Exception("Errore del database:" . $verifica_login->error);
+            header("refresh:3; registrazione.php");
+            throw new Exception("Errore del database:" .$verifica_login->error. ". Tra 3 secondi sarai reindirizzato alla pagina di login.");
 
         }
 
@@ -49,7 +52,8 @@ try
             $conn->close();
         } else//Altrimenti mostra messaggio di errore ed esce
         {
-            throw new Exception("Combinazione di nome utente e password errata");
+            header("refresh:3; registrazione.php");
+            throw new Exception("Combinazione di nome utente e password errata. Tra 3 secondi sarai reindirizzato alla pagina di login.");
 
         }
     }

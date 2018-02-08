@@ -1,6 +1,6 @@
 <?php
-$titolo="Fictional Pilgrimages";
-$path="Pannello Utente";
+$titolo="Pannello utente";
+$path="Pannello utente";
 $current_menu_item=3;
 include "top.php";
 

@@ -34,22 +34,26 @@ try {
     //Verifica che username e password inseriti non siano vuoti
     if (empty($username))
     {
-       throw new Exception("Inserire un username");
+        header("refresh:3; registrazione.php");
+        throw new Exception("Inserire un username. Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
     }
 
     if (empty($password))
     {
-         throw new Exception("Inserire una password");
+        header("refresh:3; registrazione.php");
+        throw new Exception("Inserire una password. Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
     }
 
     //Verifico che l'email sia nel formato corretto
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        throw  new Exception("Formato indirizzo email errato");
+        header("refresh:3; registrazione.php");
+        throw  new Exception("Formato indirizzo email errato. Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
     }
 
     //Verifico che la password sia ripetuta correttamente in entrambi i campi
     if ($password != $conferma_password) {
-        throw new Exception("Password non ripetuta correttamente");
+        header("refresh:3; registrazione.php");
+        throw new Exception("Password non ripetuta correttamente. Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
     }
 
     //Se questi due check passano, controllo se l'email o l'username erano già presenti nel db
@@ -59,7 +63,8 @@ try {
 
     //Se la query fallisce per qualsiasi motivo, esce
     if ($verifica_email->error != "") {
-        throw  new  Exception("Errore ritornato dal database:" . $verifica_email->error);
+        header("refresh:3; registrazione.php");
+        throw  new  Exception("Errore ritornato dal database:" .$verifica_email->error. ". Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
     }
     $risultato_email = $verifica_email->get_result();
     //Se l'email è nuova, tutto ok, altrimenti esce
@@ -73,7 +78,8 @@ try {
 
         //Se la query fallisce per qualsiasi motivo, esce
         if ($verifica_username->error != "") {
-            throw new Exception( "Errore ritornato dal database:" . $verifica_username->error);
+            header("refresh:3; registrazione.php");
+            throw new Exception( "Errore ritornato dal database:" .$verifica_username->error. ". Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
         }
         $risultato_username = $verifica_username->get_result();
 
@@ -90,16 +96,17 @@ try {
                 {
                     $inserimento->close();
                     $conn->close();
-                    throw new Exception( "Errore ritornato dal database:" . $inserimento->error);
+                    header("refresh:3; registrazione.php");
+                    throw new Exception( "Errore ritornato dal database:" .$inserimento->error. ". Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
                 }
                 $inserimento->close();
                 $conn->close();
             } else {
                 //Se l'username è già esistente esce
-                //echo "Un username corrisponde";
                 $verifica_username->close();
                 $conn->close();
-                throw new Exception("Username gia' esistente, per favore sceglierne un altro");
+                header("refresh:3; registrazione.php");
+                throw new Exception("Username gia' esistente, per favore sceglierne un altro. Tra 3 secondi sarai reindirizzato alla pagina di registrazione.");
 
             }
     }
@@ -107,7 +114,8 @@ try {
     {
         $verifica_email->close();
         $conn->close();
-        throw  new Exception("Email relativa ad un account gia' esistente. Recarsi alla pagina di Login.");
+        header("refresh:3; registrazione.php");
+        throw  new Exception("Email relativa ad un account gia' esistente. Tra 3 secondi sarai reindirizzato alla pagina di login.");
     }
 }
 
