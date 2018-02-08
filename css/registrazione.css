@@ -1,0 +1,48 @@
+body #corpo {
+	border: 0;
+	background-color: inherit;
+	box-shadow: none; }
+
+#registrazione, #login {
+	display: block;
+	color: #eee;
+	width: 40%;
+	background-color: #0D4263;
+	margin: 3%; }
+
+#registrazione {
+	float: left; }
+
+#login {
+	float: right; }
+
+#registrazione *, #login * {
+	margin: 2em; }
+
+#registrazione input[type=text], #login input[type=text] {
+	color: black;
+	border: none;
+	border-bottom: 3px solid #93a459;
+	width: 90%;
+	margin: 2vh 0;
+	display: inline-block; }
+
+#registrazione input[type=password], #login input[type=password] {
+	color: black;
+	border: none;
+	border-bottom: 3px solid #93a459;
+	width: 90%;
+	margin: 2vh 0;
+	display: inline-block; }
+
+#registrazione input[type=submit], #login input[type=submit] {
+	width: 90%;
+	background-color: #0D4263;
+	color: #eeeeee;
+	margin: 8px 1em 8px;
+	border: none;
+	cursor: auto;
+	outline: 2px solid #216181; }
+
+#registrazione input[type=submit]:hover, #login input[type=submit]:hover {
+	background-color: #93a459; }

@@ -3,59 +3,52 @@
 <head>
 	<title><?php echo $titolo; ?></title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-	<script type='text/javascript' src='script.js'></script>
+	<script type='text/javascript' src='./js/main.js'></script>
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Crimson+Text:600' />
-	<link rel='stylesheet' type='text/css' href='style.css' />
-	<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='small_style.css' />
-	<link rel="stylesheet" type="text/css" media="print" href="print_style.css"/>
+	<link rel='stylesheet' type='text/css' href='./css/main.css' />
+<?php
+	if(isset($local_style))
+		echo "\t<link rel='stylesheet' type='text/css' href='./css/$local_style.css' />\n";
+?>
+	<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='./css/mobile.css' />
+<?php
+	if(isset($local_mobile_style))
+		echo "\t<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='./css/$local_mobile_style.css' />\n";
+?>
+	<link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
 </head>
 <body>
 	<h1 id='titolo'>Fictional Pilgrimages</h1>
-	<div id='path'>
-		Ti trovi in: <?php echo $path . "\n";?>
-		<?php
-		session_start();
-		if(!isset($_SESSION['username'])) {
-			echo ("<form method='get' action='registrazione.php'>\n" .
-				"\t\t\t<div>\n" .
-				"\t\t\t\t<button type='submit'>Connettiti</button>\n" .
-				"\t\t\t</div>\n" .
-				"\t\t</form>\n"); }
-		else {
-			echo ("<form method='get' action='logout.php'>\n" .
-				"\t\t\t<div>\n" .
-				"\t\t\t\t<button type='submit'>Logout</button>\n" .
-				"\t\t\t</div>\n" .
-				"\t\t</form>\n" .
-				"\t\t<p id='prova'>Ciao " . $_SESSION['username'] . "</p>\n");	}
-		?>
-	</div>
+<?php
+	if(isset($path))
+		include "view/path.php";
+?>
 	<div id='sidenav'>
 		<a href='#corpo' style='display: none'>Clicca per saltare il menu.</a>
 		<img id='logo' src='./img/logo.png' alt='Logo del sito' />
-		<ul id='menu'><?php
-			class menu_item {
-				function __construct($href, $icon, $text) {
-					$this->href=$href;
-					$this->icon=$icon;
-					$this->testo=$text; }}
+		<ul id='menu'>
+<?php
+	class menu_item {
+		function __construct($href, $icon, $text) {
+			$this->href=$href;
+			$this->icon=$icon;
+			$this->testo=$text; }}
 
-			$menu_items = array(new menu_item("index.php","home.png","Home"),
-				new menu_item("ricerca_per_localita.php","world.png","Cerca localit&agrave;"),
-				new menu_item("cerca_opere.php","titolo.png","Cerca opere"));
+	$menu_items = array(new menu_item("index.php","home.png","Home"),
+		new menu_item("ricerca_per_localita.php","world.png","Cerca localit&agrave;"),
+		new menu_item("cerca_opere.php","titolo.png","Cerca opere"));
 
-			if(isset($_SESSION['username']))
-				$menu_items[] = new menu_item("pannelloUtente.php","utente.png","Pannello utente");
+	if(isset($_SESSION['username']))
+		$menu_items[] = new menu_item("pannelloUtente.php","utente.png","Pannello utente");
 
-			echo "\n";
-			for($i=0; $i<count($menu_items); $i++) {
-				echo "\t\t\t";
-				if($i == $current_menu_item) {
-					echo "<li class='selected'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</li>"; }
-				else {
-					echo "<li><a href='" . $menu_items[$i]->href . "'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</a></li>"; }
-				echo "\n"; }
-			?>
+	for($i=0; $i<count($menu_items); $i++) {
+		echo "\t\t\t";
+		if($i == $current_menu_item) {
+			echo "<li class='selected'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</li>"; }
+		else {
+			echo "<li><a href='" . $menu_items[$i]->href . "'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</a></li>"; }
+		echo "\n"; }
+?>
 		</ul>
 	</div>
 	<div id='corpo'>
