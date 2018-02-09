@@ -32,11 +32,11 @@ try {
 		if ($risultato_login->num_rows == 1) { //Se corrisponde ai dati presenti nel db si logga come quello specifico utente
 			$_SESSION["username"] = $username;
 
-			if(isset($_POST['destination'])) {
-				header("Location: " . $_POST['destination']); }
-			else {
+			if(isset($_POST['destination']))
+				header("refresh:3; " . $_POST['destination']);
+			else
 				header("refresh:3; index.php");
-				echo("Ti sei loggato come " .$_SESSION['username']. ". Tra 3 secondi sarai reindirizzato alla homepage."); }
+			echo("Ti sei loggato come " .$_SESSION['username']. ". Tra 3 secondi verrai reindirizzato.");
 
 			$verifica_login->close();
 			$conn->close(); }

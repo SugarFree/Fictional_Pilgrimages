@@ -16,6 +16,8 @@
 		echo "\t<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='./css/$local_mobile_style.css' />\n";
 ?>
 	<link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
 </head>
 <body>
 	<h1 id='titolo'>Fictional Pilgrimages</h1>
@@ -43,10 +45,10 @@
 
 	for($i=0; $i<count($menu_items); $i++) {
 		echo "\t\t\t";
-		if($i == $current_menu_item) {
-			echo "<li class='selected'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</li>"; }
-		else {
-			echo "<li><a href='" . $menu_items[$i]->href . "'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</a></li>"; }
+		if($i == $current_menu_item)
+			echo "<li class='selected'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</li>";
+		else
+			echo "<li><a href='" . $menu_items[$i]->href . "'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</a></li>";
 		echo "\n"; }
 ?>
 		</ul>
