@@ -7,12 +7,21 @@ h1, #path, #corpo, #footer {
 	padding: 0; }
 
 h1 {
-	padding-top: 0.5em;
-	/*font-size: 6.5vw;*/}
+	font-size: 67px; }
+
+h2, #path{
+	font-size: 25px; }
+
+#footer, input[type=text], input[type=password], input[type=submit] {
+	font-size: 20px; }
+
+#corpo { /*ok, sia testo, che h2, che bottoni*/
+	font-size: 20px; }
+
+#sidenav {/*modifica solo lo spazio che separa il sidenav dal path*/ }
 
 #sidenav {
 	width: 100%;
-	height: 36%;
 	float: none;
 	position: static;
 	z-index: auto;
@@ -23,21 +32,24 @@ h1 {
 	display: none; }
 
 #sidenav #menu li {
-	/*font-size: 2em;*/}
+	width: 100%;
+	font-size: 35px;
+	height: 70px; 
+	line-height: 70px; }
 
 #sidenav #menu li .icon {
 	display: none; }
 
 #path {
 	width: 96%;
-	/*font-size: 2em;*/
 	margin-top: 10px;
 	padding: 2%; }
 
 #path form button {
-	margin: 0.1em;
-	/*font-size: 0.8em;*/
-	border-radius: 0.3em; }
+	font-size: 20px;
+	border-radius: 0.3em; 
+	width: 80px;
+	height: 25px;}
 
 #corpo{
 	padding: 0 5%;
@@ -53,14 +65,12 @@ h2 {
 	margin-left: 15%;
 	width: 8em;
 	height: 3em;
-	font-size: 2em;
 	box-shadow: 5px 5px 5px #888888; }
 
 #bottone2 {
 	margin-right: 15%;
 	width: 8em;
 	height: 3em;
-	font-size: 2em;
 	box-shadow: 5px 5px 5px #888888; }
 
 #corpo h3 {
@@ -89,5 +99,4 @@ input[type=text], input[type=password]{
 
 #footer {
 	width: 96%;
-	/*font-size: 100%;*/
 	padding: 2%; }

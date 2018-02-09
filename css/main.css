@@ -27,7 +27,8 @@ h1 {
 	font-family: 'Crimson Text';
 	vertical-align: center;
 	text-align: center;
-	font-size: 5vw; }
+	line-height: 125px;
+	font-size: 67px; }
 
 #sidenav {
 	width: 150px;
@@ -62,16 +63,17 @@ h1 {
 
 #sidenav #menu li {
 	border-bottom: 5px solid #f0f0f0;
-	padding: 10px;
+	height:90px;
+	width:150px;
 	font-size: 1em;
 	text-align: center;
 	color: #d6dcba; }
 
 #sidenav #menu li .icon {
-	height: 2.5em;
+	height: 45px;
 	display: block;
 	margin: auto;
-	padding-bottom: 0.5em; }
+	padding: 0.5em 0; }
 
 #sidenav #menu li:hover {
 	background-color: #93a459;
@@ -79,8 +81,7 @@ h1 {
 
 #sidenav #menu .selected:hover {
 	background-color: #216181;
-	color: #d6dcba
-}
+	color: #d6dcba; }
 
 #sidenav #menu a {
 	display: block;
@@ -91,7 +92,9 @@ h1 {
 
 #path {
 	margin-top: 20px;
-	font-weight: bold; }
+	font-weight: bold; 
+	font-size: 20px;
+	line-height: 20px; }
 
 #path form {
 	float: right; }
@@ -103,8 +106,8 @@ h1 {
 	font-size: 15px;
 	border-style: solid;
 	background-color: white;
-	width: 5em;
-	height: 1.5em;
+	width: 80px;
+	height: 20px;
 	cursor: pointer; }
 
 #prova {
@@ -199,7 +202,7 @@ input[type=submit] {
 	background-color: #0D4263;
 	color: #eeeeee;
 	padding: 12px 20px;
-	margin: 1em 1em;
+	margin-top: 1em;
 	border: none;
 	cursor: pointer;
 	outline: 1px solid #216181; }
