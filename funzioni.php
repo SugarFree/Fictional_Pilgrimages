@@ -26,7 +26,7 @@ function risultato_array_post($risultato)
 
 /**
  * @param mysqli_result $risultato Il risultato della query SELECT nella tabella post
- * @return mixed array Un array di oggetti di tipo opera o FALSE se la query contiene zero risultati
+ * @return mixed  Un array di oggetti di tipo opera o FALSE se la query contiene zero risultati
  */
 function risultato_array_opera($risultato)
 {
@@ -39,6 +39,20 @@ function risultato_array_opera($risultato)
         $i++;
     }
     return $array_opere;
+}
+
+
+/**
+ * @param mysqli_result $risultato Il risultato della query SELECT nella tabella opera
+ * @return mixed Un oggetto di tipo opera o FALSE se la query contiene zero risultati
+ */
+function risultato_singola_opera($risultato)
+{
+    if($risultato->num_rows==0) return FALSE;
+    $risultato=mysqli_fetch_array($risultato,MYSQLI_ASSOC);
+    $opera=new opera($risultato["titolo"],$risultato["descrizione"],$risultato["tipo"]);
+
+    return $opera;
 }
 
 /**
