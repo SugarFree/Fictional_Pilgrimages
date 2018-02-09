@@ -9,11 +9,11 @@
 					"\t\t\t</div>\n" .
 					"\t\t</form>\n"); }
 			else {
-				echo ("<span id='prova'>Ciao " . $_SESSION['username'] . "!</span>\n" .
-					"\t\t<form method='get' action='logout.php'>\n" .
+				echo ("<form method='get' action='logout.php'>\n" .
 					"\t\t\t<div>\n" .
 					"\t\t\t\t<button type='submit'>Logout</button>\n" .
 					"\t\t\t</div>\n" .
-					"\t\t</form>\n");	}
+					"\t\t</form>\n" .
+					"\t\t<span id='prova'>Ciao " . $_SESSION['username'] . "!</span>\n");	}
 		?>
 	</div>
