@@ -1,11 +1,11 @@
 
 		<dl>
 			<dt>Fotografia:</dt>
-			<dd><a target='_blank' href='./uploads/<?php echo $risultato_post->id; ?>.jpg'><img src='./uploads/<?php echo $risultato_post->id; ?>.jpg' /></a></dd>
+			<dd><a href='./uploads/<?php echo $risultato_post->id; ?>.jpg'><img src='./uploads/<?php echo $risultato_post->id; ?>.jpg' alt='' /></a></dd>
 <?php
 	if(file_exists("./uploads/" . $risultato_post->id . "A.jpg"))
 		echo "\t\t\t<dt>Corrispettivo <span lang='en'>screencap</span>:</dt>\n" .
-			"\t\t\t<dd><a target='_blank' href='./uploads/" . $risultato_post->id . "A.jpg'><img src='./uploads/" . $risultato_post->id . "A.jpg' /></a></dd>\n";
+			"\t\t\t<dd><a href='./uploads/" . $risultato_post->id . "A.jpg'><img src='./uploads/" . $risultato_post->id . "A.jpg' alt='' /></a></dd>\n";
 ?>
 			<dt>Autore:</dt>
 			<dd><?php echo $risultato_post->username; ?></dd>
@@ -14,7 +14,7 @@
 			<dt>Stato:</dt>
 			<dd><?php echo $risultato_post->stato; ?></dd>
 			<dt>Localit&agrave;:</dt>
-			<dd><?php echo "<a href='localita.php?nome=". $risultato_post->localita . "'>" . $risultato_post->localita . "<a>"; ?></dd>
+			<dd><?php echo "<a href='localita.php?nome=". $risultato_post->localita . "'>" . $risultato_post->localita . "</a>"; ?></dd>
 <?php
 	if($risultato_post->indirizzo !== '')
 		echo "\t\t\t<dt>Indirizzo:</dt>\n" .
