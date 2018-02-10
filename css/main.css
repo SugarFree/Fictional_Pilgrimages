@@ -5,6 +5,7 @@
 
 html, body {
 	max-width: 1760px;
+	height: 100%;
 	background-color: #f0f0f0;
 	font-family: sans-serif;
 	font-size: 100%;
@@ -114,7 +115,11 @@ h1 {
 	float: right;
 	padding-right: 1em; }
 
+#corpo *{
+	margin: 1em; }
+
 #corpo {
+	min-height: 30%;
 	margin-top: 20px;
 	background-color: white;
 	border: 3px solid #0D4263;
@@ -229,6 +234,9 @@ dt {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 1em; }
+
+#footer a{
+	color:#eeeeee; }
 
 #footer #copyright {
 	float: right; }
