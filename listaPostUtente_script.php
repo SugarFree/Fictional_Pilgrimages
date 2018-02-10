@@ -9,7 +9,7 @@ require_once "funzioni.php";
  * I commenti sono oggetti di tipo "commento" contenuti nel vettore $array_commenti.
  */
 $username = $_POST["username"];
-$username = trim(strip_tags($username));
+$username=trim(strip_tags($username));
 try
 {
     $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND username=?");

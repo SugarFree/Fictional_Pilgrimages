@@ -24,15 +24,15 @@ class post
      */
     function __construct($id, $titolo_opera, $descrizione, $latitudine, $longitudine, $username, $stato, $indirizzo, $localita)
     {
-        $this->id = $id;
-        $this->titolo_opera = $titolo_opera;
-        $this->descrizione = $descrizione;
-        $this->latitudine = $latitudine;
-        $this->longitudine = $longitudine;
-        $this->username = $username;
-        $this->stato = $stato;
-        $this->indirizzo = $indirizzo;
-        $this->localita = $localita;
+        $this->id=$id;
+        $this->titolo_opera=$titolo_opera;
+        $this->descrizione=$descrizione;
+        $this->latitudine=$latitudine;
+        $this->longitudine=$longitudine;
+        $this->username=$username;
+        $this->stato=$stato;
+        $this->indirizzo=$indirizzo;
+        $this->localita=$localita;
     }
 }
 
