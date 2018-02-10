@@ -13,12 +13,13 @@ require_once "connessione.php";
  */
 function risultato_array_post($risultato)
 {
-    if($risultato->num_rows==0) return FALSE;
-    $i=0;
-    $risultato=mysqli_fetch_all($risultato,MYSQLI_ASSOC);
+    if ($risultato->num_rows == 0)
+        return FALSE;
+    $i = 0;
+    $risultato = mysqli_fetch_all($risultato, MYSQLI_ASSOC);
     foreach ($risultato as $value)
     {
-        $array_post[$i]=new post($value["id"], $value["titolo_opera"], $value["descrizione"], $value["latitudine"], $value["longitudine"], $value["username"], $value["stato"],$value["indirizzo"], $value["localita"]);
+        $array_post[$i] = new post($value["id"], $value["titolo_opera"], $value["descrizione"], $value["latitudine"], $value["longitudine"], $value["username"], $value["stato"], $value["indirizzo"], $value["localita"]);
         $i++;
     }
     return $array_post;
@@ -30,12 +31,13 @@ function risultato_array_post($risultato)
  */
 function risultato_array_opera($risultato)
 {
-    if($risultato->num_rows==0) return FALSE;
-    $i=0;
-    $risultato=mysqli_fetch_all($risultato,MYSQLI_ASSOC);
+    if ($risultato->num_rows == 0)
+        return FALSE;
+    $i = 0;
+    $risultato = mysqli_fetch_all($risultato, MYSQLI_ASSOC);
     foreach ($risultato as $value)
     {
-        $array_opere[$i]=new opera($value["titolo"],$value["descrizione"],$value["tipo"]);
+        $array_opere[$i] = new opera($value["titolo"], $value["descrizione"], $value["tipo"]);
         $i++;
     }
     return $array_opere;
@@ -48,9 +50,10 @@ function risultato_array_opera($risultato)
  */
 function risultato_singola_opera($risultato)
 {
-    if($risultato->num_rows==0) return FALSE;
-    $risultato=mysqli_fetch_array($risultato,MYSQLI_ASSOC);
-    $opera=new opera($risultato["titolo"],$risultato["descrizione"],$risultato["tipo"]);
+    if ($risultato->num_rows == 0)
+        return FALSE;
+    $risultato = mysqli_fetch_array($risultato, MYSQLI_ASSOC);
+    $opera = new opera($risultato["titolo"], $risultato["descrizione"], $risultato["tipo"]);
 
     return $opera;
 }
@@ -61,9 +64,10 @@ function risultato_singola_opera($risultato)
  */
 function risultato_singolo_post($risultato)
 {
-    if($risultato->num_rows==0) return FALSE;
-    $risultato=mysqli_fetch_array($risultato,MYSQLI_ASSOC);
-    $post=new post($risultato["id"], $risultato["titolo_opera"], $risultato["descrizione"], $risultato["latitudine"], $risultato["longitudine"], $risultato["username"], $risultato["stato"],$risultato["indirizzo"], $risultato["localita"]);
+    if ($risultato->num_rows == 0)
+        return FALSE;
+    $risultato = mysqli_fetch_array($risultato, MYSQLI_ASSOC);
+    $post = new post($risultato["id"], $risultato["titolo_opera"], $risultato["descrizione"], $risultato["latitudine"], $risultato["longitudine"], $risultato["username"], $risultato["stato"], $risultato["indirizzo"], $risultato["localita"]);
 
     return $post;
 }
@@ -75,12 +79,13 @@ function risultato_singolo_post($risultato)
  */
 function risultato_array_commento($risultato)
 {
-    if($risultato->num_rows==0) return FALSE;
-    $i=0;
-    $risultato=mysqli_fetch_all($risultato,MYSQLI_ASSOC);
+    if ($risultato->num_rows == 0)
+        return FALSE;
+    $i = 0;
+    $risultato = mysqli_fetch_all($risultato, MYSQLI_ASSOC);
     foreach ($risultato as $value)
     {
-        $array_commenti[$i]=new commento($value["id_post"],$value["username"], $value["testo"],$value["timestamp"]);
+        $array_commenti[$i] = new commento($value["id_post"], $value["username"], $value["testo"], $value["timestamp"]);
         $i++;
     }
     return $array_commenti;
@@ -101,7 +106,7 @@ function amministratore($username)
         $verifica_username->execute();
         if ($verifica_username->error != "")
         {
-            throw new Exception( "Errore ritornato dal database:" . $verifica_username->error);
+            throw new Exception("Errore ritornato dal database:" . $verifica_username->error);
         }
 
         $risultato_username = $verifica_username->get_result();

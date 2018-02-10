@@ -1,10 +1,10 @@
 <?php
-	$titolo="Cerca opere - Fictional Pilgrimages";
-	$path="Cerca opere";
-	$current_menu_item=2;
-	include "top.php";
+$titolo = "Cerca opere - Fictional Pilgrimages";
+$path = "Cerca opere";
+$current_menu_item = 2;
+include "top.php";
 
-	include "view/cerca_opere.php";
+include "view/cerca_opere.php";
 
-	include "bottom.php";
+include "bottom.php";
 ?>

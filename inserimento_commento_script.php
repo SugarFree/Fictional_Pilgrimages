@@ -3,16 +3,16 @@
 session_start();
 require_once "connessione.php";
 
-$username=$_SESSION["username"];
-$id_post=$_POST["id_post"];
-$testo=$_POST["testo"];
+$username = $_SESSION["username"];
+$id_post = $_POST["id_post"];
+$testo = $_POST["testo"];
 
-$id_post=trim(strip_tags($id_post));
-$testo=trim(strip_tags($testo));
+$id_post = trim(strip_tags($id_post));
+$testo = trim(strip_tags($testo));
 
 try
 {
-    if(empty($_SESSION["username"]))
+    if (empty($_SESSION["username"]))
     {
         throw  new Exception("Devi loggarti per poter effettuare questa azione");
     }
@@ -21,13 +21,13 @@ try
     $inserimento->execute();
     if ($inserimento->error != "")
     {
-        throw new Exception( "Errore ritornato dal database:" . $inserimento->error);
+        throw new Exception("Errore ritornato dal database:" . $inserimento->error);
     }
 }
 
 catch (Exception $e)
 {
-    echo 'ERRORE: '.  $e->getMessage();
+    echo 'ERRORE: ' . $e->getMessage();
 }
 
 echo "Commento inserito con successo!";

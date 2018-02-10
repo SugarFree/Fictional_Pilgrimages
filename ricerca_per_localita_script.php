@@ -2,12 +2,12 @@
 require_once "connessione.php";
 require_once "funzioni.php";
 
-$stato=$_POST["stato"];
-$localita=$_POST["localita"];
-$errore="";
+$stato = $_POST["stato"];
+$localita = $_POST["localita"];
+$errore = "";
 
-$stato=trim(strip_tags($stato));
-$localita="%".trim(strip_tags($localita))."%";
+$stato = trim(strip_tags($stato));
+$localita = "%" . trim(strip_tags($localita)) . "%";
 
 
 /*Di seguito tutti i casi possibili. Lo stato deve essere uguale perchè viene da un option value, la località deve solo
@@ -25,19 +25,22 @@ try
             $errore = mysqli_error($conn);
             throw new Exception("Errore del database: " . $errore);
         }
-    } else if (empty($localita) and !empty($stato))
+    }
+    else if (empty($localita) and !empty($stato))
     {
 
         $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND stato=?");
         $risultato->bind_param("s", $stato);
         $risultato->execute();
-        if ($risultato->error != "") {
+        if ($risultato->error != "")
+        {
             $errore = mysqli_error($conn);
             $errore = ("Errore del database: " . $errore);
             throw new Exception($errore);
         }
         $risultato = $risultato->get_result();
-    } else if (!empty($localita) and empty($stato))
+    }
+    else if (!empty($localita) and empty($stato))
     {
 
         $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND localita LIKE ?");
@@ -68,7 +71,7 @@ try
     //L'array di oggetti "post" si trova in $risultato
     $risultato = risultato_array_post($risultato);
 }
-catch(Exception $e)
+catch (Exception $e)
 {
     echo $e->getMessage();
 }
