@@ -100,3 +100,18 @@ input[type=text], input[type=password]{
 #footer {
 	width: 96%;
 	padding: 2%; }
+
+#registrazione, #login {
+	display: block;
+	color: #eee;
+	width: 86%;
+	background-color: #0D4263;
+	margin: 7%; }
+
+#registrazione input[type=text], #login input[type=text] {
+	width: 88%; 
+	margin: 2vh 3%;}
+
+#registrazione input[type=password], #login input[type=password] {
+	width: 88%; 
+	margin: 2vh 3%;}
