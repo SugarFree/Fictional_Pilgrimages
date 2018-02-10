@@ -5,7 +5,7 @@
 	include "top.php";
 
 	require_once 'connessione.php';
-	if(isset($_SESSION['username']))
+	if(isset($_SESSION["username"]))
 		include "view/pannelloUtente.php";
 	else
 		header("Location: registrazione.php?destination=" . basename(__FILE__));

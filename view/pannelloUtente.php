@@ -14,11 +14,11 @@
 		<h2>Pannello di controllo</h2>
 		<dl>
 			<dt>Username:</dt>
-			<dd><?php echo($_SESSION['username']) ?></dd>
+			<dd><?php echo($_SESSION["username"]) ?></dd>
 			<dt>Email:</dt>
-			<dd><?php echo $arr['email']; ?></dd>
+			<dd><?php echo $arr["email"]; ?></dd>
 			<dt>Tipo di utente:</dt>
-			<dd><?php echo $arr2['privilegi']; ?></dd>
+			<dd><?php echo $arr2["privilegi"]; ?></dd>
 		</dl>
 		<div id='cambio'>
 			<h2>Cambio password</h2>

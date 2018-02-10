@@ -33,3 +33,24 @@
 			"\t\t\t<dd>" . $risultato_post->descrizione . "</dd>\n";
 ?>
 		</dl>
+<?php
+	if($risultato_commenti !== false) {
+		echo "\t\t<ul id='commenti'>\n";
+		for($i=0; $i<count($risultato_commenti); $i++) {
+			echo "\t\t\t<li>\n";
+			echo "\t\t\t\t<p>" . $risultato_commenti[$i]->testo . "</p>\n";
+			echo "\t\t\t\tInviato da " . $risultato_commenti[$i]->username . " il " . $risultato_commenti[$i]->timestamp . "\n";
+			echo "\t\t\t</li>\n"; }
+		echo "\t\t</ul>\n"; }
+
+	if(isset($_SESSION['username'])) {
+		echo "\t\t<form method='post' action='inserimento_commento_script.php'>\n" .
+			"\t\t\t<fieldset>\n" .
+			"\t\t\t\t<input type='hidden' name='id_post' value='$risultato_post->id' />\n" .
+			"\t\t\t\t<textarea name='testo' rows='5' cols='25'></textarea>\n" .
+			"\t\t\t\t<input type='submit' value='Invia un commento' />\n" .
+			"\t\t\t</fieldset>\n" .
+			"\t\t</form>"; }
+	else {
+		echo "\t\t<a href='./registrazione.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti."; }
+?>
