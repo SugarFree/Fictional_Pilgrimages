@@ -8,7 +8,7 @@
 	if(isset($_SESSION["username"]))
 		include "view/pannelloUtente.php";
 	else
-		header("Location: registrazione.php?destination=" . basename(__FILE__));
+		header("Location: connettiti.php?destination=" . basename(__FILE__));
 
 	include "bottom.php";
 ?>

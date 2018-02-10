@@ -8,7 +8,6 @@
 	$current_menu_item=-1;
 	include "top.php";
 
-	//if(isset($id))
 	if($risultato_post !== false)
 		include "view/post.php";
 	else {

@@ -31,26 +31,32 @@
 	if($risultato_post->descrizione !== '')
 		echo "\t\t\t<dt>Descrizione:</dt>\n" .
 			"\t\t\t<dd>" . $risultato_post->descrizione . "</dd>\n";
+
+	if(!(is_null($risultato_post->latitudine) || is_null($risultato_post->longitudine)))
+		echo "\t\t\t<dt lang='en'>Streetview:</dt>\n" .
+			"\t\t\t<dd><object width='500px' height='500px' data='https://www.google.com/maps/embed/v1/streetview?key=AIzaSyBEEJQuz4dw1e0pSdKoaUzOsg0iZsnZgHQ&amp;location=" .
+			$risultato_post->latitudine . "," . $risultato_post->longitudine . "'></object></dd>\n";
 ?>
 		</dl>
 <?php
 	if($risultato_commenti !== false) {
 		echo "\t\t<ul id='commenti'>\n";
 		for($i=0; $i<count($risultato_commenti); $i++) {
-			echo "\t\t\t<li>\n";
-			echo "\t\t\t\t<p>" . $risultato_commenti[$i]->testo . "</p>\n";
-			echo "\t\t\t\tInviato da " . $risultato_commenti[$i]->username . " il " . $risultato_commenti[$i]->timestamp . "\n";
-			echo "\t\t\t</li>\n"; }
+			echo "\t\t\t<li>\n" .
+				"\t\t\t\t<p>" . $risultato_commenti[$i]->testo . "</p>\n" .
+				"\t\t\t\tInviato da " . $risultato_commenti[$i]->username . " il " . $risultato_commenti[$i]->timestamp . "\n" .
+				"\t\t\t</li>\n"; }
 		echo "\t\t</ul>\n"; }
 
 	if(isset($_SESSION['username'])) {
 		echo "\t\t<form method='post' action='inserimento_commento_script.php'>\n" .
 			"\t\t\t<fieldset>\n" .
 			"\t\t\t\t<input type='hidden' name='id_post' value='$risultato_post->id' />\n" .
-			"\t\t\t\t<textarea name='testo' rows='5' cols='25'></textarea>\n" .
-			"\t\t\t\t<input type='submit' value='Invia un commento' />\n" .
+			"<label for='testo_commento'>Scrivi un commento:</label>\n" .
+			"\t\t\t\t<textarea name='testo' id='testo_commento' rows='5' cols='25'></textarea>\n" .
+			"\t\t\t\t<input type='submit' value='Invia' />\n" .
 			"\t\t\t</fieldset>\n" .
 			"\t\t</form>"; }
 	else {
-		echo "\t\t<a href='./registrazione.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti."; }
+		echo "\t\t<a href='./connettiti.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti."; }
 ?>

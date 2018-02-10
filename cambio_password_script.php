@@ -12,7 +12,7 @@ try
 {
     if(empty($_SESSION["username"]))
     {
-        header("refresh:3; registrazione.php");
+        header("refresh:3; connettiti.php");
         throw  new Exception("Devi loggarti per poter effettuare questa azione. Tra 3 secondi sarai reindirizzato alla pagina di login.");
     }
 

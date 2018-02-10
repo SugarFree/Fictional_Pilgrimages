@@ -115,15 +115,18 @@ h1 {
 	float: right;
 	padding-right: 1em; }
 
-#corpo *{
-	margin: 1em; }
-
 #corpo {
 	min-height: 30%;
 	margin-top: 20px;
 	background-color: white;
 	border: 3px solid #0D4263;
 	overflow: hidden; }
+
+#corpo *{
+	margin: 1em; }
+
+#corpo span {
+	margin: 0; }
 
 #corpo ul {
 	padding-left: 25px; }
