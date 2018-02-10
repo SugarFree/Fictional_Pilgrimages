@@ -10,8 +10,8 @@
 			<label for='conferma_pw'>Conferma password:</label>
 			<input type='password' id='conferma_pw' name='conferma_password' placeholder='Riscrivi la tua password'>
 <?php
-	if(isset($_POST['destination']))
-		echo "\t\t\t<input type='hidden' name='destination' value='" . $_POST['destination'] . "' />\n";
+	if(isset($_GET['destination']))
+		echo "\t\t\t<input type='hidden' name='destination' value='" . htmlspecialchars($_GET['destination'], ENT_QUOTES) . "' />\n";
 ?>
 			<input type='submit' value='Registrati'>
 			</form>
@@ -24,8 +24,8 @@
 			<label for='pw'>Password:</label>
 			<input type='password' id='pw' name='password' placeholder='La tua password'>
 <?php
-	if(isset($_POST['destination']))
-		echo "\t\t\t<input type='hidden' name='destination' value='" . $_POST['destination'] . "' />\n";
+	if(isset($_GET['destination']))
+		echo "\t\t\t<input type='hidden' name='destination' value='" . htmlspecialchars($_GET['destination'], ENT_QUOTES) . "' />\n";
 ?>
 			<input type='submit' value='Login'>
 			</form>
