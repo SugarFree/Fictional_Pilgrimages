@@ -16,13 +16,13 @@ try
     {
         //Non occorre usare un prepared statement perchè non ci sono input di nessun tipo
 
-        $risultato = mysqli_query($conn, "SELECT * FROM post WHERE approvato=TRUE");
+        $risultato = mysqli_query($conn, "SELECT * FROM post WHERE approvato=TRUE ORDER BY localita ASC ");
         if ($risultato == FALSE) {
             $errore = mysqli_error($conn);
             throw new Exception("Errore del database: " . $errore);
         }
     } else {
-        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND titolo_opera=?");
+        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND titolo_opera=? ORDER BY localita ASC");
         $risultato->bind_param("s", $titolo);
         $risultato->execute();
         if ($risultato->error != "") {
