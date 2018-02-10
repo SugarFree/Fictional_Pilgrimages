@@ -1,6 +1,6 @@
 <?php
 	$titolo="Connettiti - Fictional pilgrimages";
-	$current_menu_item=null;
+	$current_menu_item=-1;
 	$local_style="registrazione";
 	include "top.php";
 

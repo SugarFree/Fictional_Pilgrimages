@@ -2,9 +2,9 @@
 /**
  * Contiene funzioni necessarie per le altre pagine PHP.
  */
-require_once "opera.php";
-require_once "post.php";
-require_once "commento.php";
+require_once "class/opera.php";
+require_once "class/post.php";
+require_once "class/commento.php";
 require_once "connessione.php";
 
 /**

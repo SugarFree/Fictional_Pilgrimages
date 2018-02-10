@@ -25,7 +25,7 @@
 		include "view/path.php";
 ?>
 	<div id='sidenav'>
-		<a href='#corpo' style='display: none'>Clicca per saltare il menu.</a>
+		<a class='nascosto' href='#corpo'>Clicca per saltare il menu.</a>
 		<img id='logo' src='./img/logo.png' alt='Logo del sito' />
 		<ul id='menu'>
 <?php

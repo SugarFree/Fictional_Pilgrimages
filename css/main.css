@@ -232,3 +232,6 @@ dt {
 
 #footer #copyright {
 	float: right; }
+
+.nascosto {
+	display: none; }

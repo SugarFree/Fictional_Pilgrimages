@@ -6,7 +6,7 @@
 	<title>Fictional Pilgrimages</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 	<link href='https://fonts.googleapis.com/css?family=Crimson+Text:600' rel='stylesheet'> 
-	<link rel='stylesheet' type='text/css' href='index_style.css' />
+	<link rel='stylesheet' type='text/css' href='css/main.css' />
 	<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='index_style_small.css' >
 </head>
 <body>

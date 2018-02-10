@@ -1,38 +1,18 @@
 <?php
-/*Classe Post: Rappresenta un post nel sito.
-* Serve a chi dovrà trasformare il risultato della ricerca (fornito come vettore di oggetti post)
- *in una pagina html, oppure nel caso del dettaglio di un post soltanto viene ritornato un solo oggetto.
-*/
+	include "dettaglioPost_script.php";
 
-class post
-{
-    var $id;
-    var $titolo_opera;
-    var $descrizione;
-    var $latitudine;
-    var $longitudine;
-    var $username;
-    var $stato;
-    var $indirizzo;
-    var $localita;
-    //var $approvato; Non serve mai mostrarla all'utente
+	$titolo="Fictional Pilgrimages";
+	if(isset($id))
+		$path="<a href='opera.php?titolo=" . $risultato_post->titolo_opera . "'>" . $risultato_post->titolo_opera . "</a> > " .
+			"<a href='localita.php?nome=". $risultato_post->localita . "'>" . $risultato_post->localita . "<a>";
+	$current_menu_item=-1;
+	include "top.php";
 
-    /**
-     * Costruttore dell'oggetto post.
-     * Tipicamente si presuppone che i dati gli arrivino dal risultato di una query "SELECT", già nel formato corretto,
-     * quindi non ci sono controlli/property/getter/setter ecc.
-     */
-    function __construct($id, $titolo_opera, $descrizione, $latitudine, $longitudine, $username, $stato, $indirizzo, $localita)
-    {
-        $this->id=$id;
-        $this->titolo_opera=$titolo_opera;
-        $this->descrizione=$descrizione;
-        $this->latitudine=$latitudine;
-        $this->longitudine=$longitudine;
-        $this->username=$username;
-        $this->stato=$stato;
-        $this->indirizzo=$indirizzo;
-        $this->localita=$localita;
-    }
-}
+	if(isset($id))
+		include "view/post.php";
+	else {
+		header("refresh:3; index.php");
+		echo "Sei giunto qui da un link non corretto, verrai reindirizzato alla <span lang='en'>homepage</span> in 3 secondi."; }
 
+	include "bottom.php";
+?>
