@@ -30,7 +30,7 @@
 			if ($risultato_login->num_rows == 1) { // Se corrisponde ai dati presenti nel db si logga come quello specifico utente
 				$_SESSION["username"] = $username;
 				header("refresh:3; $redirect_location");
-				echo("Hai acceduto come " . $_SESSION['username'] . ". Tra 3 secondi verrai reindirizzato.");
+				echo("Sei acceduto come " . $_SESSION['username'] . ". Tra 3 secondi verrai reindirizzato.");
 
 				$verifica_login->close();
 				$conn->close(); }
