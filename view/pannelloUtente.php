@@ -16,7 +16,7 @@
 		<dl>
 			<dt lang='en'>Username:</dt>
 			<dd><?php echo($_SESSION["username"]) ?></dd>
-			<dt>Email:</dt>
+			<dt lang='en'>Email:</dt>
 			<dd><?php echo $arr["email"]; ?></dd>
 			<dt>Rango:</dt>
 			<dd><?php
@@ -26,14 +26,14 @@
 						echo "Amministratore"; ?></dd>
 		</dl>
 		<div id='cambio'>
-			<h2>Cambio password</h2>
+			<h2>Cambio <span lang='en'>password</span></h2>
 			<form method='post' action='./cambio_password_script.php'>
 				<fieldset>
-					<label for='vecchia_password'>Vecchia password:</label>
+					<label for='vecchia_password'>Immetti la <span lang='en'>password</span> attuale:</label>
 					<input type='password' id='vecchia_password' name='password_vecchia' />
-					<label for='password'>Nuova password:</label>
+					<label for='password'>Immetti la nuova <span lang='en'>password</span>:</label>
 					<input type='password' id='password' name='password' />
-					<label for='conferma_password'>Conferma nuova password:</label>
+					<label for='conferma_password'>Conferma la nuova <span lang='en'>password</span>:</label>
 					<input type='password' id='conferma_password' name='conferma_password' />
 					<input type='submit' value='Cambia password' />
 				</fieldset>

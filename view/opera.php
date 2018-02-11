@@ -6,8 +6,11 @@
 							echo "Serie TV";
 						else if($opera->tipo == "film")
 							echo "Film"; ?></dd>
-			<dt>Sinossi:</dt>
-			<dd><?php echo $opera->descrizione; ?></dd>
+<?php
+	if(isset($opera->descrizione) && !empty($opera->descrizione))
+		echo "\t\t\t<dt>Sinossi:</dt>\n" .
+			"\t\t\t<dd>$opera->descrizione</dd>\n";
+?>
 		</dl>
 <?php
 	include __DIR__ . "../../ricerca_per_titolo_script.php";

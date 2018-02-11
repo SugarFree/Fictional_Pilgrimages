@@ -26,6 +26,6 @@ try
 catch (Exception $e)
 {
     echo 'ERRORE: ' . $e->getMessage();
-    header("Refresh: 3; post.php?id=$id_post");
+    header("Refresh: 3; URL=post.php?id=$id_post");
 }
 ?>

@@ -1,12 +1,12 @@
 <?php
-	$titolo="Pannello utente - Fictional Pilgrimages";
-	$path="Pannello utente";
-	$current_menu_item=4;
+	$titolo="Inserisci post - Fictional Pilgrimages";
+	$path="Inserisci post";
+	$current_menu_item=3;
 	include "top.php";
 
 	require_once 'connessione.php';
 	if(isset($_SESSION["username"]))
-		include "view/pannelloUtente.php";
+		include "view/upload.php";
 	else
 		header("Location: connettiti.php?destination=" . basename(__FILE__));
 
