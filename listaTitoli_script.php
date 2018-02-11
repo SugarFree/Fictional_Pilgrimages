@@ -2,7 +2,7 @@
 require_once "connessione.php";
 
 
-//Ritorna, una sola volta, tutti i titoli delle opere dei post 
+//Ritorna, una sola volta, tutti i titoli delle opere dei post (quindi non inclusi i titoli presenti solo in post non approvati o non presenti in alcun post)
 $errore = "";
 $risultato = array();
 $i = 0;
