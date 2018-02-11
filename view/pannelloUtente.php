@@ -31,7 +31,7 @@
 				<fieldset>
 					<label for='vecchia_password'>Immetti la <span lang='en'>password</span> attuale:</label>
 					<input type='password' id='vecchia_password' name='password_vecchia' />
-					<label for='password'>Immetti la nuova <span lang='en'>password</span>:</label>
+					<label for='password'>Immetti la <span lang='en'>password</span> desiderata:</label>
 					<input type='password' id='password' name='password' />
 					<label for='conferma_password'>Conferma la nuova <span lang='en'>password</span>:</label>
 					<input type='password' id='conferma_password' name='conferma_password' />
