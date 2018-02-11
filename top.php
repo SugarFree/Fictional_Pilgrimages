@@ -2,7 +2,7 @@
 <html xmlns='http://www.w3.org/1999/xhtml' lang='it' xml:lang='it'>
 <head>
 	<title><?php echo $titolo; ?></title>
-	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta http-equiv='Content-Type' content='text/html' charset='utf-8' />
 	<script type='text/javascript' src='./js/main.js'></script>
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Crimson+Text:600' />
 	<link rel='stylesheet' type='text/css' href='./css/main.css' />
