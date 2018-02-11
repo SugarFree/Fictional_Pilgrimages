@@ -24,5 +24,5 @@ catch (Exception $e)
 {
     $risultato = array();
 }
-var_dump($risultato);
+
 //La lista dei titoli si trova in $risultato
