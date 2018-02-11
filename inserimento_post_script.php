@@ -145,7 +145,7 @@ try
         throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
     }
 
-    echo 'File dal film caricato correttamente.';
+    echo 'File dal film caricato correttamente.<br />';
 
     if (!isset($_FILES['immagine_reale']['error']) || is_array($_FILES['immagine_reale']['error']))
     {
@@ -187,8 +187,9 @@ try
         throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
     }
 
-    echo 'File reale caricato correttamente.';
-
+    echo 'File reale caricato correttamente.<br />';
+	header("Refresh:3; URL=index.php");
+	echo "Il post &egrave; in attesa di approvazione da parte di un amministratore. Fra 3 secondi verrai reindirizzato.";
 }
 catch (RuntimeException $e)
 {
@@ -204,13 +205,14 @@ catch (RuntimeException $e)
     {
         unlink("uploads/" . $numero_nuovo_post . "A.jpg");
     }
-    echo $e->getMessage();
+	header("Refresh:5; URL=upload.php");
+    echo "ERRORE: " . $e->getMessage() . "Tra 5 secondi verrai reindirizzato.";
 
 }
 catch (Exception $e)
 {
-
-    echo $e->getMessage();
+	header("Refresh:5; URL=upload.php");
+    echo "ERRORE: " . $e->getMessage() . "Tra 5 secondi verrai reindirizzato.";
 
 }
 

@@ -44,7 +44,7 @@ try
 }
 catch (Exception $e)
 {
+	header("Refresh:3; URL=$redirect_location");
     echo "ERRORE: " . $e->getMessage() . " Tra 3 secondi verrai reindirizzato.";
-    header("Refresh:3; URL=$redirect_location");
 }
 ?>
