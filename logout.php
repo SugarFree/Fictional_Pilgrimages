@@ -13,5 +13,5 @@
 		header("Location: $redirect_location"); } // Se arriva alla fine significa che ha fatto il logout
 	catch (Exception $e) {
 		echo "ERRORE: ".  $e->getMessage() . "Tra 3 secondi verrai reindirizzato.";
-		header("Refresh: 3; $redirect_location"); }
+		header("Refresh: 3; URL=$redirect_location"); }
 ?>

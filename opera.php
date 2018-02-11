@@ -11,7 +11,7 @@
 	if(isset($opera) && $opera !== false)
 		include "view/opera.php";
 	else {
-		header("Refresh: 3; cerca_opere.php");
+		header("Refresh: 3; URL=cerca_opere.php");
 		echo "Sei giunto qui da un link non corretto, verrai reindirizzato alla ricerca opere in 3 secondi."; }
 
 	include "bottom.php";

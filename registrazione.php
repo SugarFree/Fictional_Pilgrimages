@@ -111,7 +111,7 @@ try
       Si procede dunque a fare il login con l'account appena creato e a reindirizzarlo.
     */
     $_SESSION["username"] = $username;
-    header("Refresh: 3; $redirect_location");
+    header("Refresh: 3; URL=$redirect_location");
     echo("Registrazione effettuata con successo. Tra 3 secondi sarai reindirizzato.");
 }
 
@@ -119,7 +119,7 @@ try
 catch (Exception $e)
 {
     echo "ERRORE: " . $e->getMessage() . "Tra 3 secondi verrai reindirizzato.";
-    header("Refresh: 3; $redirect_location");
+    header("Refresh: 3; URL=$redirect_location");
 }
 
 

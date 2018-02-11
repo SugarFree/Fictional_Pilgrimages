@@ -29,14 +29,14 @@
 			$risultato_login = $verifica_login->get_result();
 			if ($risultato_login->num_rows == 1) { // Se corrisponde ai dati presenti nel db si logga come quello specifico utente
 				$_SESSION["username"] = $username;
-				header("refresh:3; $redirect_location");
+				header("Refresh: 3; URL=$redirect_location");
 				echo("Hai effettuato l'accesso come " . $_SESSION['username'] . ". Tra 3 secondi verrai reindirizzato.");
 
 				$verifica_login->close();
-				$conn->close(); }
+				$conn->close();	}
 			else //Altrimenti mostra messaggio di errore ed esce
 				throw new Exception("Combinazione di nome utente e password errata."); }}
 	catch (Exception $e) {
 		echo "ERRORE: " . $e->getMessage() . " Tra 3 secondi verrai reindirizzato.";
-		header("refresh:3; $redirect_location"); }
+		header("Refresh: 3; URL=$redirect_location"); }
 ?>
