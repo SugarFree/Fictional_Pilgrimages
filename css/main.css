@@ -156,21 +156,27 @@ SEZIONE CORPO
 	margin: 0; }
 
 #corpo ul {
-	padding-right: 5%;
-	padding-left: 5%; }
+	padding-right: 0;
+	padding-left: 0; }
 
 #corpo a {
+	margin:0;
 	margin-top: 2em; }
 
 #corpo h3 {
 	text-align: left;
 	font-style: normal;
 	font-size: 1em;
-	padding-bottom: 1em; }
+	padding-bottom: 1em;
+	margin: 0; }
 
 #corpo img {
 	display: block;
 	text-align: center; }
+
+#corpo p {
+	padding: 0.5em; 
+	margin: 0;}
 
 h2 {
 	text-align: center;
@@ -240,14 +246,25 @@ input[type=submit]:hover {
 	background-color: #93a459; }
 
 input[type=hidden]{
-	border: 2px solid #eeeeee; }
+	border: 2px solid #eeeeee; 
+	margin: 0; }
+
+#form_commenti{
+	margin: 0 10%;
+	width: 80%; }
+
+#corpo fieldset{ 
+	margin: 0; }
 
 textarea {
 	height: 5em;
 	width: 100%;
-	margin-right: 10%;
 	border: 2px solid #0D4263;
 	resize: none; }
+
+#testo_commento{
+	margin: 0;
+}
 
 /*
 SEZIONE DEFINIZIONI
@@ -268,16 +285,19 @@ dd img, dd a{
 SEZIONE LISTE
 */
 
-#corpo #commenti li .dati {
-	margin: 0;
-	padding: 0.5em; }
+#corpo #commenti li p {
+	padding: 0.3em; }
 
 ul {
-	list-style: none; }
+	list-style: none; 
+	padding: 0; }
+
+li {
+	margin: 0; }
 
 #corpo #commenti li {
 	border: 2px solid #0D4263;
-	margin-left: 0;
+	margin: 5%;
 	width: 100%; }
 
 #lista{
@@ -316,6 +336,31 @@ SEZIONE POST
 
 label {
 	display: block; }
+
+/*
+SEZIONE OPERA
+*/
+
+#corpo ul ul {
+	margin: 0; }
+
+#corpo ul ul li{
+	margin: 0; }
+
+#corpo ul ul img{
+	width: 70%;
+	margin-bottom: 5%; }
+
+/*
+SEZIONE LOCALITA'
+*/
+
+#corpo ul li {
+	margin: 0; }
+
+#corpo ul li img{
+	width: 70%;
+	margin-bottom: 5% }
 
 /*
 ====================
