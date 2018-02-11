@@ -295,6 +295,10 @@ ul {
 li {
 	margin: 0; }
 
+#elenco_località ul{
+	display: list-item;
+}
+
 #corpo #commenti li {
 	border: 2px solid #0D4263;
 	margin: 5%;
@@ -316,7 +320,7 @@ SEZIONE POST
 	width: 100%;
 	padding: 0; 
 	margin: 0; 
-	border-right: 2px solid #0D4263;}
+	border-right: 3px solid #0D4263;}
 
 #info{
 	width: 75%;
@@ -330,9 +334,17 @@ SEZIONE POST
 
 #commenti {
 	width: 90%;
-	padding: 0; 
+	padding: 3px; 
 	margin: 0; 
 	border:0; }
+
+#corpo #commenti li {
+	margin: 5px 5%; 
+	padding: 0 ;}
+
+#corpo #commenti li p{
+	word-wrap: break-word;
+}
 
 label {
 	display: block; }
@@ -341,26 +353,22 @@ label {
 SEZIONE OPERA
 */
 
-#corpo ul ul {
-	margin: 0; }
-
-#corpo ul ul li{
-	margin: 0; }
-
-#corpo ul ul img{
-	width: 70%;
-	margin-bottom: 5%; }
+#corpo ul li {
+	width: 30%;
+    display: inline-block;
+    margin: 1%; }
 
 /*
 SEZIONE LOCALITA'
 */
 
-#corpo ul li {
-	margin: 0; }
-
 #corpo ul li img{
-	width: 70%;
+	width: 100%;
 	margin-bottom: 5% }
+
+#elenco_località{
+	display: inline;
+}
 
 /*
 ====================

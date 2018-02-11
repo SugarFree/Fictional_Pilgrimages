@@ -8,7 +8,7 @@
 		$post[$val->titolo_opera][] = (array)$val;
 
 	// Lo scorro e per ciascuna località mostro la lista dei post
-	echo "\t\t<ul>\n";
+	echo "\t\t<ul id='elenco_località'>\n";
 	foreach($post as $val) {
 		echo "\t\t\t<li>\n";
 		echo "\t\t\t\t<h3><a href='./opera.php?nome=" . $val[0]["titolo_opera"] . "'>" . $val[0]["titolo_opera"] . "</a></h3>\n";
