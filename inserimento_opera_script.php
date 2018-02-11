@@ -17,9 +17,13 @@ try
     {
         throw  new  Exception("Dati inviati in modo non corretto");
     }
+	if (empty($titolo))
+	{
+		throw  new  Exception("Il titolo non pu&ograve; essere vuoto");
+	}
     if (strlen($titolo) > 32)
     {
-        throw  new  Exception("Titolo troppo lungo: max 32 caratteri");
+        throw  new  Exception("Titolo troppo lungo: massimo 32 caratteri");
     }
     $verifica_titolo = $conn->prepare("SELECT * FROM opera WHERE titolo=?");//Verifica che il titolo che l'utente vuole inserire non esista già
     $verifica_titolo->bind_param("s", $titolo);
@@ -41,10 +45,14 @@ try
     }
     else
     {
-        throw  new  Exception("Titolo già presente nel sito");
+        throw  new  Exception("Titolo gi&agrave; presente nel sito");
     }
+	header("Refresh: 3; URL=upload.php");
+	echo("Opera aggiunta con successo. Tra 3 secondi verrai reindirizzato.");
+
 }
 catch (Exception $e)
 {
-    echo 'ERRORE: ' . $e->getMessage();
+	header("Refresh: 5; URL=aggiungi_opera.php");
+    echo 'ERRORE: ' . $e->getMessage() . ". Tra 5 secondi verrai reindirizzato.";
 }

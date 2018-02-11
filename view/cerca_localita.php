@@ -1,5 +1,5 @@
 
-		<h2>Lista localit&agrave;:</h2>
+		<h2>Lista localit&agrave;</h2>
 		<ul>
 <?php
 	include __DIR__ . "../../listaLocalita_script.php";

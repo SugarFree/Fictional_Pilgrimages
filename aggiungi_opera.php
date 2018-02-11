@@ -1,11 +1,11 @@
 <?php
-	$titolo="Inserisci post - Fictional Pilgrimages";
-	$path="Inserisci <span lang='en'>post</span>";
-	$current_menu_item=3;
+	$titolo="Aggiungi opera - Fictional Pilgrimages";
+	$path="Aggiungi opera";
+	$current_menu_item=-1;
 	include "top.php";
 
 	if(isset($_SESSION["username"]))
-		include "view/upload.php";
+		include "view/aggiungi_opera.php";
 	else
 		header("Location: connettiti.php?destination=" . basename(__FILE__));
 

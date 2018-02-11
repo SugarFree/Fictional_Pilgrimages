@@ -1,5 +1,5 @@
 
-		<h2>Lista opere:</h2>
+		<h2>Lista opere</h2>
 		<ul><?php
 				include __DIR__ . "../../listaTitoli_script.php";
 				for($i=0; $i<count($risultato); $i++) {

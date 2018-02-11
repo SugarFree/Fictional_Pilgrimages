@@ -1,5 +1,5 @@
 
-		<h2>Inserimento <span lang='en'>post</span>:</h2>
+		<h2>Inserimento <span lang='en'>post</span></h2>
 		<form method='post' enctype='multipart/form-data' action='inserimento_post_script.php '>
 			<fieldset>
 					<label for='titolo_opera'>Seleziona l'opera raffigurata dalla tua fotografia tra quelle nella tendina:</label>
