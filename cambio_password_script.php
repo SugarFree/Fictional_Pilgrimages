@@ -2,26 +2,26 @@
 error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 require_once "connessione.php";
-$password_vecchia=$_POST["password_vecchia"];
-$password=$_POST["password"];
-$conferma_password=$_POST["conferma_password"];
-$username=$_SESSION["username"];
+$password_vecchia = $_POST["password_vecchia"];
+$password = $_POST["password"];
+$conferma_password = $_POST["conferma_password"];
+$username = $_SESSION["username"];
 
 
 try
 {
-    if(empty($_SESSION["username"]))
+    if (empty($_SESSION["username"]))
     {
         header("refresh:3; connettiti.php");
         throw  new Exception("Devi loggarti per poter effettuare questa azione. Tra 3 secondi sarai reindirizzato alla pagina di login.");
     }
 
-    if($password!=$conferma_password)
+    if ($password != $conferma_password)
     {
         header("refresh:3; pannelloUtente.php");
         throw new Exception("Le due password non coincidono. Tra 3 secondi sarai reindirizzato al pannello utente.");
     }
-    if(empty($password))
+    if (empty($password))
     {
         header("refresh:3; pannelloUtente.php");
         throw new Exception("Non puoi inserire una password vuota. Tra 3 secondi sarai reindirizzato al pannello utente.");
@@ -35,7 +35,7 @@ try
     if ($verifica_login->error != "")
     {
         header("refresh:3; pannelloUtente.php");
-        throw new Exception("Errore del database:" .$verifica_login->error. ". Tra 3 secondi sarai reindirizzato al pannello utente.");
+        throw new Exception("Errore del database:" . $verifica_login->error . ". Tra 3 secondi sarai reindirizzato al pannello utente.");
     }
     $risultato_login = $verifica_login->get_result();
 
@@ -46,17 +46,17 @@ try
     }
 
     $queryModifica = $conn->prepare("UPDATE utente SET password=? WHERE username=?");
-    $queryModifica->bind_param("ss",sha1($password), $username );
+    $queryModifica->bind_param("ss", sha1($password), $username);
     $queryModifica->execute();
     if ($queryModifica->error != "")
     {
         header("refresh:3; pannelloUtente.php");
-        throw new Exception( "Errore ritornato dal database:" .$queryModifica->error. ". Tra 3 secondi sarai reindirizzato al pannello utente.");
+        throw new Exception("Errore ritornato dal database:" . $queryModifica->error . ". Tra 3 secondi sarai reindirizzato al pannello utente.");
     }
     header("refresh:3; pannelloUtente.php");
     echo "Password cambiata correttamente. Tra 3 secondi sarai reindirizzato al pannello utente.";
 }
-catch(Exception $e)
+catch (Exception $e)
 {
     echo $e->getMessage();
 }
