@@ -27,5 +27,5 @@
 			echo "\t\t\t\t\t<li><a href='./post.php?id=" . $val[$i]["id"] . "'><img src='./uploads/" . $val[$i]["id"] . ".jpg' alt='" . $val[$i]["descrizione"] ."' /></a></li>\n";
 		echo "\t\t\t\t</ul>\n";
 		echo "\t\t\t</li>\n"; }
-	echo "\t\t</ul>\n";
+	echo "\t\t</ul>";
 ?>
