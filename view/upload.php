@@ -5,8 +5,8 @@
 				<input type='text' id='titolo_opera' name='titolo_opera' />
 				<label for='stato'>Inserisci lo Stato in cui &egrave; stata scattata la foto:</label>
 				<input type='text' id='stato' name='stato' />
-				<label for='descrizione'>Inserisci una breve descrizione del post:</label>
-				<input type='text' id='descrizione' name='descrizione' />
+				<label for='descrizione-post'>Inserisci una breve descrizione del post:</label>
+				<input type='text' id='descrizione-post' name='descrizione' />
 				<label for='indirizzo'>Inserisci l&apos;indirizzo in cui &egrave; stata scattata la foto</label>
 				<input type='text' id='indirizzo' name='indirizzo' />
 				<label for='localita'>Inserisci la localit&agrave; in cui &egrave; stata scattata la foto:</label>
