@@ -36,7 +36,7 @@
 			$this->testo=$text; }}
 
 	$menu_items = array(new menu_item("index.php","home.png","Home"),
-		new menu_item("ricerca_per_localita.php","world.png","Cerca localit&agrave;"),
+		new menu_item("cerca_localita.php","world.png","Cerca localit&agrave;"),
 		new menu_item("cerca_opere.php","titolo.png","Cerca opere"));
 
 	if(isset($_SESSION['username']))

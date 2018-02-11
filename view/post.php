@@ -48,7 +48,7 @@
 				"\t\t\t\t<p>" . $risultato_commenti[$i]->testo . "</p>\n" .
 				"\t\t\t\t<p class='dati'> Inviato da " . $risultato_commenti[$i]->username . " il " . $risultato_commenti[$i]->timestamp . "</p>\n" .
 				"\t\t\t</li>\n"; }
-		echo "\t\t</ul>\n";
+		echo "\t\t</ul>\n"; }
 
 		if(isset($_SESSION['username'])) {
 			echo "\t\t<form method='post' action='inserimento_commento_script.php'>\n" .
@@ -59,6 +59,6 @@
 				"\t\t\t\t<input type='submit' value='Invia' />\n" .
 				"\t\t\t</fieldset>\n" .
 				"\t\t</form>\n"; }
-		else {
-			echo "\t\t<a href='./connettiti.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti."; }}
+		else
+			echo "\t\t<a href='./connettiti.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti.";
 ?>
