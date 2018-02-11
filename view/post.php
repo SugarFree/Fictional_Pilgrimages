@@ -34,7 +34,7 @@
 			<dt>Autore:</dt>
 			<dd><?php echo $risultato_post->username; ?></dd>
 			<dt>Opera:</dt>
-			<dd><?php echo "<a href='opera.php?titolo=" . $risultato_post->titolo_opera . "'>" . $risultato_post->titolo_opera . "</a>"; ?></dd>
+			<dd><?php echo "<a href='opera.php?nome=" . $risultato_post->titolo_opera . "'>" . $risultato_post->titolo_opera . "</a>"; ?></dd>
 			<dt>Stato:</dt>
 			<dd><?php echo $risultato_post->stato; ?></dd>
 			<dt>Localit&agrave;:</dt>
