@@ -39,9 +39,9 @@ try
     {
         throw  new Exception("Inserisci una descrizione");
     }
-    if (empty($indirizzo))
+    if (empty($localita))
     {
-        throw  new Exception("Inserisci un indirizzo");//Non controllo la località perchè è facoltativa
+        throw  new Exception("Inserisci una località");//Non controllo l'indirizzo perchè è facoltativo
     }
     if (empty($stato))
     {
@@ -60,29 +60,33 @@ try
         throw  new Exception("La località può essere lunga max 32 caratteri");
     }
 
-    if (!filter_var($latitudine, FILTER_VALIDATE_FLOAT))
+    if((!empty($latitudine)) or (!empty($longitudine)))//latitudine e longitudine possono essere vuote, ma se ci sono devono esserci entrambe
     {
-        throw  new Exception("Latitudine inserita non e' un numero");
-    }
+        if (!filter_var($latitudine, FILTER_VALIDATE_FLOAT))
+        {
+            throw  new Exception("Latitudine inserita non e' un numero");
+        }
+        if (($latitudine > 90) || ($latitudine < -90))
+        {
+            throw  new Exception("Latitudine inserita deve essere compresa tra +90 e -90");
+        }
+        if (!filter_var($longitudine, FILTER_VALIDATE_FLOAT))
+        {
+            throw  new Exception("Longitudine inserita non e' un numero");
+        }
 
-    if (($latitudine > 90) || ($latitudine < -90))
+        if (($longitudine > 180) || ($longitudine < -180))
+        {
+            throw  new Exception("Longitudine inserita deve essere compresa tra +180 e -180");
+        }
+        $latitudine = round($latitudine, 4);//approssima latitudine e longitudine a 4 cifre decimali per farle stare nel DB
+        $longitudine = round($longitudine, 4);
+    }
+    else
     {
-        throw  new Exception("Latitudine inserita deve essere compresa tra +90 e -90");
+        $latitudine=NULL;
+        $longitudine=NULL;
     }
-
-
-    if (!filter_var($longitudine, FILTER_VALIDATE_FLOAT))
-    {
-        throw  new Exception("Longitudine inserita non e' un numero");
-    }
-
-    if (($longitudine > 180) || ($longitudine < -180))
-    {
-        throw  new Exception("Longitudine inserita deve essere compresa tra +90 e -90");
-    }
-
-    $latitudine = round($latitudine, 4);//approssima latitudine e longitudine a 4 cifre decimali per farle stare nel DB
-    $longitudine = round($longitudine, 4);
 
     $inserimento = $conn->prepare("INSERT INTO post (titolo_opera, descrizione, latitudine, longitudine, username, stato, indirizzo, localita) VALUES (?,?,?,?,?,?,?,?)");
     $inserimento->bind_param("ssddssss", $titolo_opera, $descrizione, $latitudine, $longitudine, $username, $stato, $indirizzo, $localita);
@@ -135,6 +139,7 @@ try
     }
 
     //il file viene messo in /uploads/numerodelpost.estensione.
+
     if (!move_uploaded_file($_FILES['immagine_film']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post, $ext)))
     {
         throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
@@ -176,6 +181,7 @@ try
     }
 
 //il file viene messo in /uploads/numerodelpostA.estensione.
+
     if (!move_uploaded_file($_FILES['immagine_reale']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post . 'A', $ext)))
     {
         throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
