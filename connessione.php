@@ -11,4 +11,5 @@
 	//Controllo errori
 	if($conn === false)
 		die("ERRORE: Impossibile stabilire una connessione con il database MySQL. " . mysqli_connect_error());
+	mysqli_query($conn,"SET NAMES UTF8");
 ?>
