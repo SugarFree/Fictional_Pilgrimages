@@ -246,3 +246,7 @@ dt {
 
 .nascosto {
 	display: none; }
+
+label {
+	display: block;
+}
