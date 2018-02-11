@@ -30,24 +30,31 @@
 		<ul id='menu'>
 <?php
 	class menu_item {
-		function __construct($href, $icon, $text) {
+		function __construct($href, $icon, $text, $en) {
 			$this->href=$href;
 			$this->icon=$icon;
-			$this->testo=$text; }}
+			$this->testo=$text;
+			$this->inglese=$en; }}
 
-	$menu_items = array(new menu_item("index.php","home.png","Home"),
-		new menu_item("cerca_localita.php","world.png","Cerca localit&agrave;"),
-		new menu_item("cerca_opere.php","titolo.png","Cerca opere"));
+	$menu_items = array(new menu_item("index.php","home.png","Home", true),
+		new menu_item("cerca_localita.php","world.png","Cerca localit&agrave;", false),
+		new menu_item("cerca_opere.php","titolo.png","Cerca opere", false));
 
 	if(isset($_SESSION['username']))
-		$menu_items[] = new menu_item("pannelloUtente.php","utente.png","Pannello utente");
+		$menu_items[] = new menu_item("pannelloUtente.php","utente.png","Pannello utente", false);
 
 	for($i=0; $i<count($menu_items); $i++) {
 		echo "\t\t\t";
-		if($i == $current_menu_item)
-			echo "<li class='selected'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</li>";
-		else
-			echo "<li><a href='" . $menu_items[$i]->href . "'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</a></li>";
+		if($i == $current_menu_item) {
+			echo "<li class='selected'";
+			if($menu_items[$i]->inglese)
+				echo " lang='en'";
+			echo "><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</li>"; }
+		else {
+			echo "<li";
+			if($menu_items[$i]->inglese)
+				echo " lang='en'";
+			echo "><a href='" . $menu_items[$i]->href . "'><img class='icon' src='./img/" . $menu_items[$i]->icon . "' alt='' />" . $menu_items[$i]->testo . "</a></li>"; }
 		echo "\n"; }
 ?>
 		</ul>
