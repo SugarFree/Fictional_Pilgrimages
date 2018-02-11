@@ -21,7 +21,7 @@
 	echo "\t\t<ul>\n";
 	foreach($post as $val) {
 		echo "\t\t\t<li>\n";
-		echo "\t\t\t\t<h3><a href='./localita?nome=" . $val[0]["localita"] . "'>" . $val[0]["localita"] . "</a></h3>\n";
+		echo "\t\t\t\t<h3><a href='./localita.php?nome=" . $val[0]["localita"] . "'>" . $val[0]["localita"] . "</a></h3>\n";
 		echo "\t\t\t\t<ul>\n";
 		for($i=0; $i<count($val); $i++)
 			echo "\t\t\t\t\t<li><a href='./post.php?id=" . $val[$i]["id"] . "'><img src='./uploads/" . $val[$i]["id"] . ".jpg' alt='" . $val[$i]["descrizione"] ."' /></a></li>\n";

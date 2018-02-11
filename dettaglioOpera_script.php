@@ -2,7 +2,8 @@
 require_once ("connessione.php");
 require_once ("funzioni.php");
 
-$titolo=trim(strip_tags($_GET["nome"]));
+$titolo=isset($_GET["nome"]) ? trim(strip_tags($_GET["nome"])) : "";
+
 try
 {
     //Se questi due check passano, controllo se l'email o l'username erano già presenti nel db

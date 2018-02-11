@@ -2,8 +2,9 @@
 require_once "connessione.php";
 require_once "funzioni.php";
 
-$stato=$_POST["stato"];
-$localita=$_POST["localita"];
+//$stato=$_GET["stato"];
+$stato="";
+$localita=$_GET["nome"];
 $errore="";
 
 $stato=trim(strip_tags($stato));

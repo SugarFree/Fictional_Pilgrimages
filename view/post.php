@@ -64,5 +64,5 @@
 				"\t\t\t</fieldset>\n" .
 				"\t\t</form>"; }
 		else
-			echo "\t\t<a href='./connettiti.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti.";
+			echo "\t\t<a href='./connettiti.php?destination=post.php?id=" . $risultato_post->id . "'>Connettiti</a> per poter inviare commenti.";
 ?>
