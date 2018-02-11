@@ -41,7 +41,7 @@
 		new menu_item("cerca_opere.php","titolo.png","Cerca opere", false));
 
 	if(isset($_SESSION['username'])) {
-		array_push($menu_items, new menu_item("upload.php", "upload.png", "Carica <span lang'en'>post</span>", false));
+		array_push($menu_items, new menu_item("upload.php", "upload.png", "Inserisci <span lang='en'>post</span>", false));
 		$menu_items[] = new menu_item("pannelloUtente.php", "utente.png", "Pannello utente", false); }
 
 	for($i=0; $i<count($menu_items); $i++) {

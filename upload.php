@@ -1,6 +1,6 @@
 <?php
 	$titolo="Inserisci post - Fictional Pilgrimages";
-	$path="Inserisci post";
+	$path="Inserisci <span lang='en'>post</span>";
 	$current_menu_item=3;
 	include "top.php";
 

@@ -53,7 +53,7 @@ try
     }
     if (strlen($indirizzo) > 64)
     {
-        throw  new Exception("L'indirizzo può essere lungo max 32 caratteri");
+        throw  new Exception("L'indirizzo può essere lungo max 64 caratteri");
     }
     if (strlen($localita) > 32)
     {
