@@ -219,7 +219,8 @@ input[type=submit]:hover {
 
 dt {
 	font-weight: bold;
-	padding: 0.1em 0em; }
+	padding: 0; 
+	margin: 0;}
 
 #Top {
 	display: none;
@@ -233,10 +234,12 @@ dt {
 	width: 40px; }
 
 #post{ 
-	display:flex; }
+	display:flex; 
+	margin: 0; 
+	padding: 0; }
 
 #immagini {
-	width: 90%;
+	width: 100%;
 	padding: 0; 
 	margin: 0; 
 	border-right: 2px solid #0D4263;}
@@ -248,10 +251,14 @@ dd img, dd a{
 #corpo #post #info dd object { width: 100% }
 
 #info{
-	width: 90%;
+	width: 75%;
 	padding: 0; 
 	margin: 0; 
 	border:0;}
+
+#mappa {
+	max-width: 90%;
+	height: 40%; }
 
 input[type=hidden]{
 	border: 2px solid #eeeeee; }
@@ -269,8 +276,9 @@ input[type=hidden]{
 ul {
 	list-style: none; }
 
-#corpo li {
+#corpo #commenti li {
 	border: 2px solid #0D4263;
+	margin-left: 0;
 	width: 100%; }
 
 textarea {
@@ -283,7 +291,8 @@ textarea {
 #footer {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	font-size: 1em; }
+	font-size: 1em; 
+	height: 1em;}
 
 #footer a{
 	color:#eeeeee; }
