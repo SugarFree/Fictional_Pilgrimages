@@ -1,8 +1,8 @@
 <?php
-require_once ("connessione.php");
-require_once ("funzioni.php");
+require_once("connessione.php");
+require_once("funzioni.php");
 
-$titolo=isset($_GET["nome"]) ? trim(strip_tags($_GET["nome"])) : "";
+$titolo = isset($_GET["nome"]) ? trim(strip_tags($_GET["nome"])) : "";
 
 try
 {
@@ -15,15 +15,15 @@ try
     if ($query_opera->error != "")
     {
 
-        throw  new  Exception("Errore ritornato dal database:" .$query_opera->error);
+        throw  new  Exception("Errore ritornato dal database:" . $query_opera->error);
     }
     else
     {
         $risultato_opera = $query_opera->get_result();
-        $opera=risultato_singola_opera($risultato_opera);//$opera contiene l'oggetto opera da mostrare. Se è FALSE significa che si sta richiedendo un'opera inesistente o qualcosa è andato storto.
+        $opera = risultato_singola_opera($risultato_opera);//$opera contiene l'oggetto opera da mostrare. Se è FALSE significa che si sta richiedendo un'opera inesistente o qualcosa è andato storto.
     }
 }
-catch(Exception $e)
+catch (Exception $e)
 {
     echo $e->getMessage();
 }

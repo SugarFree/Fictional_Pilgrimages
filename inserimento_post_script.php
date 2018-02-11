@@ -1,60 +1,61 @@
 <?php
 require_once "connessione.php";
 session_start();
-$titolo_opera=$_POST["titolo_opera"];
-$descrizione=$_POST["descrizione"];
-$latitudine=$_POST["latitudine"];
-$longitudine=$_POST["longitudine"];
-$username=$_SESSION["username"];
-$stato=$_POST["stato"];
-$indirizzo=$_POST["indirizzo"];
-$localita=$_POST["localita"];
+$titolo_opera = $_POST["titolo_opera"];
+$descrizione = $_POST["descrizione"];
+$latitudine = $_POST["latitudine"];
+$longitudine = $_POST["longitudine"];
+$username = $_SESSION["username"];
+$stato = $_POST["stato"];
+$indirizzo = $_POST["indirizzo"];
+$localita = $_POST["localita"];
 
-$titolo_opera=trim(strip_tags($titolo_opera));
-$descrizione=trim(strip_tags($descrizione));
-$latitudine=trim(strip_tags($latitudine));
-$longitudine=trim(strip_tags($longitudine));
+$titolo_opera = trim(strip_tags($titolo_opera));
+$descrizione = trim(strip_tags($descrizione));
+$latitudine = trim(strip_tags($latitudine));
+$longitudine = trim(strip_tags($longitudine));
 
-$stato=trim(strip_tags($stato));
-$indirizzo=trim(strip_tags($indirizzo));
-$localita=trim(strip_tags($localita));
+$stato = trim(strip_tags($stato));
+$indirizzo = trim(strip_tags($indirizzo));
+$localita = trim(strip_tags($localita));
 
 
-try {
-    if(empty($_SESSION["username"]))
+try
+{
+    if (empty($_SESSION["username"]))
 
     {
         throw  new Exception("Devi loggarti per poter effettuare questa azione");
     }
-    if(empty($titolo_opera))
+    if (empty($titolo_opera))
     {
         throw  new Exception("Inserisci il titolo del film o serie tv");
     }
-    if(strlen($titolo_opera)>32)
+    if (strlen($titolo_opera) > 32)
     {
         throw  new Exception("Il titolo può essere lungo max 32 caratteri");
     }
-    if(empty($descrizione))
+    if (empty($descrizione))
     {
         throw  new Exception("Inserisci una descrizione");
     }
-    if(empty($indirizzo))
+    if (empty($indirizzo))
     {
         throw  new Exception("Inserisci un indirizzo");//Non controllo la località perchè è facoltativa
     }
-    if(empty($stato))
+    if (empty($stato))
     {
         throw  new Exception("Inserisci uno stato");
     }
-    if(strlen($stato)>32)
+    if (strlen($stato) > 32)
     {
         throw  new Exception("Lo stato può essere lungo max 32 caratteri");
     }
-    if(strlen($indirizzo)>64)
+    if (strlen($indirizzo) > 64)
     {
         throw  new Exception("L'indirizzo può essere lungo max 32 caratteri");
     }
-    if(strlen($localita)>32)
+    if (strlen($localita) > 32)
     {
         throw  new Exception("La località può essere lunga max 32 caratteri");
     }
@@ -64,7 +65,7 @@ try {
         throw  new Exception("Latitudine inserita non e' un numero");
     }
 
-    if (($latitudine > 90) || ($latitudine < -90) )
+    if (($latitudine > 90) || ($latitudine < -90))
     {
         throw  new Exception("Latitudine inserita deve essere compresa tra +90 e -90");
     }
@@ -75,26 +76,26 @@ try {
         throw  new Exception("Longitudine inserita non e' un numero");
     }
 
-    if (($longitudine > 180) || ($longitudine < -180) )
+    if (($longitudine > 180) || ($longitudine < -180))
     {
         throw  new Exception("Longitudine inserita deve essere compresa tra +90 e -90");
     }
 
-    $latitudine=round($latitudine, 4);//approssima latitudine e longitudine a 4 cifre decimali per farle stare nel DB
-    $longitudine=round($longitudine, 4);
+    $latitudine = round($latitudine, 4);//approssima latitudine e longitudine a 4 cifre decimali per farle stare nel DB
+    $longitudine = round($longitudine, 4);
 
     $inserimento = $conn->prepare("INSERT INTO post (titolo_opera, descrizione, latitudine, longitudine, username, stato, indirizzo, localita) VALUES (?,?,?,?,?,?,?,?)");
-    $inserimento->bind_param("ssddssss",$titolo_opera,$descrizione, $latitudine, $longitudine, $username, $stato, $indirizzo, $localita);
+    $inserimento->bind_param("ssddssss", $titolo_opera, $descrizione, $latitudine, $longitudine, $username, $stato, $indirizzo, $localita);
     $inserimento->execute();
     if ($inserimento->error != "")
     {
 
-        throw new Exception( "Errore ritornato dal database:". $inserimento->error);
+        throw new Exception("Errore ritornato dal database:" . $inserimento->error);
     }
 
     $numero_nuovo_post = mysqli_query($conn, "SELECT max(id) FROM post");//Prende il numero dell'ultimo post caricato (cioè  quello appena caricato dall'utente)
-    $risultato_query=mysqli_fetch_assoc($numero_nuovo_post);
-    $numero_nuovo_post=$risultato_query["max(id)"];
+    $risultato_query = mysqli_fetch_assoc($numero_nuovo_post);
+    $numero_nuovo_post = $risultato_query["max(id)"];
 
     if (!file_exists('uploads')) //crea la cartella per tenere le foto se non esiste
     {
@@ -108,7 +109,8 @@ try {
         throw new RuntimeException('Errore nel caricamento del/dei file: Parametri errati');
     }
 
-    switch ($_FILES['immagine_film']['error']) {
+    switch ($_FILES['immagine_film']['error'])
+    {
         case UPLOAD_ERR_OK:
             break;
         case UPLOAD_ERR_NO_FILE:
@@ -127,7 +129,8 @@ try {
                 'jpg' => 'image/jpeg'
             ),
             true
-        )) {
+        ))
+    {
         throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg');
     }
 
@@ -145,10 +148,10 @@ try {
     }
 
 
-
     //-----------CARICAMENTO IMMAGINE 2
 
-    switch ($_FILES['immagine_reale']['error']) {
+    switch ($_FILES['immagine_reale']['error'])
+    {
         case UPLOAD_ERR_OK:
             break;
         case UPLOAD_ERR_NO_FILE:
@@ -167,12 +170,13 @@ try {
                 'jpg' => 'image/jpeg'
             ),
             true
-        )) {
+        ))
+    {
         throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg');
     }
 
 //il file viene messo in /uploads/numerodelpostA.estensione.
-    if (!move_uploaded_file($_FILES['immagine_reale']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post.'A', $ext)))
+    if (!move_uploaded_file($_FILES['immagine_reale']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post . 'A', $ext)))
     {
         throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
     }
@@ -183,11 +187,17 @@ try {
 catch (RuntimeException $e)
 {
     $numero_nuovo_post = mysqli_query($conn, "SELECT max(id) FROM post");//Prende il numero dell'ultimo post caricato (cioè  quello appena caricato dall'utente)
-    $risultato_query=mysqli_fetch_assoc($numero_nuovo_post);
-    $numero_nuovo_post=$risultato_query["max(id)"];
-    $elimina_post=mysqli_query($conn,"DELETE from post WHERE id=$numero_nuovo_post");//cancella il post se il caricamento di un'immagine fallisce
-    if (file_exists("uploads/".$numero_nuovo_post.".jpg")) { unlink ("uploads/".$numero_nuovo_post.".jpg"); }//Cancella le immagini se il caricamento di una delle due fallisce
-    if (file_exists("uploads/".$numero_nuovo_post."A.jpg")) { unlink ("uploads/".$numero_nuovo_post."A.jpg"); }
+    $risultato_query = mysqli_fetch_assoc($numero_nuovo_post);
+    $numero_nuovo_post = $risultato_query["max(id)"];
+    $elimina_post = mysqli_query($conn, "DELETE from post WHERE id=$numero_nuovo_post");//cancella il post se il caricamento di un'immagine fallisce
+    if (file_exists("uploads/" . $numero_nuovo_post . ".jpg"))
+    {
+        unlink("uploads/" . $numero_nuovo_post . ".jpg");
+    }//Cancella le immagini se il caricamento di una delle due fallisce
+    if (file_exists("uploads/" . $numero_nuovo_post . "A.jpg"))
+    {
+        unlink("uploads/" . $numero_nuovo_post . "A.jpg");
+    }
     echo $e->getMessage();
 
 }

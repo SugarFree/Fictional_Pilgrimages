@@ -19,9 +19,9 @@ class opera
     function __construct($titolo_inserito, $descrizione_inserita, $tipo_inserito)
     {
 
-            $this->tipo = $tipo_inserito;
-            $this->titolo = $titolo_inserito;
-            $this->descrizione = $descrizione_inserita;
+        $this->tipo = $tipo_inserito;
+        $this->titolo = $titolo_inserito;
+        $this->descrizione = $descrizione_inserita;
     }
 }
 
