@@ -3,7 +3,7 @@
 
 	$titolo="Fictional Pilgrimages";
 	if(isset($risultato_post) && $risultato_post !== false)
-		$path="<a href='opera.php?titolo=" . $risultato_post->titolo_opera . "'>" . $risultato_post->titolo_opera . "</a> > " .
+		$path="<a href='opera.php?nome=" . $risultato_post->titolo_opera . "'>" . $risultato_post->titolo_opera . "</a> > " .
 			"<a href='localita.php?nome=". $risultato_post->localita . "'>" . $risultato_post->localita . "</a>";
 	$current_menu_item=-1;
 	include "top.php";
