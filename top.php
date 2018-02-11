@@ -19,7 +19,7 @@
 	<link rel="icon" type="image/png" href="./favicon-16x16.png" />
 </head>
 <body>
-	<h1 id='titolo'>Fictional Pilgrimages</h1>
+	<h1 id='titolo' lang='en'>Fictional Pilgrimages</h1>
 <?php
 	if(isset($path))
 		include "view/path.php";
@@ -41,7 +41,7 @@
 		new menu_item("cerca_opere.php","titolo.png","Cerca opere", false));
 
 	if(isset($_SESSION['username'])) {
-		array_push($menu_items, new menu_item("upload.php", "upload.png", "Upload", true));
+		array_push($menu_items, new menu_item("upload.php", "upload.png", "Carica <span lang'en'>post</span>", false));
 		$menu_items[] = new menu_item("pannelloUtente.php", "utente.png", "Pannello utente", false); }
 
 	for($i=0; $i<count($menu_items); $i++) {
