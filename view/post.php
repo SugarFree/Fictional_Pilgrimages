@@ -8,31 +8,28 @@
 			"\t\t\t<dd><a href='./uploads/" . $risultato_post->id . "A.jpg'><img src='./uploads/" . $risultato_post->id . "A.jpg' alt='' /></a></dd>\n";
 ?>
 		</dl>
-			<p>	
 <?php
 	if($risultato_commenti !== false) {
 		echo "\t\t<ul id='commenti'>\n";
 		for($i=0; $i<count($risultato_commenti); $i++) {
 			echo "\t\t\t<li>\n" .
 				"\t\t\t\t<p>" . $risultato_commenti[$i]->testo . "</p>\n" .
-				"\t\t\t\t<p id='dati'> Inviato da " . $risultato_commenti[$i]->username . " il " . $risultato_commenti[$i]->timestamp . "</p>\n" . 
+				"\t\t\t\t<p class='dati'> Inviato da " . $risultato_commenti[$i]->username . " il " . $risultato_commenti[$i]->timestamp . "</p>\n" .
 				"\t\t\t</li>\n"; }
+		echo "\t\t</ul>\n";
 
 	if(isset($_SESSION['username'])) {
 		echo "\t\t<form method='post' action='inserimento_commento_script.php'>\n" .
 			"\t\t\t<fieldset>\n" .
 			"\t\t\t\t<input type='hidden' name='id_post' value='$risultato_post->id' />\n" .
-			"<label for='testo_commento'>Scrivi un commento:</label>\n" .
+			"\t\t\t\t<label for='testo_commento'>Scrivi un commento:</label>\n" .
 			"\t\t\t\t<textarea name='testo' id='testo_commento' rows='5' cols='25'></textarea>\n" .
 			"\t\t\t\t<input type='submit' value='Invia' />\n" .
 			"\t\t\t</fieldset>\n" .
-			"\t\t</form>"; }
+			"\t\t</form>\n"; }
 	else {
-		echo "\t\t<a href='./connettiti.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti."; }
-		echo "\t\t</ul>\n"; }
-
+		echo "\t\t<a href='./connettiti.php?destination=post.php?id=" . $risultato_post->id . "'>Collegati</a> per poter inviare commenti."; }}
 ?>
-			</p>
 		<dl id='info'>
 			<dt>Autore:</dt>
 			<dd><?php echo $risultato_post->username; ?></dd>
