@@ -34,15 +34,17 @@
 	if($risultato_post->descrizione !== '')
 		echo "\t\t\t\t<dt>Descrizione:</dt>\n" .
 			"\t\t\t\t<dd>" . $risultato_post->descrizione . "</dd>\n";
-
-	if(!(is_null($risultato_post->latitudine) || is_null($risultato_post->longitudine)))
-		echo "\t\t\t\t<dt lang='en'>Streetview:</dt>\n" .
-			"\t\t\t\t<dd><object width='500px' height='500px' data='https://www.google.com/maps/embed/v1/streetview?key=AIzaSyBEEJQuz4dw1e0pSdKoaUzOsg0iZsnZgHQ&amp;location=" .
-			$risultato_post->latitudine . "," . $risultato_post->longitudine . "'></object></dd>\n";
 ?>
 			</dl>
 		</div>
 <?php
+	if(!(is_null($risultato_post->latitudine) || is_null($risultato_post->longitudine)))
+		echo "\t\t<div id='mappa'>\n" .
+			"\t\t\t<h3 lang='en'>Streetview:</h3>\n" .
+			"\t\t\t<object width='500px' height='500px' data='https://www.google.com/maps/embed/v1/streetview?key=AIzaSyBEEJQuz4dw1e0pSdKoaUzOsg0iZsnZgHQ&amp;location=" .
+			$risultato_post->latitudine . "," . $risultato_post->longitudine . "'></object>\n" .
+			"\t\t</div>\n";
+
 	if($risultato_commenti !== false) {
 		echo "\t\t<ul id='commenti'>\n";
 		for($i=0; $i<count($risultato_commenti); $i++) {
