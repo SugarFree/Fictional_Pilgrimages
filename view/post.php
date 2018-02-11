@@ -55,7 +55,7 @@
 		echo "\t\t</ul>\n"; }
 
 		if(isset($_SESSION['username'])) {
-			echo "\t\t<form method='post' action='inserimento_commento_script.php'>\n" .
+			echo "\t\t<form id='form_commenti' method='post' action='inserimento_commento_script.php'>\n" .
 				"\t\t\t<fieldset>\n" .
 				"\t\t\t\t<input type='hidden' name='id_post' value='$risultato_post->id' />\n" .
 				"\t\t\t\t<label for='testo_commento'>Scrivi un commento:</label>\n" .
