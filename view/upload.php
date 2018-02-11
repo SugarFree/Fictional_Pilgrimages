@@ -5,7 +5,7 @@
 					<label for='titolo_opera'>Seleziona l'opera raffigurata dalla tua fotografia tra quelle nella tendina:</label>
 					<select id='titolo_opera' name='titolo_opera'>
 <?php
-	include __DIR__ . "../../listaTitoli_script.php";
+	include __DIR__ . "../../listaTuttiTitoli_script.php";
 	for($i=0; $i<count($risultato); $i++) {
 		echo "\t\t\t\t\t\t<option value='" . $risultato[$i] . "'>" . $risultato[$i] . "</option>\n"; }
 ?>
