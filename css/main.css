@@ -400,10 +400,10 @@ SEZIONE FOOTER
 #Top {
 	display: none;
 	position: fixed;
-	bottom: 35px;
+	bottom: 70px;
 	right: 7px;
 	z-index: 99;
 	border: none;
 	cursor: pointer;
-	height: 40px;
-	width: 40px; }
+	height: 35px;
+	width: 35px; }
