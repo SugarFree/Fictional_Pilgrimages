@@ -44,7 +44,7 @@
 		$menu_items[]=new menu_item("upload.php", "upload.png", "Inserisci <span lang='en'>post</span>", false);
 		$menu_items[]=new menu_item("pannelloUtente.php", "utente.png", "Pannello utente", false);
 		if($_SESSION["rango"] == "admin")
-			$menu_items[] = new menu_item("pannelloAdmin.php", "admin.png", "Pannello <span lang='en	'>admin</span>", false); }
+			$menu_items[] = new menu_item("pannelloAdmin.php", "admin.png", "Pannello <span lang='en'>admin</span>", false); }
 
 	for($i=0; $i<count($menu_items); $i++) {
 		echo "\t\t\t";

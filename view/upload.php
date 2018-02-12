@@ -2,15 +2,15 @@
 		<h2>Inserimento <span lang='en'>post</span></h2>
 		<form method='post' enctype='multipart/form-data' action='inserimento_post_script.php '>
 			<fieldset>
-					<label for='titolo_opera'>Seleziona l'opera raffigurata dalla tua fotografia tra quelle nella tendina:</label>
-					<select id='titolo_opera' name='titolo_opera'>
+				<label for='titolo_opera'>Seleziona l'opera raffigurata dalla tua fotografia tra quelle nella tendina:</label>
+				<select id='titolo_opera' name='titolo_opera'>
 <?php
 	include __DIR__ . "../../listaTuttiTitoli_script.php";
 	for($i=0; $i<count($risultato); $i++) {
-		echo "\t\t\t\t\t\t<option value='" . $risultato[$i] . "'>" . $risultato[$i] . "</option>\n"; }
+		echo "\t\t\t\t\t<option value='" . $risultato[$i] . "'>" . $risultato[$i] . "</option>\n"; }
 ?>
-					</select>
-					L'opera che desideri non &egrave; presente? Puoi <a href='./aggiungi_opera.php'>aggiungerla</a>!
+				</select>
+				L'opera che desideri non &egrave; presente? Puoi <a href='./aggiungi_opera.php'>aggiungerla</a>!
 				<label for='descrizione-post'>Inserisci una breve descrizione:</label>
 				<input type='text' id='descrizione-post' name='descrizione' />
 				<label for='stato'>Inserisci la nazione in cui ti trovavi:</label>

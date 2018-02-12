@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 require_once "connessione.php";
-require_once "post.php";
+require_once "./class/post.php";
 require_once "funzioni.php";
 //Salva tutti i post in attesa di approvazione nell'array $array_post
 try
@@ -10,7 +10,7 @@ try
     {
         throw  new  Exception("Devi loggarti per poter effettuare questa azione");
     }
-    if (!amministratore($_SESSION["$username"]))
+    if (!amministratore($_SESSION["username"]))
     {
         throw  new  Exception("Devi essere un amministratore per poter effettuare questa azione");
     }
