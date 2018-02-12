@@ -6,7 +6,7 @@
 	echo "\t\t<ul>\n";
 	for($k=0; $k<count($array_post); $k++) {
 		echo "\t\t\t<li>\n" .
-			"\t\t\t\t<form action='modificaPost_script.php'>\n" .
+			"\t\t\t\t<form method='post' enctype='multipart/form-data' action='modificaPost_script.php'>\n" .
 			"\t\t\t\t\t<fieldset>\n" .
 			"\t\t\t\t\t\t<label for='titolo_opera-" . $array_post[$k]->id . "'>Titolo opera:</label>\n" .
 			"\t\t\t\t\t\t<select id='titolo_opera-" . $array_post[$k]->id . "' name='titolo_opera'>\n";
@@ -33,7 +33,7 @@
 			"\t\t\t\t\t\t<input type='submit' value='Modifica ed approva' />\n" .
 			"\t\t\t\t\t</fieldset>\n" .
 			"\t\t\t\t</form>\n" .
-			"\t\t\t\t<form action='cancellaPost_script.php'>\n" .
+			"\t\t\t\t<form method='post' enctype='multipart/form-data' action='cancellaPost_script.php'>\n" .
 			"\t\t\t\t\t<fieldset>\n" .
 			"\t\t\t\t\t\t<input type='hidden' name='id' value='" . $array_post[$k]->id . "' />\n" .
 			"\t\t\t\t\t\t<input type='submit' value='Cancella' />\n" .
