@@ -1,5 +1,6 @@
 <?php
 	include "dettaglioPost_script.php";
+	error_reporting(0);
 
 	$titolo="ERRORE - Fictional Pilgrimages";
 	if(isset($risultato_post) && !is_object($risultato_post))
