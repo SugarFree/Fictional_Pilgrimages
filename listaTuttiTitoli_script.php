@@ -15,14 +15,14 @@ try
         $risultato_query = mysqli_fetch_array($query, MYSQLI_NUM);
         if ($risultato_query == NULL)
             break;
-        $risultato[$i] = $risultato_query[0];
+        $titoli[$i] = $risultato_query[0];
 
         $i++;
     }
 }
 catch (Exception $e)
 {
-    $risultato = array();
+    $titoli = array();
 }
 
 //La lista dei titoli si trova in $risultato

@@ -6,8 +6,8 @@
 				<select id='titolo_opera' name='titolo_opera'>
 <?php
 	include __DIR__ . "../../listaTuttiTitoli_script.php";
-	for($i=0; $i<count($risultato); $i++) {
-		echo "\t\t\t\t\t<option value='" . $risultato[$i] . "'>" . $risultato[$i] . "</option>\n"; }
+	for($i=0; $i<count($titoli); $i++)
+		echo "\t\t\t\t\t<option value='" . $titoli[$i] . "'>" . $titoli[$i] . "</option>\n";
 ?>
 				</select>
 				<p>L'opera che desideri non &egrave; presente? Puoi <a href='./aggiungi_opera.php'>aggiungerla</a>!</p>
