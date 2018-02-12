@@ -10,7 +10,7 @@
 		echo "\t\t\t\t\t<option value='" . $risultato[$i] . "'>" . $risultato[$i] . "</option>\n"; }
 ?>
 				</select>
-				L'opera che desideri non &egrave; presente? Puoi <a href='./aggiungi_opera.php'>aggiungerla</a>!
+				<p>L'opera che desideri non &egrave; presente? Puoi <a href='./aggiungi_opera.php'>aggiungerla</a>!</p>
 				<label for='descrizione-post'>Inserisci una breve descrizione:</label>
 				<input type='text' id='descrizione-post' name='descrizione' />
 				<label for='stato'>Inserisci la nazione in cui ti trovavi:</label>

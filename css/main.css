@@ -33,7 +33,7 @@ h1 {
 	vertical-align: center;
 	text-align: center;
 	line-height: 114px;
-	font-size: 6vw; }
+	font-size: 6em; }
 
 /*
 ====================
@@ -242,7 +242,7 @@ input[type=submit], #titolo_opera, #tipo_opera{
 	cursor: pointer;
 	outline: 1px solid #216181; }
 
-#titolo_opera{
+#titolo_opera, #tipo_opera{
 	margin-right: 100%;
 }
 
@@ -269,7 +269,7 @@ textarea {
 #testo_commento{
 	margin: 0; }
 
-#inserimento{
+#corpo .inserimento{
 	width: 30%;
 	text-align: center;
 	margin: 5% 35%;
