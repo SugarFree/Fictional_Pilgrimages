@@ -111,6 +111,7 @@ try
       Si procede dunque a fare il login con l'account appena creato e a reindirizzarlo.
     */
     $_SESSION["username"] = $username;
+    $_SESSION["rango"]="user"; // la registrazione manuale e' solo per gli utenti non privilegiati
     header("Refresh: 3; URL=$redirect_location");
     echo("Registrazione effettuata con successo. Tra 3 secondi sarai reindirizzato.");
 }
