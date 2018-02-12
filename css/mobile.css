@@ -75,10 +75,10 @@ h2 {
 	box-shadow: 5px 5px 5px #888888; }
 
 #corpo h3 {
-	display: none; }
+ }
 
 #corpo img {
-	display: none; }
+ }
 
 #didascalia {
 	display: none; }
@@ -116,3 +116,11 @@ input[type=text], input[type=password]{
 #registrazione input[type=password], #login input[type=password] {
 	width: 88%; 
 	margin: 2vh 3%;}
+
+.elenco_colonna {
+	width: 80%;
+    display: list-item;
+    margin: 10%; }
+
+#lista{
+	margin-right: 0; }

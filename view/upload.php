@@ -10,7 +10,7 @@
 		echo "\t\t\t\t\t\t<option value='" . $risultato[$i] . "'>" . $risultato[$i] . "</option>\n"; }
 ?>
 					</select>
-					L'opera che desideri non &egrave; presente? Puoi <a href='./aggiungi_opera.php'>aggiungerla</a>!
+					<P>L'opera che desideri non &egrave; presente? Puoi <a href='./aggiungi_opera.php'>aggiungerla</a>!</P>
 				<label for='descrizione-post'>Inserisci una breve descrizione:</label>
 				<input type='text' id='descrizione-post' name='descrizione' />
 				<label for='stato'>Inserisci la nazione in cui ti trovavi:</label>
@@ -27,6 +27,6 @@
 				<input type='file' id='immagine_reale' name='immagine_reale' />
 				<label for='immagine_opera'>Seleziona un eventuale <span lang='en'>screencap</span> tratto dall'opera corrispondente alla foto:</label>
 				<input type='file' id='immagine_opera' name='immagine_film' />
-				<input id='inserimento' type="submit" value="Procedi con l'inserimento" />
+				<input class='inserimento' type="submit" value="Procedi con l'inserimento" />
 			</fieldset>
 		</form>
