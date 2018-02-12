@@ -29,7 +29,7 @@ h1, #path, #footer, #corpo #commenti li .dati {
 
 h1 {
 	min-height: 114px; /* per allinearsi col logo */
-	font-family: 'Crimson Text';
+	font-family: 'Crimson Text', sans-serif;
 	vertical-align: center;
 	text-align: center;
 	line-height: 114px;
@@ -45,10 +45,10 @@ SEZIONE SIDENAV
 	width: 150px;
 	height: 100%;
 	float: left;
-	position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-	z-index: 1; /* Stay on top */
-	top: 0; /* Stay at the top */
-	overflow-x: hidden; /* Disable horizontal scroll (hmmm maybe not) */
+	position: fixed;
+	z-index: 1; 
+	top: 0; 
+	overflow-x: hidden; 
 	margin-left: 10px;
 	background-color: #0d4263;
 	-webkit-touch-callout: none;
@@ -176,7 +176,7 @@ SEZIONE CORPO
 
 #corpo p {
 	padding: 0.5em; 
-	margin: 0;}
+	margin: 0.5em;}
 
 h2 {
 	text-align: center;
@@ -241,6 +241,10 @@ input[type=submit], #titolo_opera, #tipo_opera{
 	border: none;
 	cursor: pointer;
 	outline: 1px solid #216181; }
+
+#titolo_opera{
+	margin-right: 100%;
+}
 
 input[type=submit]:hover {
 	background-color: #93a459; }
