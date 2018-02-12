@@ -1,6 +1,5 @@
 		<h2><?php echo $_GET["nome"]; ?></h2>
 <?php
-	include __DIR__ . "../../ricerca_per_localita_script.php";
 
 	// Preparo array ordinato per opera
 	$post = array();

@@ -1,6 +1,7 @@
 <?php
+	include "ricerca_per_localita_script.php";
 	$titolo="ERRORE - Fictional Pilgrimages";
-	$ok=isset($_GET["nome"]) && !empty($_GET["nome"]);
+	$ok=isset($risultato) && $risultato !== false;
 
 	if($ok) {
 		$titolo=$_GET["nome"] . " - Fictional Pilgrimages";

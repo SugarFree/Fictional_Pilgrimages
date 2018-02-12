@@ -8,7 +8,7 @@ $localita = $_GET["nome"];
 $errore = "";
 
 $stato = trim(strip_tags($stato));
-$localita = "%" . trim(strip_tags($localita)) . "%";
+$localita = trim(strip_tags($localita));
 
 
 /*Di seguito tutti i casi possibili. Lo stato deve essere uguale perchè viene da un option value, la località deve solo
@@ -44,7 +44,7 @@ try
     else if (!empty($localita) and empty($stato))
     {
 
-        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND localita LIKE ?");
+        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND localita = ?");
         $risultato->bind_param("s", $localita);
         $risultato->execute();
         if ($risultato->error != "")
@@ -57,7 +57,7 @@ try
     }
     else
     {
-        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND localita LIKE ? AND stato=?");
+        $risultato = $conn->prepare("SELECT * FROM post WHERE approvato=TRUE AND localita = ? AND stato=?");
         $risultato->bind_param("ss", $localita, $stato);
         $risultato->execute();
         if ($risultato->error != "")
