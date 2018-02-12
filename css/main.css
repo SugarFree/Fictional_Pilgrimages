@@ -233,7 +233,7 @@ input[type=text], input[type=password]{
 	margin: 3vw 2vh 3vw 0;
 	display: inline-block; }
 
-input[type=submit], #titolo_opera, #tipo_opera{
+input[type=submit], #titolo_opera, #tipo_opera, #titolo_opera-2, #titolo_opera-8{
 	background-color: #0D4263;
 	color: #eeeeee;
 	padding: 12px 20px;
@@ -320,6 +320,12 @@ ul {
 
 #lista{
 	margin-right: 30%; }
+
+#corpo li{
+	display: block;
+	padding: 0 1em;
+	border: 1px solid #0D4263;
+}
 
 /*
 SEZIONE POST
