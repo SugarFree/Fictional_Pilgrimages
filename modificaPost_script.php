@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "connessione.php";
 require_once "funzioni.php";
 //Contestualmente, applica le modifiche che l'amministratore ritiene di dover fare e approva il post
@@ -44,9 +45,9 @@ try
     {
         throw  new Exception("Inserisci una descrizione");
     }
-    if (empty($indirizzo))
+    if (empty($localita))
     {
-        throw  new Exception("Inserisci un indirizzo");//Non controllo la località perchè è facoltativa
+        throw  new Exception("Inserisci una localit&agrave;");
     }
     if (empty($stato))
     {
@@ -94,9 +95,11 @@ try
     {
         throw new Exception("Errore del database:" . $risultato->error);
     }
-
+	header("Refresh:3; URL=pannelloAdmin.php");
+	echo "Post modificato ed approvato con successo. Verrai reindirizzato in 3 secondi.";
 }
 catch (Exception $e)
 {
-    echo $e->getMessage();
+	header("Refresh:3; URL=pannelloAdmin.php#p$id");
+    echo $e->getMessage() . ". Verrai reindirizzato in 3 secondi.";
 }

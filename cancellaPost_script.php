@@ -23,10 +23,12 @@ try
     {
         throw new Exception("Errore del database:" . $risultato->error);
     }
-
+	header("Refresh:3; URL=pannelloAdmin.php");
+	echo "Post cancellato con successo. Verrai reindirizzato in 3 secondi.";
 }
 catch (Exception $e)
 {
-    echo $e->getMessage();
+	header("Refresh:3; URL=pannelloAdmin.php#p$id");
+    echo $e->getMessage() . ". Verrai reindirizzato in 3 secondi.";
 }
 
