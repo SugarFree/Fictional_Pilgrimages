@@ -1,5 +1,5 @@
 	<div id='path'>
-		Ti trovi in: <span id='percorso'><?php echo $path . "\n";?></span>
+		Ti trovi in: <?php echo $path . "\n";?>
 <?php
 	session_start();
 	if(!isset($_SESSION["username"])) {
