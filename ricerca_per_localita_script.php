@@ -24,7 +24,7 @@ try
         if ($risultato == FALSE)
         {
             $errore = mysqli_error($conn);
-            throw new Exception("Errore del database: " . $errore);
+            throw new Exception("Errore del <span lang='en'>database</span>: " . $errore);
         }
     }
     else if (empty($localita) and !empty($stato))
@@ -36,7 +36,7 @@ try
         if ($risultato->error != "")
         {
             $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
+            $errore = ("Errore del <span lang='en'>database</span>: " . $errore);
             throw new Exception($errore);
         }
         $risultato = $risultato->get_result();
@@ -50,7 +50,7 @@ try
         if ($risultato->error != "")
         {
             $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
+            $errore = ("Errore del <span lang='en'>database</span>: " . $errore);
             throw new Exception($errore);
         }
         $risultato = $risultato->get_result();
@@ -63,7 +63,7 @@ try
         if ($risultato->error != "")
         {
             $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
+            $errore = ("Errore del <span lang='en'>database</span>: " . $errore);
             throw new Exception($errore);
         }
         $risultato = $risultato->get_result();

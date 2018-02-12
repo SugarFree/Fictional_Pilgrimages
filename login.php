@@ -5,7 +5,7 @@ session_start();
 try
 {
     if (isset($_SESSION['username'])) // Se l'utente risulta già loggato, mostra un messaggio adeguato
-        Throw new Exception("Utente già loggato, esegui il logout prima.");
+        Throw new Exception("Utente già loggato, esegui il <span lang='en'>logout</span> prima.");
     else
     { // Altrimenti va col login
         require_once 'connessione.php';
@@ -15,9 +15,9 @@ try
 
         // Se l'username o la password inseriti sono vuoti, avvisa l'utente
         if (empty($username))
-            throw new Exception("Inserisci un username.");
+            throw new Exception("Inserisci un <span lang='en'>username</span>")
         if (empty($password))
-            throw new Exception("Inserisci una password.");
+            throw new Exception("Inserisci una <span lang='en'>password</span>");
 
         // Verifica se la combinazione di username e password inserita è corretta
         $verifica_login = $conn->prepare("SELECT username, password FROM utente WHERE username=? AND password=?");
@@ -26,7 +26,7 @@ try
 
         // Se la query per qualche motivo fallisce, mostra un messaggio di errore ed esce
         if ($verifica_login->error != "")
-            throw new Exception("Errore del database:" . $verifica_login->error);
+            throw new Exception("Errore del <span lang='en'>database</span>:" . $verifica_login->error);
 
         $risultato_login = $verifica_login->get_result();
         if ($risultato_login->num_rows == 1)
@@ -39,7 +39,7 @@ try
             $conn->close();
         }
         else //Altrimenti mostra messaggio di errore ed esce
-            throw new Exception("Combinazione di nome utente e password errata.");
+            throw new Exception("Combinazione di nome utente e <span lang='en'>password</span> errata.");
     }
 }
 catch (Exception $e)

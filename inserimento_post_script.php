@@ -41,7 +41,7 @@ try
     }
     if (empty($localita))
     {
-        throw  new Exception("Inserisci una località");//Non controllo l'indirizzo perchè è facoltativo
+        throw  new Exception("Inserisci una localitagrave;");//Non controllo l'indirizzo perchè è facoltativo
     }
     if (empty($stato))
     {
@@ -57,14 +57,14 @@ try
     }
     if (strlen($localita) > 32)
     {
-        throw  new Exception("La località può essere lunga max 32 caratteri");
+        throw  new Exception("La localitagrave; può essere lunga max 32 caratteri");
     }
 
     if((!empty($latitudine)) or (!empty($longitudine)))//latitudine e longitudine possono essere vuote, ma se ci sono devono esserci entrambe
     {
         if (!filter_var($latitudine, FILTER_VALIDATE_FLOAT))
         {
-            throw  new Exception("Latitudine inserita non e' un numero");
+            throw  new Exception("Latitudine inserita non egrave; un numero");
         }
         if (($latitudine > 90) || ($latitudine < -90))
         {
@@ -72,7 +72,7 @@ try
         }
         if (!filter_var($longitudine, FILTER_VALIDATE_FLOAT))
         {
-            throw  new Exception("Longitudine inserita non e' un numero");
+            throw  new Exception("Longitudine inserita non egrave; un numero");
         }
 
         if (($longitudine > 180) || ($longitudine < -180))
@@ -94,7 +94,7 @@ try
     if ($inserimento->error != "")
     {
 
-        throw new Exception("Errore ritornato dal database:" . $inserimento->error);
+        throw new Exception("Errore ritornato dal <span lang='en'>database</span>:" . $inserimento->error);
     }
 
     $numero_nuovo_post = mysqli_query($conn, "SELECT max(id) FROM post");//Prende il numero dell'ultimo post caricato (cioè  quello appena caricato dall'utente)
@@ -110,7 +110,7 @@ try
 
     if (!isset($_FILES['immagine_film']['error']) || is_array($_FILES['immagine_film']['error']))
     {
-        throw new RuntimeException('Errore nel caricamento del/dei file: Parametri errati');
+        throw new RuntimeException("Errore nel caricamento del/dei <span lang='en'>file</span>: Parametri errati");
     }
 
     switch ($_FILES['immagine_film']['error'])
@@ -118,12 +118,12 @@ try
         case UPLOAD_ERR_OK:
             break;
         case UPLOAD_ERR_NO_FILE:
-            throw new RuntimeException('Non hai inviato alcun file');
+            throw new RuntimeException("Non hai inviato alcun <span lang='en'>file</span>");
         case UPLOAD_ERR_INI_SIZE:
         case UPLOAD_ERR_FORM_SIZE:
-            throw new RuntimeException('Superato limite di peso file');
+            throw new RuntimeException("Superato limite di peso <span lang='en'>file</span>");
         default:
-            throw new RuntimeException('Altro errore non specificato nel caricamento dei file');
+            throw new RuntimeException("Altro errore non specificato nel caricamento dei <span lang='en'>file</span>");
     }
 
     $finfo = new finfo(FILEINFO_MIME_TYPE);
@@ -135,21 +135,21 @@ try
             true
         ))
     {
-        throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg');
+        throw new RuntimeException("Formato <span lang='en'>file</span> non valido. Sono ammessi solo <acronym title='Joint Photographic Experts Group'>.jpg</acronym>");
     }
 
     //il file viene messo in /uploads/numerodelpost.estensione.
 
     if (!move_uploaded_file($_FILES['immagine_film']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post, $ext)))
     {
-        throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
+        throw new RuntimeException("Impossibile spostare il <span lang='en'>file</span> caricato nella cartella apposita del <span lang='en'>server</span>");
     }
 
-    echo 'File dal film caricato correttamente.<br />';
+    echo "<span lang='en'>File</span> dal film caricato correttamente.<br />";
 
     if (!isset($_FILES['immagine_reale']['error']) || is_array($_FILES['immagine_reale']['error']))
     {
-        throw new RuntimeException('Errore nel caricamento del/dei file: Parametri errati');
+        throw new RuntimeException("Errore nel caricamento del/dei <span lang='en'>file</span>: Parametri errati");
     }
 
 
@@ -160,12 +160,12 @@ try
         case UPLOAD_ERR_OK:
             break;
         case UPLOAD_ERR_NO_FILE:
-            throw new RuntimeException('Non hai inviato alcun file');
+            throw new RuntimeException("Non hai inviato alcun <span lang='en'>file</span>");
         case UPLOAD_ERR_INI_SIZE:
         case UPLOAD_ERR_FORM_SIZE:
-            throw new RuntimeException('Superato limite di peso file');
+            throw new RuntimeException("Superato limite di peso <span lang='en'>file</span>");
         default:
-            throw new RuntimeException('Altro errore non specificato nel caricamento dei file');
+            throw new RuntimeException("Altro errore non specificato nel caricamento dei <span lang='en'>file</span>");
     }
 
     $finfo = new finfo(FILEINFO_MIME_TYPE);
@@ -177,19 +177,19 @@ try
             true
         ))
     {
-        throw new RuntimeException('Formato file non valido. Sono ammessi solo .jpg');
+        throw new RuntimeException("Formato <span lang='en'>file</span> non valido. Sono ammessi solo <acronym title='Joint Photographic Experts Group'>.jpg</acronym>");
     }
 
 //il file viene messo in /uploads/numerodelpostA.estensione.
 
     if (!move_uploaded_file($_FILES['immagine_reale']['tmp_name'], sprintf('./uploads/%s.%s', $numero_nuovo_post . 'A', $ext)))
     {
-        throw new RuntimeException('Impossibile spostare il file caricato nella cartella apposita del server');
+        throw new RuntimeException("Impossibile spostare il <span lang='en'>file</span> caricato nella cartella apposita del <span lang='en'>server</span>");
     }
 
-    echo 'File reale caricato correttamente.<br />';
+    echo "<span lang='en'>File</span> reale caricato correttamente.<br />";
 	header("Refresh:3; URL=index.php");
-	echo "Il post &egrave; in attesa di approvazione da parte di un amministratore. Fra 3 secondi verrai reindirizzato.";
+	echo "Il <span lang='en'>post</span> &egrave; in attesa di approvazione da parte di un amministratore. Fra 3 secondi verrai reindirizzato.";
 }
 catch (RuntimeException $e)
 {

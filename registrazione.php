@@ -35,17 +35,17 @@ try
 {
     //Verifica che username e password inseriti non siano vuoti
     if (empty($username))
-        throw new Exception("Inserire un username.");
+        throw new Exception("Inserire un <span lang='en'>username</span>.");
     if (empty($password))
-        throw new Exception("Inserire una password.");
+        throw new Exception("Inserire una <span lang='en'>password</span>.");
 
     //Verifico che l'email sia nel formato corretto
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-        throw  new Exception("Formato indirizzo email errato.");
+        throw  new Exception("Formato indirizzo <span lang='en'>email</span> errato.");
 
     //Verifico che la password sia ripetuta correttamente in entrambi i campi
     if ($password != $conferma_password)
-        throw new Exception("Password non ripetuta correttamente.");
+        throw new Exception("<span lang='en'>Password</span> non ripetuta correttamente.");
 
     //Se questi due check passano, controllo se l'email o l'username erano già presenti nel db
     $verifica_email = $conn->prepare("SELECT email FROM utente WHERE email=?");
@@ -54,7 +54,7 @@ try
 
     //Se la query fallisce per qualsiasi motivo, esce
     if ($verifica_email->error != "")
-        throw  new  Exception("Errore ritornato dal database:" . $verifica_email->error . ".");
+        throw  new  Exception("Errore ritornato dal <span lang='en'>database</span>:" . $verifica_email->error . ".");
 
     $risultato_email = $verifica_email->get_result();
     //Se l'email è nuova, tutto ok, altrimenti esce
@@ -69,7 +69,7 @@ try
 
         //Se la query fallisce per qualsiasi motivo, esce
         if ($verifica_username->error != "")
-            throw new Exception("Errore ritornato dal database:" . $verifica_username->error . ".");
+            throw new Exception("Errore ritornato dal <span lang='en'>database</span>:" . $verifica_username->error . ".");
         $risultato_username = $verifica_username->get_result();
 
         if ($risultato_username->num_rows === 0)
@@ -86,7 +86,7 @@ try
             {
                 $inserimento->close();
                 $conn->close();
-                throw new Exception("Errore ritornato dal database:" . $inserimento->error . ".");
+                throw new Exception("Errore ritornato dal <span lang='en'>database</span>:" . $inserimento->error . ".");
             }
             $inserimento->close();
             $conn->close();
@@ -96,14 +96,14 @@ try
             //Se l'username è già esistente esce
             $verifica_username->close();
             $conn->close();
-            throw new Exception("Username gia' esistente, per favore sceglierne un altro.");
+            throw new Exception("<span lang='en'>Username</span> giagrave; esistente, per favore sceglierne un altro.");
         }
     }
     else
     {
         $verifica_email->close();
         $conn->close();
-        throw  new Exception("Email relativa ad un account gia' esistente.");
+        throw  new Exception("<span lang='en'>Email</span> relativa ad un <span lang='en'>account</span> giagrave; esistente.");
     }
 
     /*Se il flusso del programma arriva fin qui senza aver innescato alcuna eccezione
