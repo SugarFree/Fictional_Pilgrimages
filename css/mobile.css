@@ -44,13 +44,29 @@ h2, #path{
 #path {
 	width: 96%;
 	margin-top: 10px;
-	padding: 2%; }
+	padding: 2%; 
+	line-height: 1.5em;}
 
 #path form button {
+	float: none;
 	font-size: 20px;
 	border-radius: 0.3em; 
-	width: 80px;
-	height: 25px;}
+	width: 100px;
+	height: 30px;}
+
+#path form {
+	float: none; 
+	width:80px;
+	margin: 0;
+	padding: 0;
+	display: inline-block;}
+
+#percorso {
+	margin-right: 100%; }
+
+#saluto {
+	float: left;
+	padding-right: 1em; }
 
 #corpo{
 	padding: 0 5%;
@@ -118,9 +134,6 @@ input[type=text], input[type=password]{
 	margin: 2vh 3%;}
 
 .elenco_colonna {
-	width: 80%;
+	width: 90%;
     display: list-item;
     margin: 10%; }
-
-#lista{
-	margin-right: 0; }
