@@ -10,10 +10,10 @@
 	if(isset($local_style))
 		echo "\t<link rel='stylesheet' type='text/css' href='./css/$local_style.css' />\n";
 ?>
-	<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='./css/mobile.css' />
+	<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:767px), only screen and (max-device-width:767px)' href='./css/mobile.css' />
 <?php
 	if(isset($local_mobile_style))
-		echo "\t<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:480px), only screen and (max-device-width:480px)' href='./css/$local_mobile_style.css' />\n";
+		echo "\t<link rel='stylesheet' type='text/css' media='handheld, screen and (max-width:767px), only screen and (max-device-width:767px)' href='./css/$local_mobile_style.css' />\n";
 ?>
 	<link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
 	<link rel="icon" type="image/png" href="./favicon-16x16.png" />
