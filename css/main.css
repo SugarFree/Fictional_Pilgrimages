@@ -167,7 +167,7 @@ SEZIONE CORPO
 	text-align: left;
 	font-style: normal;
 	font-size: 1em;
-	padding-bottom: 1em;
+	padding-bottom: 0em;
 	margin: 0; }
 
 #corpo img {
@@ -285,6 +285,10 @@ dd img, dd a{
 SEZIONE LISTE
 */
 
+h3{
+	padding-top: 2em;
+	padding-bottom: 0;}
+
 #corpo #commenti li p {
 	padding: 0.3em; }
 
@@ -292,12 +296,16 @@ ul {
 	list-style: none; 
 	padding: 0; }
 
-li {
-	margin: 0; }
-
-#elenco_località ul{
+.elenco_riga {
 	display: list-item;
-}
+	margin-bottom: 50px; }
+
+.elenco_colonna {
+	width: 30%;
+    display: inline-block;
+    margin: 1%; }
+
+
 
 #corpo #commenti li {
 	border: 2px solid #0D4263;
@@ -350,25 +358,12 @@ label {
 	display: block; }
 
 /*
-SEZIONE OPERA
-*/
-
-#corpo ul li {
-	width: 30%;
-    display: inline-block;
-    margin: 1%; }
-
-/*
 SEZIONE LOCALITA'
 */
 
 #corpo ul li img{
 	width: 100%;
 	margin-bottom: 5% }
-
-#elenco_località{
-	display: inline;
-}
 
 /*
 ====================
