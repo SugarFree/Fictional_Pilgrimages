@@ -29,7 +29,6 @@
 		<img id='logo' src='./img/logo.png' alt='Logo del sito' />
 		<ul id='menu'>
 <?php
-	error_reporting(0);
 	class menu_item {
 		function __construct($href, $icon, $text, $en) {
 			$this->href=$href;
