@@ -27,6 +27,6 @@
 				<input type='file' id='immagine_reale' name='immagine_reale' />
 				<label for='immagine_opera'>Seleziona un eventuale <span lang='en'>screencap</span> tratto dall'opera corrispondente alla foto:</label>
 				<input type='file' id='immagine_opera' name='immagine_film' />
-				<input id='inserimento' type="submit" value="Procedi con l'inserimento" />
+				<input class='inserimento' type="submit" value="Procedi con l'inserimento" />
 			</fieldset>
 		</form>
