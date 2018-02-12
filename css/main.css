@@ -408,6 +408,9 @@ SEZIONE FOOTER
 	cursor: pointer;
 	height: 35px;
 	width: 35px;
+	text-indent: 100%;
+    	white-space: nowrap;
+    	overflow: hidden;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
