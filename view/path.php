@@ -1,5 +1,5 @@
 	<div id='path'>
-		Ti trovi in: <?php echo $path . "\n";?>
+		Ti trovi in: <span id='percorso'><?php echo $path . "\n";?></span>
 <?php
 	session_start();
 	if(!isset($_SESSION["username"])) {
@@ -16,6 +16,6 @@
 			"\t\t\t\t<button type='submit'>Sconnettiti</button>\n" .
 			"\t\t\t</div>\n" .
 			"\t\t</form>\n" .
-			"\t\t<span id='prova'>Ciao " . $_SESSION['username'] . "!</span>\n");	}
+			"\t\t<span id='saluto'>Ciao " . $_SESSION['username'] . "!</span>\n");	}
 ?>
 	</div>
