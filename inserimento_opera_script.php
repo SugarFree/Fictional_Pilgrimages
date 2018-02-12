@@ -30,7 +30,7 @@ try
     $verifica_titolo->execute();
     if ($verifica_titolo->error != "")
     {
-        throw  new  Exception("Errore ritornato dal database:" . $verifica_titolo->error);
+        throw  new  Exception("Errore ritornato dal <span lang='en'>database</span>:" . $verifica_titolo->error);
     }
     $risultato_titolo = $verifica_titolo->get_result();
     if ($risultato_titolo->num_rows === 0)
@@ -40,7 +40,7 @@ try
         $inserisci_post->execute();
         if ($inserisci_post->error != "")
         {
-            throw  new  Exception("Errore ritornato dal database:" . $verifica_titolo->error);
+            throw  new  Exception("Errore ritornato dal <span lang='en'>database</span>:" . $verifica_titolo->error);
         }
     }
     else

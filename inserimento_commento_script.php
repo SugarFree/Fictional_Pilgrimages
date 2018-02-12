@@ -19,7 +19,7 @@ try
     $inserimento->bind_param("sss", $id_post, $username, $testo);
     $inserimento->execute();
     if ($inserimento->error != "")
-        throw new Exception("Errore ritornato dal database:" . $inserimento->error);
+        throw new Exception("Errore ritornato dal <span lang='en'>database</span>:" . $inserimento->error);
 
     header("Location: post.php?id=$id_post#commenti");
 }

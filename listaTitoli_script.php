@@ -11,7 +11,7 @@ try
     $query = mysqli_query($conn, "SELECT DISTINCT titolo_opera FROM post WHERE approvato=TRUE");
     if ($query == FALSE)
     {
-        $errore = "Errore del database:" . mysqli_error($conn);
+        $errore = "Errore del <span lang='en'>database</span>:" . mysqli_error($conn);
         throw new Exception($errore);
     }
 

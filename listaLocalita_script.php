@@ -12,7 +12,7 @@ try
     $query = mysqli_query($conn, "SELECT DISTINCT stato, localita FROM post WHERE approvato=TRUE ORDER BY stato, localita");
     if ($query == FALSE)
     {
-        $errore = "Errore del database:" . mysqli_error($conn);
+        $errore = "Errore del <span lang='en'>database</span>:" . mysqli_error($conn);
         throw new Exception($errore);
     }
 
