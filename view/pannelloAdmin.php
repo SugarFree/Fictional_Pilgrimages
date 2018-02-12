@@ -5,7 +5,7 @@
 	echo "\t\t<ul>\n";
 	for($k=0; $k<count($array_post); $k++) {
 		echo "\t\t\t<li>\n" .
-			"\t\t\t\t<h3>Post #" . $array_post[$k]->id . "</h3>" .
+			"\t\t\t\t<h3>Post #" . $array_post[$k]->id . "</h3>\n" .
 			"\t\t\t\t<form method='post' enctype='multipart/form-data' action='modificaPost_script.php'>\n" .
 			"\t\t\t\t\t<fieldset>\n" .
 			"\t\t\t\t\t\t<label for='titolo_opera-" . $array_post[$k]->id . "'>Titolo opera:</label>\n" .
