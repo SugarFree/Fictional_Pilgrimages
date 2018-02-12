@@ -321,7 +321,7 @@ ul {
 #lista{
 	margin-right: 30%; }
 
-#corpo li{
+#corpo .form_post {
 	display: block;
 	padding: 0 1em;
 	border: 1px solid #0D4263;
