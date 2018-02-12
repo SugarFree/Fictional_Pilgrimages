@@ -230,10 +230,10 @@ input[type=text], input[type=password]{
 	border: 3px solid #93a459;
 	width: 88%;
 	padding: 1em;
-	margin: 2vh 3vw;
+	margin: 3vw 2vh 3vw 0;
 	display: inline-block; }
 
-input[type=submit] {
+input[type=submit], #titolo_opera{
 	background-color: #0D4263;
 	color: #eeeeee;
 	padding: 12px 20px;
@@ -263,9 +263,13 @@ textarea {
 	resize: none; }
 
 #testo_commento{
-	margin: 0;
-}
+	margin: 0; }
 
+#inserimento{
+	width: 30%;
+	text-align: center;
+	margin: 5% 35%;
+}
 /*
 SEZIONE DEFINIZIONI
 */
