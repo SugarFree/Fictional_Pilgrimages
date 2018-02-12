@@ -8,7 +8,7 @@ SEZIONE GENERALE
 	border: 0;
 	padding: 0; }
 
-html, body {
+html {
 	height: 100%;
 	background-color: #f0f0f0;
 	font-family: sans-serif;
@@ -407,4 +407,9 @@ SEZIONE FOOTER
 	border: none;
 	cursor: pointer;
 	height: 35px;
-	width: 35px; }
+	width: 35px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none; }
