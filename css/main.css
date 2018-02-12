@@ -229,7 +229,7 @@ input[type=text], input[type=password]{
 	color: black;
 	border: 3px solid #93a459;
 	width: 88%;
-	padding: 1em;
+	padding: 0.8em;
 	margin: 3vw 2vh 3vw 0;
 	display: inline-block; }
 
@@ -360,7 +360,9 @@ SEZIONE POST
 	word-wrap: break-word;
 }
 
-label {
+#corpo label {
+	margin-bottom: 0px;
+	margin-top: 10px;
 	display: block; }
 
 /*
