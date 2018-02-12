@@ -37,15 +37,16 @@ body #corpo {
 
 #registrazione input[type=submit], #login input[type=submit] {
 	width: 90%;
-	background-color: #0D4263;
-	color: #eeeeee;
+	background-color: #93a459;
+	color: black;
+	font: bold;
 	margin: 8px 5% 20px;
 	border: none;
-	cursor: auto;
+	cursor: pointer;
 	outline: 2px solid #216181; }
 
 #registrazione input[type=submit]:hover, #login input[type=submit]:hover {
-	background-color: #93a459; }
+	background-color: #D6DCBA; } 
 
 label {
 	margin-left: 5%; }
