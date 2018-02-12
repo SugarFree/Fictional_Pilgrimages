@@ -2,9 +2,8 @@
 	include "dettaglioPost_script.php";
 	error_reporting(0);
 
-	$titolo="ERRORE - Fictional Pilgrimages";
-	if(isset($risultato_post) && !is_object($risultato_post))
-		$titolo="Post " . $risultato_post->titolo_opera . " - Fictional Pilgrimages";
+	$titolo="Post - Fictional Pilgrimages";
+	if(isset($risultato_post) && $risultato_post !== false)
 		$path="<a href='opera.php?nome=" . $risultato_post->titolo_opera . "'>" . $risultato_post->titolo_opera . "</a> &gt; " .
 			"<a href='localita.php?nome=". $risultato_post->localita . "'>" . $risultato_post->localita . "</a>";
 	$current_menu_item=-1;
