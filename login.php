@@ -15,7 +15,7 @@ try
 
         // Se l'username o la password inseriti sono vuoti, avvisa l'utente
         if (empty($username))
-            throw new Exception("Inserisci un <span lang='en'>username</span>")
+            throw new Exception("Inserisci un <span lang='en'>username</span>");
         if (empty($password))
             throw new Exception("Inserisci una <span lang='en'>password</span>");
 
