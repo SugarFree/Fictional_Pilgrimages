@@ -40,9 +40,11 @@
 		new menu_item("cerca_localita.php","world.png","Cerca localit&agrave;", false),
 		new menu_item("cerca_opere.php","titolo.png","Cerca opere", false));
 
-	if(isset($_SESSION['username'])) {
-		array_push($menu_items, new menu_item("upload.php", "upload.png", "Inserisci <span lang='en'>post</span>", false));
-		$menu_items[] = new menu_item("pannelloUtente.php", "utente.png", "Pannello utente", false); }
+	if(isset($_SESSION["username"])) {
+		$menu_items[]=new menu_item("upload.php", "upload.png", "Inserisci <span lang='en'>post</span>", false);
+		$menu_items[]=new menu_item("pannelloUtente.php", "utente.png", "Pannello utente", false);
+		if($_SESSION["rango"] == "admin")
+			$menu_items[] = new menu_item("pannelloAdmin.php", "utente.png", "Pannello <span lang='en	'>admin</span>", false); }
 
 	for($i=0; $i<count($menu_items); $i++) {
 		echo "\t\t\t";

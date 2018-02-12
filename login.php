@@ -20,7 +20,7 @@ try
             throw new Exception("Inserisci una <span lang='en'>password</span>");
 
         // Verifica se la combinazione di username e password inserita è corretta
-        $verifica_login = $conn->prepare("SELECT username, password FROM utente WHERE username=? AND password=?");
+        $verifica_login = $conn->prepare("SELECT username, password, privilegi FROM utente WHERE username=? AND password=?");
         $verifica_login->bind_param("ss", $username, $hashed_psw);
         $verifica_login->execute();
 
@@ -32,6 +32,7 @@ try
         if ($risultato_login->num_rows == 1)
         { // Se corrisponde ai dati presenti nel db si logga come quello specifico utente
             $_SESSION["username"] = $username;
+            $_SESSION["rango"]=$risultato_login->fetch_array(MYSQLI_NUM)[2];
             header("Refresh: 3; URL=$redirect_location");
             echo("Hai effettuato l'accesso come " . $_SESSION['username'] . ". Tra 3 secondi verrai reindirizzato.");
 
