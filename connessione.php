@@ -10,6 +10,6 @@ $conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 //Controllo errori
 if ($conn === false)
-    die("ERRORE: Impossibile stabilire una connessione con il database MySQL. " . mysqli_connect_error());
+    die("ERRORE: Impossibile stabilire una connessione con il <span lang='en'>database</span> MySQL. " . mysqli_connect_error());
 mysqli_query($conn, "SET NAMES UTF8");
 ?>

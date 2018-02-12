@@ -7,7 +7,7 @@ try
     $query = mysqli_query($conn, "SELECT titolo FROM opera ORDER BY titolo ASC ");
     if ($query == FALSE)
     {
-        throw new Exception("Errore del database:" . mysqli_error($conn));
+        throw new Exception("Errore del <span lang='en'>database</span>:" . mysqli_error($conn));
     }
 
     while (true)

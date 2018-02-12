@@ -15,7 +15,7 @@ if (isset($_GET["id"]))
         if ($risultato_post->error != "")
         {
             $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
+            $errore = ("Errore del <span lang='en'>database</span>: " . $errore);
             throw new Exception($errore);
         }
         $risultato_post = $risultato_post->get_result();
@@ -30,7 +30,7 @@ if (isset($_GET["id"]))
         if ($risultato_commenti->error != "")
         {
             $errore = mysqli_error($conn);
-            $errore = ("Errore del database: " . $errore);
+            $errore = ("Errore del <span lang='en'>database</span>: " . $errore);
             throw new Exception($errore);
         }
         $risultato_commenti = $risultato_commenti->get_result();

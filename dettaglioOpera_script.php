@@ -15,7 +15,7 @@ try
     if ($query_opera->error != "")
     {
 
-        throw  new  Exception("Errore ritornato dal database:" . $query_opera->error);
+        throw  new  Exception("Errore ritornato dal <span lang='en'>database</span>:" . $query_opera->error);
     }
     else
     {
