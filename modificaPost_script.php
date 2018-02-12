@@ -68,20 +68,20 @@ try
 
     if (!filter_var($latitudine, FILTER_VALIDATE_FLOAT))
     {
-        throw  new Exception("Latitudine inserita non e' un numero");
+    	if(!empty($latitudine))
+        	throw  new Exception("Latitudine inserita non e' un numero");
     }
-
-    if (($latitudine > 90) || ($latitudine < -90))
+	else if (($latitudine > 90) || ($latitudine < -90))
     {
         throw  new Exception("Latitudine inserita deve essere compresa tra +90 e -90");
     }
 
     if (!filter_var($longitudine, FILTER_VALIDATE_FLOAT))
     {
-        throw  new Exception("Longitudine inserita non e' un numero");
+		if(!empty($longitudine))
+        	throw  new Exception("Longitudine inserita non e' un numero");
     }
-
-    if (($longitudine > 180) || ($longitudine < -180))
+	else if (($longitudine > 180) || ($longitudine < -180))
     {
         throw  new Exception("Longitudine inserita deve essere compresa tra +90 e -90");
     }

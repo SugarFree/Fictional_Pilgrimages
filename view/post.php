@@ -23,11 +23,11 @@
 		echo "\t\t\t\t<dt>Indirizzo:</dt>\n" .
 			"\t\t\t\t<dd>" . $risultato_post->indirizzo . "</dd>\n";
 
-	if(!is_null($risultato_post->latitudine))
+	if(!is_null($risultato_post->latitudine) && $risultato_post->latitudine !== "0.0000")
 		echo "\t\t\t\t<dt>Latitudine:</dt>\n" .
 			"\t\t\t\t<dd>" . $risultato_post->latitudine . "</dd>\n";
 
-	if(!is_null($risultato_post->longitudine))
+	if(!is_null($risultato_post->longitudine) && $risultato_post->longitudine !== "0.0000")
 		echo "\t\t\t\t<dt>Longitudine:</dt>\n" .
 			"\t\t\t\t<dd>" . $risultato_post->longitudine . "</dd>\n";
 
@@ -38,7 +38,7 @@
 			</dl>
 		</div>
 <?php
-	if(!(is_null($risultato_post->latitudine) || is_null($risultato_post->longitudine)))
+	if(!(is_null($risultato_post->latitudine)  || is_null($risultato_post->longitudine)) && $risultato_post->latitudine !== "0.0000" && $risultato_post->longitudine !== "0.0000")
 		echo "\t\t<div id='mappa'>\n" .
 			"\t\t\t<h3 lang='en'>Streetview:</h3>\n" .
 			"\t\t\t<object width='100%' height='500px' data='https://www.google.com/maps/embed/v1/streetview?key=AIzaSyBEEJQuz4dw1e0pSdKoaUzOsg0iZsnZgHQ&amp;location=" .
