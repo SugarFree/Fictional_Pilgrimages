@@ -11,6 +11,6 @@
 					<option value='serietv'>Serie TV</option>
 					<option value='film'>Film</option>
 				</select>
-				<input type="submit" value="Procedi con l'aggiunta" />
+				<input class='inserimento' type="submit" value="Procedi con l'aggiunta" />
 			</fieldset>
 		</form>
