@@ -1,8 +1,6 @@
 
 	</div>
-	<div id='scroll'>
-		<a href='#titolo'><img id='Top' src='./img/back_on_top.png' alt='Ritorna in cima' /></a>
-	</div>
+	<a id='to_top' href='#titolo'></a>
 	<div id='footer'>
 		&copy; 2018 <span lang='en'>Fictional Pilgrimages</span>
 	</div>

@@ -112,26 +112,27 @@ SEZIONE PATH
 #path{
 	margin-top: 20px;
 	font-weight: bold; 
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 1em;
+	vertical-align: middle;
+	line-height: 1em;
 	overflow: auto; }
 
 #path a{
 	color: #eeeeee;}
 
 #path form {
-	float: right; }
+	display: inline-block;
+}
 
 #path form button {
-	float: right;
-	overflow: auto;
-	border-radius: 4px;
-	font-size: 15px;
 	border-style: solid;
 	background-color: white;
-	width: 80px;
-	height: 20px;
-	cursor: pointer; }
+	width: auto;
+	height: auto;
+	border-radius: 0.3em;
+	padding: 0.2em;
+	cursor: pointer;
+	font-size: 0.8em; }
 
 #saluto {
 	float: right;
@@ -396,11 +397,12 @@ SEZIONE FOOTER
 	color:#eeeeee;
 	float: right; }
 
-#Top {
+#to_top {
 	display: none;
+	background-image: url("../img/back_on_top.png");
 	position: fixed;
-	bottom: 70px;
-	right: 7px;
+	bottom: 7em;
+	right: 1em;
 	z-index: 99;
 	border: none;
 	cursor: pointer;

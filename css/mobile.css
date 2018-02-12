@@ -45,27 +45,26 @@ h2, #path{
 	font-size: 2em;
 	width: 96%;
 	margin-top: 10px;
-	padding: 2%; 
+	padding: 2%;
 	line-height: 1.5em;
-	overflow: auto; }
-
-#path form {
-	float: right;
-	width: auto;
-	height: auto;
-	display: inline-block; }
+	overflow: auto;
+	white-space:nowrap; }
 
 #path form fieldset button {
-	float: none;
-	border-radius: 0.3em;
 	width: auto;
 	height: auto;
-	padding: 0.2em;
+	border-radius: 0.3em;
+	padding: 0.1em;
+	margin-left: 0.5em;
 	font-size: inherit; }
 
 #saluto {
-	float: right;
-	padding-right: 1em; }
+	float: left;
+	display: block;
+	clear: left; }
+
+#sentiero {
+	float: left; }
 
 #corpo{
 	padding: 0 5%;
@@ -101,17 +100,6 @@ h2 {
 input[type=text], input[type=password]{
 	padding: 2%;
 	margin: 2vh 3%; }
-
-#Top {
-	display: none;
-	position: fixed;
-	bottom: 35px;
-	right: 7px;
-	z-index: 99;
-	border: none;
-	cursor: pointer;
-	height: 40px;
-	width: 40px; }
 
 #footer {
 	width: 96%;
