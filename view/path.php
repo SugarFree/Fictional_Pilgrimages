@@ -3,12 +3,14 @@
 <?php
 	session_start();
 	if(!isset($_SESSION["username"])) {
-		echo ("\t\t<form method='get' action='connettiti.php'>\n" .
-			"\t\t\t<div>\n" .
-			"\t\t\t\t<input type='hidden' name='destination' value='" . $_SERVER["REQUEST_URI"] . "' />\n" .
-			"\t\t\t\t<button type='submit'>Connettiti</button>\n" .
-			"\t\t\t</div>\n" .
-			"\t\t</form>\n"); }
+		echo ("\t\t<span id='saluto'>\n" .
+			"\t\t\t<form method='get' action='connettiti.php'>\n" .
+			"\t\t\t\t<fieldset>\n" .
+			"\t\t\t\t\t<input type='hidden' name='destination' value='" . $_SERVER["REQUEST_URI"] . "' />\n" .
+			"\t\t\t\t\t<button type='submit'>Connettiti</button>\n" .
+			"\t\t\t\t</fieldset>\n" .
+			"\t\t\t</form>\n" .
+			"\t\t</span>"); }
 	else {
 		echo ("\t\t<span id='saluto'>Ciao " . $_SESSION['username'] . "!\n" .
 			"\t\t\t<form method='post' action='logout.php'>\n" .

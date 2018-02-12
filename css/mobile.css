@@ -9,7 +9,7 @@ h1, #path, #corpo, #footer {
 h1 {
 	font-size: 67px; }
 
-h2, #path{
+h2 {
 	font-size: 25px; }
 
 #footer, input[type=text], input[type=password], input[type=submit] {
@@ -43,10 +43,10 @@ h2, #path{
 
 #path {
 	font-size: 2em;
+	line-height: auto;
 	width: 96%;
 	margin-top: 10px;
 	padding: 2%;
-	line-height: 1.5em;
 	overflow: auto;
 	white-space:nowrap; }
 
