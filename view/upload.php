@@ -24,9 +24,9 @@
 				<label for='longitudine'>Inserisci la longitudine del luogo dello scatto, se la conosci:</label>
 				<input type='text' id='longitudine' name='longitudine' />
 				<label for='immagine_reale'>Seleziona la foto che desideri caricare:</label>
-				<input type='file' id='immagine_reale' name='immagine_reale' />
+				<input type='file' id='immagine_reale' name='immagine_film' />
 				<label for='immagine_opera'>Seleziona un eventuale <span lang='en'>screencap</span> tratto dall'opera corrispondente alla foto:</label>
-				<input type='file' id='immagine_opera' name='immagine_film' />
+				<input type='file' id='immagine_opera' name='immagine_reale' />
 				<input class='inserimento' type="submit" value="Procedi con l'inserimento" />
 			</fieldset>
 		</form>
